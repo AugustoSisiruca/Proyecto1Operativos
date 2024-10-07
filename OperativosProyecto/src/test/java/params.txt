@@ -1,0 +1,25 @@
+[General Params]
+DayDuration=2000
+Deadline=30
+
+[Dell]
+MotherboardProducers=2
+CPUProducers=3
+RAMProducers=2
+PowerSupplyProducers=3
+GraphicsCardProducers=1
+Assemblers=1
+ProjectManager=1
+Director=1
+MaxCapacity=13
+
+[HP]
+MotherboardProducers=3
+CPUProducers=2
+RAMProducers=3
+PowerSupplyProducers=2
+GraphicsCardProducers=1
+Assemblers=2
+ProjectManager=1
+Director=1
+MaxCapacity=14
