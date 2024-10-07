@@ -3,7 +3,6 @@
  */
 
 package proyecto.operativosproyecto;
-
 /**
  *
  * @author sisir
@@ -11,6 +10,9 @@ package proyecto.operativosproyecto;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        App app = App.getInstance();
+        app.start();
     }
+
+
 }
