@@ -4,45 +4,180 @@
  */
 package proyecto.operativosproyecto;
 
+import java.util.Random;
+import java.util.concurrent.Semaphore;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author sisir
  */
 public class Director extends Empleado {
 
-    private boolean listoParaEntregar; // Verifica si quedan días para la entrega
+    private String status;
+    private App app = App.getInstance();
 
-    public Director(String nombre, int salarioPorHora) {
-        super(nombre, salarioPorHora, 0); // No produce, solo supervisa
-        this.listoParaEntregar = false;
+    public Director(int company, int workerId, int type, int daysToFinish, int numOfWorkDone, int hourlyWage,
+            Almacen driveRef, Semaphore mutex) {
+        super(company, workerId, type, daysToFinish, numOfWorkDone, hourlyWage, driveRef, mutex);
+        this.status = "Inactivo";
     }
 
     @Override
-    public void trabajar() {
-        if (isListoParaEntregar()) {
-            System.out.println(nombre + " está enviando computadoras a las distribuidoras.");
-        } else {
-            System.out.println(nombre + " está realizando labores administrativas.");
+    public void run() {
+        while (true) {
+            try {
+                getPaid();
+                int dayDuration = app.getDayDuration();
+                int oneHour = dayDuration / 24;
+                // Se determina cuanto son 35 minutos.
+                int thirtyFiveMinutes = (int) (oneHour * (35.0 / 60.0));
+                int remainingMinutes = oneHour - thirtyFiveMinutes;
+
+                // Se buscan los días restantes.
+                int remainingDays = this.company == 0 ? app.getDell().getRemainingDays()
+                        : app.getHP().getRemainingDays();
+
+                if (remainingDays <= 0) {
+                    this.setStatus("Enviando capítulos");
+
+                    this.getMutex().acquire();
+                    // Se envian los capitulos
+                    this.sendChaptersToTV();
+
+                    funcionesaux.calculateTotalCost(this.company, this.getAccumulatedSalary());
+                    this.setAccumulatedSalary(0);
+
+                    // Se calcula las ganancias
+                    funcionesaux.calculateTotalEarnings(this.company);
+                    funcionesaux.calculateProfit(this.company);
+
+                    this.getMutex().release();
+
+                } // Si es un dia diferente al 0 entonces hace sus labores administrativas y
+                  // supervisa al PM
+                else {
+                    Random rand = new Random();
+                    int randomHour = rand.nextInt(24);
+
+                    for (int i = 0; i < 24; i++) {
+                        if (i == randomHour) {
+                            this.status = "Vigilando PM";
+                            checkProjectManager();
+                            Thread.sleep(thirtyFiveMinutes);
+                            checkProjectManager();
+                            // Basta con solo 2 revisadas porque solo puede cambiar 2 veces el status del PM
+                            // en 1 hora.
+                            Thread.sleep(remainingMinutes);
+                        } else {
+                            performAdministrativeTasks();
+                            Thread.sleep(oneHour);
+                        }
+                    }
+                }
+                Thread.sleep(dayDuration);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Director.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
-    public void revisarEntrega(int diasRestantes) {
-        setListoParaEntregar(diasRestantes <= 0);
+    private void resetDeadline(int company) {
+        Company co = funcionesaux.getCompany(company);
+        co.setRemainingDays(app.getDeadline());
     }
 
-    // Getters y setters...
+    private void sendChaptersToTV() {
+        try {
+            this.setStatus("Enviando capítulos");
 
-    /**
-     * @return the listoParaEntregar
-     */
-    public boolean isListoParaEntregar() {
-        return listoParaEntregar;
+            // Esperar un día completo (simulado)
+            Thread.sleep(app.getDayDuration());
+            // Se reinicia el deadline
+            this.resetDeadline(this.company);
+
+            Company tv = funcionesaux.getCompany(this.company);
+
+            // Enviamos los capitulos
+            tv.getDrive().resetChapters();
+
+            // Settiamos los valores actuales como los anteriores para estadisticas
+            tv.setLastNumChaptersWithPlotTwist(tv.getActualNumChaptersWithPlotTwist());
+            tv.setLastNumNormalChapters(tv.getActualNumNormalChapters());
+
+            // Settiamos los valores actuales a 0
+            tv.setActualNumChaptersWithPlotTwist(0);
+            tv.setActualNumNormalChapters(0);
+
+            // Settiamos el costo operacional del último batch
+            tv.setLastOpsCost(tv.getTotalCost() - tv.getLastOpsCost());
+
+            // Calculamos las ganancias del último batch
+            calculateBatchLastProfit(tv);
+
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Director.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void calculateBatchLastProfit(Company co) {
+        float profit = (co.getLastNumNormalChapters()
+                * constantes.profitPerChapter[this.company][0])
+                + (co.getNumChaptersWithPlotTwist()
+                        * constantes.profitPerChapter[this.company][1])
+                - (co.getLastOpsCost());
+
+        co.setBatchLastProfit(profit);
+    }
+
+    private void performAdministrativeTasks() {
+        this.setStatus("Administrando");
+    }
+
+    private void checkProjectManager() {
+        this.status = "Vigilando PM";
+        Company tv = funcionesaux.getCompany(this.company);
+
+        if ("Viendo Anime".equals(tv.getProjectManagerInstance().getCurrentState())) {
+
+            try {
+                // Pedimos permiso al mutex para poder reducir el salario del PM al costo total
+                this.getMutex().acquire();
+                tv.getProjectManagerInstance().addStrike();
+                tv.setTotalCost(tv.getTotalCost() - 100);
+                // Se calcula las ganancias
+                funcionesaux.calculateTotalEarnings(this.company);
+                funcionesaux.calculateProfit(this.company);
+                this.getMutex().release();
+
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Director.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }
+
+    private void getPaid() {
+        this.accumulatedSalary += this.hourlyWage * 24;
+    }
+
+    @Override
+    public String toString() {
+        return "Director [Salario acumulado=" + this.accumulatedSalary + ", Estado actual=" + this.getStatus() + "]";
     }
 
     /**
-     * @param listoParaEntregar the listoParaEntregar to set
+     * @return the status
      */
-    public void setListoParaEntregar(boolean listoParaEntregar) {
-        this.listoParaEntregar = listoParaEntregar;
+    public String getStatus() {
+        return status;
+    }
+
+    /**
+     * @param status the status to set
+     */
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
