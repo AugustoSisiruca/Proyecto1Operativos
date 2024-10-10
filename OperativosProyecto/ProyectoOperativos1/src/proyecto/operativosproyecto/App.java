@@ -50,6 +50,8 @@ public class App {
         // Inicia la simulación
         //getDell().start();
         //getHP().start();
+        MenuInicio home = new MenuInicio();
+        home.setVisible(true);
     }
 
     /**
