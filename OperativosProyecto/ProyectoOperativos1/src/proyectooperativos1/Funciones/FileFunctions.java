@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Funciones;
+package proyectooperativos1.Funciones;
 
 /**
  *
@@ -81,7 +81,7 @@ public class FileFunctions {
     }
 
     public static int[] getCompanyValues(int company, String fileData) {
-        int[] values = new int[8];
+        int[] values = new int[9];
         int startIndex = 0;
 
         if (company == 0) {

@@ -12,31 +12,124 @@ import java.util.HashMap;
 
 public class Almacen {
 
-    private HashMap<String, Integer> inventario; // Mapa para almacenar el tipo de producto y su cantidad
-    private HashMap<String, Integer> capacidadMaxima; // Capacidad máxima para cada tipo de producto
+    private int[] sections;
+    private int[] maxCapacity;
+    private int standarChapters;
+    private int plotTwistChapters;
 
-    public Almacen() {
-        this.inventario = new HashMap<>();
-        this.capacidadMaxima = new HashMap<>();
+    public Almacen(
+            int maxMotherboard,
+            int maxCPU,
+            int maxRams,
+            int maxPowerSupply,
+            int maxGPU) {
+        this.sections = new int[6];
+
+        this.maxCapacity = new int[] {
+                maxMotherboard,
+                maxCPU,
+                maxRams,
+                maxPowerSupply,
+                maxGPU
+        };
     }
 
-    public void agregarProducto(String tipoProducto, int cantidad) {
-        int actual = inventario.getOrDefault(tipoProducto, 0);
-        int max = capacidadMaxima.getOrDefault(tipoProducto, Integer.MAX_VALUE);
-
-        if (actual + cantidad <= max) {
-            inventario.put(tipoProducto, actual + cantidad);
-        } else {
-            System.out.println("No hay espacio suficiente en el almacén para " + tipoProducto);
+    public void uploadFile(int workerType, int workToUpload) {
+        if (workerType >= 0 && workerType <= 5) {
+            // Si el trabajador es de tipo 5, se sube el archivo sin verificar la capacidad
+            // máxima
+            if (workerType == 5) {
+                this.getSections()[workerType] += workToUpload;
+            } else if (this.getSections()[workerType] < this.getMaxCapacity()[workerType]) {
+                // Para los otros trabajadores, se verifica la capacidad máxima antes de subir
+                // el archivo
+                if (this.getSections()[workerType] + workToUpload <= this.getMaxCapacity()[workerType]) {
+                    this.getSections()[workerType] += workToUpload;
+                } else {
+                    this.getSections()[workerType] = this.getMaxCapacity()[workerType];
+                }
+            }
         }
     }
 
-    public void establecerCapacidad(String tipoProducto, int capacidad) {
-        capacidadMaxima.put(tipoProducto, capacidad);
+    @Override
+    public String toString() {
+        String str = "Drive Info\n\n";
+        for (int i = 0; i <= 5; i++) {
+            str += "-" + constantes.workesType[i] + "'s drive section: " + this.sections[i] + "\n";
+            if (i != 5) {
+                str += "-" + constantes.workesType[i] + "'s max capacity: " + this.maxCapacity[i] + "\n";
+            }
+        }
+        return str;
     }
 
-    public int obtenerCantidad(String tipoProducto) {
-        return inventario.getOrDefault(tipoProducto, 0);
+    /**
+     * @return the sections
+     */
+    public int[] getSections() {
+        return sections;
+    }
+
+    /**
+     * @param sections the sections to set
+     */
+    public void setSections(int[] sections) {
+        this.sections = sections;
+    }
+
+    /**
+     * @return the maxCapacity
+     */
+    public int[] getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    /**
+     * @param maxCapacity the maxCapacity to set
+     */
+    public void setMaxCapacity(int[] maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
+
+    /**
+     * @return the standarChapters
+     */
+    public int getStandarChapters() {
+        return standarChapters;
+    }
+
+    /**
+     * @param standarChapters the standarChapters to set
+     */
+    public void setStandarChapters(int standarChapters) {
+        this.standarChapters = standarChapters;
+    }
+
+    /**
+     * @return the plotTwistChapters
+     */
+    public int getPlotTwistChapters() {
+        return plotTwistChapters;
+    }
+
+    /**
+     * @param plotTwistChapters the plotTwistChapters to set
+     */
+    public void setPlotTwistChapters(int plotTwistChapters) {
+        this.plotTwistChapters = plotTwistChapters;
+    }
+
+    public void increaseStandarChapters() {
+        this.standarChapters++;
+    }
+
+    public void increasePlotTwistChapters() {
+        this.plotTwistChapters++;
+    }
+
+    public void resetChapters() {
+        this.getSections()[5] = 0;
     }
 
     // Getters y setters...
