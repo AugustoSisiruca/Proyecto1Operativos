@@ -4,17 +4,29 @@
  */
 package GUI;
 
+import java.awt.Point;
+import proyecto.operativosproyecto.App;
+
+
 /**
  *
  * @author sisir
  */
 public class MenuInicio extends javax.swing.JFrame {
+    
+    private Point initialClick;
+    private final App app = App.getInstance();
 
     /**
      * Creates new form Menu
      */
     public MenuInicio() {
         initComponents();
+        // Centra la ventana
+        this.setLocationRelativeTo(null);
+        // Evita que el usuario cambie el tamaño
+        this.setResizable(false);
+
     }
 
     /**
@@ -37,12 +49,6 @@ public class MenuInicio extends javax.swing.JFrame {
         ParteInteractiva = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -130,36 +136,6 @@ public class MenuInicio extends javax.swing.JFrame {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("de la compañía HP  con el de una compañía rival Dell!");
 
-        jLabel8.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel8.setText("Dias:");
-
-        jLabel9.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel9.setText("Dias para la fecha límite:");
-
-        jLabel10.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel10.setText("s");
-
-        jLabel11.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel11.setText("s");
-
-        jTextField1.setText("1000");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jTextField2.setText("1000");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout ParteInteractivaLayout = new javax.swing.GroupLayout(ParteInteractiva);
         ParteInteractiva.setLayout(ParteInteractivaLayout);
         ParteInteractivaLayout.setHorizontalGroup(
@@ -168,21 +144,7 @@ public class MenuInicio extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(ParteInteractivaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(ParteInteractivaLayout.createSequentialGroup()
-                        .addGroup(ParteInteractivaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(ParteInteractivaLayout.createSequentialGroup()
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ParteInteractivaLayout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(ParteInteractivaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(148, 148, 148))
         );
         ParteInteractivaLayout.setVerticalGroup(
@@ -192,17 +154,7 @@ public class MenuInicio extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addGroup(ParteInteractivaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(ParteInteractivaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(87, 87, 87))
+                .addContainerGap(243, Short.MAX_VALUE))
         );
 
         jPanel1.add(ParteInteractiva, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 580, 320));
@@ -226,10 +178,16 @@ public class MenuInicio extends javax.swing.JFrame {
 
     private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
         // TODO add your handling code here:
+        MenuParametros v3 = new MenuParametros();
+        v3.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_modificarActionPerformed
 
     private void companiaHPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_companiaHPActionPerformed
         // TODO add your handling code here:
+        MenuHP v2 = new MenuHP();
+        v2.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_companiaHPActionPerformed
 
     private void simulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simulacionActionPerformed
@@ -242,18 +200,14 @@ public class MenuInicio extends javax.swing.JFrame {
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_SalirActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void companiaDellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_companiaDellActionPerformed
         // TODO add your handling code here:
+        MenuDell v1 = new MenuDell();
+        v1.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_companiaDellActionPerformed
 
     /**
@@ -299,16 +253,10 @@ public class MenuInicio extends javax.swing.JFrame {
     private javax.swing.JButton companiaDell;
     private javax.swing.JButton companiaHP;
     private javax.swing.JButton guardar;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton modificar;
     private javax.swing.JButton simulacion;
     // End of variables declaration//GEN-END:variables
