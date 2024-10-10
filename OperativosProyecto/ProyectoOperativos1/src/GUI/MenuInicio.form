@@ -296,7 +296,7 @@
                   <Font name="Cascadia Mono" size="16" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="ms"/>
+                <Property name="text" type="java.lang.String" value="s"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
@@ -305,7 +305,7 @@
                   <Font name="Cascadia Mono" size="16" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="ms"/>
+                <Property name="text" type="java.lang.String" value="s"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField1">

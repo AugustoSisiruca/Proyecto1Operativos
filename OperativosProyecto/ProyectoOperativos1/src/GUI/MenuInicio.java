@@ -140,11 +140,11 @@ public class MenuInicio extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel10.setText("ms");
+        jLabel10.setText("s");
 
         jLabel11.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel11.setText("ms");
+        jLabel11.setText("s");
 
         jTextField1.setText("1000");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
