@@ -4,7 +4,7 @@
  */
 package GUI.Classes;
 
-import MainPackage.App;
+import proyecto.operativosproyecto.App;
 import java.awt.Point;
 import java.io.IOException;
 import java.net.URL;
@@ -78,16 +78,16 @@ public class Dashboard extends javax.swing.JFrame {
                             @Override
                             public void run() {
 
-                                profit1.setText(formatNumberAsK((int) app.getCartoonNetwork().getEarning() - (int) app.getNickelodeon().getTotalCost()));
-                                cost1.setText(formatNumberAsK((int) app.getCartoonNetwork().getTotalCost()));
-                                earning1.setText(formatNumberAsK((int) app.getCartoonNetwork().getEarning()));
+                                profit1.setText(formatNumberAsK((int) app.getHP().getEarning() - (int) app.getDell().getTotalCost())); //verificar que el codigo este bueno
+                                cost1.setText(formatNumberAsK((int) app.getHP().getTotalCost()));
+                                earning1.setText(formatNumberAsK((int) app.getHP().getEarning()));
 
-                                profit.setText(formatNumberAsK((int) app.getNickelodeon().getEarning() - (int) app.getNickelodeon().getTotalCost()));
-                                cost2.setText(formatNumberAsK((int) app.getNickelodeon().getTotalCost()));
-                                earning.setText(formatNumberAsK((int) app.getNickelodeon().getEarning()));
+                                profit.setText(formatNumberAsK((int) app.getDell().getEarning() - (int) app.getDell().getTotalCost()));
+                                cost2.setText(formatNumberAsK((int) app.getDell().getTotalCost()));
+                                earning.setText(formatNumberAsK((int) app.getDell().getEarning()));
 
-                                totalDays.setText(String.valueOf(app.getCartoonNetwork().getTotalDays()));
-                                currentDeadline.setText(String.valueOf(app.getCartoonNetwork().getRemainingDays()));
+                                totalDays.setText(String.valueOf(app.getHP().getTotalDays()));
+                                currentDeadline.setText(String.valueOf(app.getHP().getRemainingDays()));
 
                             }
                         });

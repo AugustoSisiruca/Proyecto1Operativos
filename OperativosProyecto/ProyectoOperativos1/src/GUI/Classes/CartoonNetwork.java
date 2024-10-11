@@ -4,10 +4,10 @@
  */
 package GUI.Classes;
 
-import FileFunctions.FileFunctions;
-import MainPackage.App;
-import Helpers.HelpersFunctions;
-import MainClasses.Employee;
+import Funciones.FileFunctions;
+import proyecto.operativosproyecto.App;
+import proyecto.operativosproyecto.funcionesaux;
+import proyecto.operativosproyecto.Empleado;
 import java.awt.Point;
 import java.io.File;
 import java.io.IOException;
@@ -33,18 +33,18 @@ public class CartoonNetwork extends javax.swing.JFrame {
     private int maxEmployees;
     private int actualEmployees;
     private static CartoonNetwork cartoonNetwork;
-    private HelpersFunctions helper = new HelpersFunctions();
+    private funcionesaux helper = new funcionesaux();
     private FileFunctions filefunctions = new FileFunctions();
     private File selectedFile = app.getSelectedFile();
     private JButton[] decreaseBtn = new JButton[6];
     private JButton[] increaseBtn = new JButton[6];
     private int[] values = {
-        countNonNullEmployees(this.app.getCartoonNetwork().getScreenwriters()),
-        countNonNullEmployees(this.app.getCartoonNetwork().getSetDesigners()),
-        countNonNullEmployees(this.app.getCartoonNetwork().getCharacterAnimators()),
-        countNonNullEmployees(this.app.getCartoonNetwork().getVoiceActors()),
-        countNonNullEmployees(this.app.getCartoonNetwork().getPlotTwistScreenwriters()),
-        countNonNullEmployees(this.app.getCartoonNetwork().getAssemblers())
+        countNonNullEmployees(this.app.getHP().getMotherboardProducers()),
+        countNonNullEmployees(this.app.getHP().getCpuProducers()),
+        countNonNullEmployees(this.app.getHP().getRamProducers()),
+        countNonNullEmployees(this.app.getHP().getPowerSupplyProducers()),
+        countNonNullEmployees(this.app.getHP().getGraphicsCardProducers()),
+        countNonNullEmployees(this.app.getHP().getAssemblers())
     };
 
     private void updateBtnStatus() {
@@ -75,12 +75,12 @@ public class CartoonNetwork extends javax.swing.JFrame {
     }
 
     private void updateValues() {
-        values[0] = countNonNullEmployees(this.app.getCartoonNetwork().getScreenwriters());
-        values[1] = countNonNullEmployees(this.app.getCartoonNetwork().getSetDesigners());
-        values[2] = countNonNullEmployees(this.app.getCartoonNetwork().getCharacterAnimators());
-        values[3] = countNonNullEmployees(this.app.getCartoonNetwork().getVoiceActors());
-        values[4] = countNonNullEmployees(this.app.getCartoonNetwork().getPlotTwistScreenwriters());
-        values[5] = countNonNullEmployees(this.app.getCartoonNetwork().getAssemblers());
+        values[0] = countNonNullEmployees(this.app.getHP().getMotherboardProducers());
+        values[1] = countNonNullEmployees(this.app.getHP().getCpuProducers());
+        values[2] = countNonNullEmployees(this.app.getHP().getRamProducers());
+        values[3] = countNonNullEmployees(this.app.getHP().getPowerSupplyProducers());
+        values[4] = countNonNullEmployees(this.app.getHP().getGraphicsCardProducers());
+        values[5] = countNonNullEmployees(this.app.getHP().getAssemblers());
     }
 
     public static synchronized CartoonNetwork getInstance() {
@@ -142,58 +142,58 @@ public class CartoonNetwork extends javax.swing.JFrame {
                             public void run() {
                                 // Aquí van tus actualizaciones de la UI
                                 scriptDrive
-                                        .setText(String.valueOf(app.getCartoonNetwork().getDrive().getSections()[0]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[0]));
                                 scenaryDrive
-                                        .setText(String.valueOf(app.getCartoonNetwork().getDrive().getSections()[1]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[1]));
                                 animationDrive
-                                        .setText(String.valueOf(app.getCartoonNetwork().getDrive().getSections()[2]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[2]));
                                 dubbingDrive
-                                        .setText(String.valueOf(app.getCartoonNetwork().getDrive().getSections()[3]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[3]));
                                 plotTwistDrive
-                                        .setText(String.valueOf(app.getCartoonNetwork().getDrive().getSections()[4]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[4]));
                                 assemblerDrive
-                                        .setText(String.valueOf(app.getCartoonNetwork().getDrive().getSections()[5]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[5]));
 
                                 projectManagerStatus
-                                        .setText(app.getCartoonNetwork().getProjectManagerInstance().getCurrentState());
+                                        .setText(app.getHP().getProjectManagerInstance().getCurrentState());
 
                                 currentDeadline.setText(
-                                        String.valueOf(app.getCartoonNetwork().getRemainingDays()));
+                                        String.valueOf(app.getHP().getRemainingDays()));
 
-                                totalDays.setText(String.valueOf(app.getCartoonNetwork().getTotalDays()));
+                                totalDays.setText(String.valueOf(app.getHP().getTotalDays()));
 
                                 strikeCounter.setText(String
-                                        .valueOf(app.getCartoonNetwork().getProjectManagerInstance().getStrikes()));
+                                        .valueOf(app.getHP().getProjectManagerInstance().getStrikes()));
                                 cashPenality.setText(String.valueOf(Integer.parseInt(strikeCounter.getText()) * 100));
-                                directorStatus.setText(app.getCartoonNetwork().getDirectorInstance().getStatus());
+                                directorStatus.setText(app.getHP().getDirectorInstance().getStatus());
 
                                 totalChapters.setText(
-                                        String.valueOf(app.getCartoonNetwork().getNumChapters()));
+                                        String.valueOf(app.getHP().getNumChapters()));
                                 standardChapters.setText(
-                                        String.valueOf(app.getCartoonNetwork().getNumNormalChapters()));
+                                        String.valueOf(app.getHP().getNumNormalChapters()));
 
                                 plotTwistChapters.setText(
-                                        String.valueOf(app.getCartoonNetwork().getNumChaptersWithPlotTwist()));
+                                        String.valueOf(app.getHP().getNumChaptersWithPlotTwist()));
 
                                 standardChaptes2.setText(
-                                        String.valueOf(app.getCartoonNetwork().getActualNumNormalChapters())
+                                        String.valueOf(app.getHP().getActualNumNormalChapters())
                                 );
                                 plotTwistChapters2.setText(
-                                        String.valueOf(app.getCartoonNetwork().getActualNumChaptersWithPlotTwist())
+                                        String.valueOf(app.getHP().getActualNumChaptersWithPlotTwist())
                                 );
 
                                 standardChaptes1.setText(
-                                        String.valueOf(app.getCartoonNetwork().getLastNumNormalChapters())
+                                        String.valueOf(app.getHP().getLastNumNormalChapters())
                                 );
                                 plotTwistChapters1.setText(
-                                        String.valueOf(app.getCartoonNetwork().getLastNumChaptersWithPlotTwist())
+                                        String.valueOf(app.getHP().getLastNumChaptersWithPlotTwist())
                                 );
 
-                                profit.setText(formatNumberAsK((int) app.getCartoonNetwork().getEarning() -  (int) app.getCartoonNetwork().getTotalCost()));
-                                cost.setText(formatNumberAsK((int) app.getCartoonNetwork().getTotalCost()));
-                                earning.setText(formatNumberAsK((int) app.getCartoonNetwork().getEarning()));
+                                profit.setText(formatNumberAsK((int) app.getHP().getEarning() -  (int) app.getHP().getTotalCost()));
+                                cost.setText(formatNumberAsK((int) app.getHP().getTotalCost()));
+                                earning.setText(formatNumberAsK((int) app.getHP().getEarning()));
                                 batchLastProfit.setText(
-                                        formatNumberAsK((int) app.getCartoonNetwork().getBatchLastProfit()));
+                                        formatNumberAsK((int) app.getHP().getBatchLastProfit()));
                             }
                         });
 
@@ -212,28 +212,28 @@ public class CartoonNetwork extends javax.swing.JFrame {
     }
 
     private void initializeValues() {
-        if (this.app.getCartoonNetwork() != null) {
-            this.maxEmployees = this.app.getCartoonNetwork().getMaxEmployeesQuantity();
-            this.actualEmployees = this.app.getCartoonNetwork().getActualEmployeesQuantity();
+        if (this.app.getHP() != null) {
+            this.maxEmployees = this.app.getHP().getMaxEmployeesQuantity();
+            this.actualEmployees = this.app.getHP().getActualEmployeesQuantity();
             this.scriptsValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getScreenwriters())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getMotherboardProducers())));
             this.scenaryValue
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getSetDesigners())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getCpuProducers())));
             this.animationValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getCharacterAnimators())));
+                    String.valueOf(countNonNullEmployees(this.app.getHP().getRamProducers())));
             this.dubbingValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getVoiceActors())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getPowerSupplyProducers())));
             this.plotTwistValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getPlotTwistScreenwriters())));
+                    String.valueOf(countNonNullEmployees(this.app.getHP().getGraphicsCardProducers())));
             this.assemblerValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getAssemblers())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getAssemblers())));
             this.maxCap.setText(String.valueOf(this.maxEmployees) + "     trabajadores");
         }
     }
 
-    private int countNonNullEmployees(Employee[] employees) {
+    private int countNonNullEmployees(Empleado[] employees) {
         int count = 0;
-        for (Employee employee : employees) {
+        for (Empleado employee : employees) {
             if (employee != null) {
                 count++;
             }

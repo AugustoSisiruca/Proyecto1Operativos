@@ -791,7 +791,7 @@
                                       <Component id="driveTitle8" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="driveTitle6" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="11" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jTextField8" min="-2" max="-2" attributes="0"/>
                                       <Component id="jTextField7" min="-2" max="-2" attributes="0"/>
@@ -1002,19 +1002,19 @@
                   <Component id="driveTitle1" alignment="0" max="32767" attributes="0"/>
                   <Component id="driveTitle21" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="driveTitle27" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="maxCap" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="plotTwist" alignment="1" pref="270" max="32767" attributes="0"/>
-                          <Component id="dubbing" alignment="1" pref="270" max="32767" attributes="0"/>
-                          <Component id="animations" alignment="1" pref="270" max="32767" attributes="0"/>
-                          <Component id="scenary" alignment="1" pref="270" max="32767" attributes="0"/>
+                          <Component id="plotTwist" alignment="1" pref="294" max="32767" attributes="0"/>
+                          <Component id="dubbing" alignment="1" pref="294" max="32767" attributes="0"/>
+                          <Component id="animations" alignment="1" pref="294" max="32767" attributes="0"/>
+                          <Component id="scenary" alignment="1" pref="294" max="32767" attributes="0"/>
                           <Component id="scripts" alignment="1" max="32767" attributes="0"/>
-                          <Component id="plotTwist2" alignment="0" pref="270" max="32767" attributes="0"/>
+                          <Component id="plotTwist2" alignment="0" pref="294" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
@@ -1912,7 +1912,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="scriptDrive" pref="32" max="32767" attributes="0"/>
+                              <Component id="scriptDrive" max="32767" attributes="0"/>
                               <Component id="scriptTitle1" max="32767" attributes="0"/>
                               <Component id="scriptsLimit1" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -2001,7 +2001,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="scenaryTitle1" pref="32" max="32767" attributes="0"/>
+                              <Component id="scenaryTitle1" max="32767" attributes="0"/>
                               <Component id="scenaryLimit1" alignment="0" max="32767" attributes="0"/>
                               <Component id="scenaryDrive" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -2090,7 +2090,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="animationDrive" pref="32" max="32767" attributes="0"/>
+                              <Component id="animationDrive" max="32767" attributes="0"/>
                               <Component id="animationsTitle1" max="32767" attributes="0"/>
                               <Component id="animationsLimit1" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -2179,7 +2179,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="dubbingDrive" pref="32" max="32767" attributes="0"/>
+                              <Component id="dubbingDrive" max="32767" attributes="0"/>
                               <Component id="dubbingTitle1" max="32767" attributes="0"/>
                               <Component id="dubbingLimit1" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -2256,7 +2256,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Component id="plotTwistTitle1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="44" max="32767" attributes="0"/>
+                          <EmptySpace pref="38" max="32767" attributes="0"/>
                           <Component id="plotTwistDrive" min="-2" pref="23" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="plotTwistLimit1" min="-2" max="-2" attributes="0"/>
@@ -2269,7 +2269,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="plotTwistDrive" pref="32" max="32767" attributes="0"/>
+                              <Component id="plotTwistDrive" max="32767" attributes="0"/>
                               <Component id="plotTwistTitle1" max="32767" attributes="0"/>
                               <Component id="plotTwistLimit1" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -2756,7 +2756,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="driveTitle15" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="driveTitle12" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="projectManagerStatus" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2974,7 +2974,7 @@
                           <Component id="driveTitle28" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="batchLastProfit" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

@@ -4,10 +4,10 @@
  */
 package GUI.Classes;
 
-import FileFunctions.FileFunctions;
-import Helpers.HelpersFunctions;
-import MainClasses.Employee;
-import MainPackage.App;
+import Funciones.FileFunctions;
+import proyecto.operativosproyecto.funcionesaux;
+import proyecto.operativosproyecto.App;
+import proyecto.operativosproyecto.Empleado;
 import java.awt.Point;
 import java.io.File;
 import java.io.IOException;
@@ -33,18 +33,18 @@ public class Nickelodeon extends javax.swing.JFrame {
     private int maxEmployees;
     private int actualEmployees;
     private static Nickelodeon nickelodeon;
-    private HelpersFunctions helper = new HelpersFunctions();
+    private funcionesaux helper = new funcionesaux();
     private FileFunctions filefunctions = new FileFunctions();
     private File selectedFile = app.getSelectedFile();
     private JButton[] decreaseBtn = new JButton[6];
     private JButton[] increaseBtn = new JButton[6];
     private int[] values = {
-        countNonNullEmployees(this.app.getNickelodeon().getScreenwriters()),
-        countNonNullEmployees(this.app.getNickelodeon().getSetDesigners()),
-        countNonNullEmployees(this.app.getNickelodeon().getCharacterAnimators()),
-        countNonNullEmployees(this.app.getNickelodeon().getVoiceActors()),
-        countNonNullEmployees(this.app.getNickelodeon().getPlotTwistScreenwriters()),
-        countNonNullEmployees(this.app.getNickelodeon().getAssemblers())
+        countNonNullEmployees(this.app.getDell().getMotherboardProducers()),
+        countNonNullEmployees(this.app.getDell().getCpuProducers()),
+        countNonNullEmployees(this.app.getDell().getRamProducers()),
+        countNonNullEmployees(this.app.getDell().getPowerSupplyProducers()),
+        countNonNullEmployees(this.app.getDell().getGraphicsCardProducers()),
+        countNonNullEmployees(this.app.getDell().getAssemblers())
     };
 
     private void updateBtnStatus() {
@@ -75,12 +75,12 @@ public class Nickelodeon extends javax.swing.JFrame {
     }
 
     private void updateValues() {
-        values[0] = countNonNullEmployees(this.app.getNickelodeon().getScreenwriters());
-        values[1] = countNonNullEmployees(this.app.getNickelodeon().getSetDesigners());
-        values[2] = countNonNullEmployees(this.app.getNickelodeon().getCharacterAnimators());
-        values[3] = countNonNullEmployees(this.app.getNickelodeon().getVoiceActors());
-        values[4] = countNonNullEmployees(this.app.getNickelodeon().getPlotTwistScreenwriters());
-        values[5] = countNonNullEmployees(this.app.getNickelodeon().getAssemblers());
+        values[0] = countNonNullEmployees(this.app.getDell().getMotherboardProducers());
+        values[1] = countNonNullEmployees(this.app.getDell().getCpuProducers());
+        values[2] = countNonNullEmployees(this.app.getDell().getRamProducers());
+        values[3] = countNonNullEmployees(this.app.getDell().getPowerSupplyProducers());
+        values[4] = countNonNullEmployees(this.app.getDell().getGraphicsCardProducers());
+        values[5] = countNonNullEmployees(this.app.getDell().getAssemblers());
     }
 
     public static synchronized Nickelodeon getInstance() {
@@ -140,58 +140,58 @@ public class Nickelodeon extends javax.swing.JFrame {
                             public void run() {
                                 // Aquí van tus actualizaciones de la UI
                                 scriptDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[0]));
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[0]));
                                 scenaryDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[1]));
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[1]));
                                 animationDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[2]));
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[2]));
                                 dubbingDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[3]));
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[3]));
                                 plotTwistDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[4]));
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[4]));
                                 assemblerDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[5]));
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[5]));
 
                                 projectManagerStatus
-                                        .setText(app.getNickelodeon().getProjectManagerInstance().getCurrentState());
+                                        .setText(app.getDell().getProjectManagerInstance().getCurrentState());
 
                                 currentDeadline.setText(
-                                        String.valueOf(app.getNickelodeon().getRemainingDays()));
+                                        String.valueOf(app.getDell().getRemainingDays()));
 
-                                totalDays.setText(String.valueOf(app.getNickelodeon().getTotalDays()));
+                                totalDays.setText(String.valueOf(app.getDell().getTotalDays()));
 
                                 strikeCounter.setText(String
-                                        .valueOf(app.getNickelodeon().getProjectManagerInstance().getStrikes()));
+                                        .valueOf(app.getDell().getProjectManagerInstance().getStrikes()));
                                 cashPenality.setText(String.valueOf(Integer.parseInt(strikeCounter.getText()) * 100));
-                                directorStatus.setText(app.getNickelodeon().getDirectorInstance().getStatus());
+                                directorStatus.setText(app.getDell().getDirectorInstance().getStatus());
 
                                 totalChapters.setText(
-                                        String.valueOf(app.getNickelodeon().getNumChapters()));
+                                        String.valueOf(app.getDell().getNumChapters()));
                                 standardChapters.setText(
-                                        String.valueOf(app.getNickelodeon().getNumNormalChapters()));
+                                        String.valueOf(app.getDell().getNumNormalChapters()));
 
                                 plotTwistChapters.setText(
-                                        String.valueOf(app.getNickelodeon().getNumChaptersWithPlotTwist()));
+                                        String.valueOf(app.getDell().getNumChaptersWithPlotTwist()));
 
                                 standardChaptes2.setText(
-                                        String.valueOf(app.getNickelodeon().getActualNumNormalChapters())
+                                        String.valueOf(app.getDell().getActualNumNormalChapters())
                                 );
                                 plotTwistChapters2.setText(
-                                        String.valueOf(app.getNickelodeon().getActualNumChaptersWithPlotTwist())
+                                        String.valueOf(app.getDell().getActualNumChaptersWithPlotTwist())
                                 );
 
                                 standardChaptes1.setText(
-                                        String.valueOf(app.getNickelodeon().getLastNumNormalChapters())
+                                        String.valueOf(app.getDell().getLastNumNormalChapters())
                                 );
                                 plotTwistChapters1.setText(
-                                        String.valueOf(app.getNickelodeon().getLastNumChaptersWithPlotTwist())
+                                        String.valueOf(app.getDell().getLastNumChaptersWithPlotTwist())
                                 );
 
-                                profit.setText(formatNumberAsK((int) app.getNickelodeon().getEarning() -  (int) app.getNickelodeon().getTotalCost()));
-                                cost.setText(formatNumberAsK((int) app.getNickelodeon().getTotalCost()));
-                                earning.setText(formatNumberAsK((int) app.getNickelodeon().getEarning()));
+                                profit.setText(formatNumberAsK((int) app.getDell().getEarning() -  (int) app.getDell().getTotalCost()));
+                                cost.setText(formatNumberAsK((int) app.getDell().getTotalCost()));
+                                earning.setText(formatNumberAsK((int) app.getDell().getEarning()));
                                 batchLastProfit.setText(
-                                        formatNumberAsK((int) app.getNickelodeon().getBatchLastProfit()));
+                                        formatNumberAsK((int) app.getDell().getBatchLastProfit()));
 
                             }
                         });
@@ -212,28 +212,28 @@ public class Nickelodeon extends javax.swing.JFrame {
     }
 
     private void initializeValues() {
-        if (this.app.getNickelodeon() != null) {
-            this.maxEmployees = this.app.getNickelodeon().getMaxEmployeesQuantity();
-            this.actualEmployees = this.app.getNickelodeon().getActualEmployeesQuantity();
+        if (this.app.getDell() != null) {
+            this.maxEmployees = this.app.getDell().getMaxEmployeesQuantity();
+            this.actualEmployees = this.app.getDell().getActualEmployeesQuantity();
             this.scriptsValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getScreenwriters())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getMotherboardProducers())));
             this.scenaryValue
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getSetDesigners())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getCpuProducers())));
             this.animationValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getCharacterAnimators())));
+                    String.valueOf(countNonNullEmployees(this.app.getDell().getRamProducers())));
             this.dubbingValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getVoiceActors())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getPowerSupplyProducers())));
             this.plotTwistValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getPlotTwistScreenwriters())));
+                    String.valueOf(countNonNullEmployees(this.app.getDell().getGraphicsCardProducers())));
             this.assemblerValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getAssemblers())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getAssemblers())));
             this.maxCap.setText(String.valueOf(this.maxEmployees) + "     trabajadores");
         }
     }
 
-    private int countNonNullEmployees(Employee[] employees) {
+    private int countNonNullEmployees(Empleado[] employees) {
         int count = 0;
-        for (Employee employee : employees) {
+        for (Empleado employee : employees) {
             if (employee != null) {
                 count++;
             }

@@ -4,10 +4,10 @@
  */
 package GUI.Classes;
 
-import FileFunctions.FileFunctions;
-import Helpers.HelpersFunctions;
-import MainClasses.Employee;
-import MainPackage.App;
+import Funciones.FileFunctions;
+import proyecto.operativosproyecto.funcionesaux;
+import proyecto.operativosproyecto.Empleado;
+import proyecto.operativosproyecto.App;
 import java.awt.Point;
 import java.io.File;
 import java.io.IOException;
@@ -35,48 +35,48 @@ public class ConfigParams extends javax.swing.JFrame {
     private int actualEmployees;
     private int actualEmployees1;
     private static ConfigParams config;
-    private HelpersFunctions helper = new HelpersFunctions();
+    private funcionesaux helper = new funcionesaux();
     private FileFunctions filefunctions = new FileFunctions();
     private File selectedFile = app.getSelectedFile();
     private int dayDuration;
     private int deadline;
 
     private void initializeValues() {
-        if (this.app.getCartoonNetwork() != null && this.app.getNickelodeon() != null) {
-            this.maxEmployees = this.app.getNickelodeon().getMaxEmployeesQuantity();
-            this.maxEmployees1 = this.app.getCartoonNetwork().getMaxEmployeesQuantity();
-            this.actualEmployees1 = this.app.getCartoonNetwork().getActualEmployeesQuantity();
-            this.actualEmployees = this.app.getNickelodeon().getActualEmployeesQuantity();
+        if (this.app.getHP() != null && this.app.getDell() != null) {
+            this.maxEmployees = this.app.getDell().getMaxEmployeesQuantity();
+            this.maxEmployees1 = this.app.getHP().getMaxEmployeesQuantity();
+            this.actualEmployees1 = this.app.getHP().getActualEmployeesQuantity();
+            this.actualEmployees = this.app.getDell().getActualEmployeesQuantity();
             this.dayDuration = (int) app.getDayDuration() / 1000;
             this.deadline = app.getDeadline();
             this.dayDurationValue.setText(String.valueOf(dayDuration));
             this.deadlineValue.setText(String.valueOf(deadline));
 
             this.scriptsValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getScreenwriters())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getMotherboardProducers())));
             this.scenaryValue
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getSetDesigners())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getCpuProducers())));
             this.animationValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getCharacterAnimators())));
+                    String.valueOf(countNonNullEmployees(this.app.getDell().getRamProducers())));
             this.dubbingValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getVoiceActors())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getPowerSupplyProducers())));
             this.plotTwistValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getPlotTwistScreenwriters())));
+                    String.valueOf(countNonNullEmployees(this.app.getDell().getGraphicsCardProducers())));
             this.assemblerValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getAssemblers())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getDell().getAssemblers())));
 
             this.scriptsValues1
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getScreenwriters())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getMotherboardProducers())));
             this.scenaryValue1
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getSetDesigners())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getCpuProducers())));
             this.animationValues1.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getCharacterAnimators())));
+                    String.valueOf(countNonNullEmployees(this.app.getHP().getRamProducers())));
             this.dubbingValues1
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getVoiceActors())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getPowerSupplyProducers())));
             this.plotTwistValues1.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getPlotTwistScreenwriters())));
+                    String.valueOf(countNonNullEmployees(this.app.getHP().getGraphicsCardProducers())));
             this.assemblerValues1
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getCartoonNetwork().getAssemblers())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getAssemblers())));
             this.maxCap.setText(String.valueOf(this.maxEmployees) + "     trabajadores");
             this.maxCap1.setText(String.valueOf(this.maxEmployees1) + "     trabajadores");
         }
@@ -119,9 +119,9 @@ public class ConfigParams extends javax.swing.JFrame {
         }
     }
 
-    private int countNonNullEmployees(Employee[] employees) {
+    private int countNonNullEmployees(Empleado[] employees) {
         int count = 0;
-        for (Employee employee : employees) {
+        for (Empleado employee : employees) {
             if (employee != null) {
                 count++;
             }
@@ -133,24 +133,24 @@ public class ConfigParams extends javax.swing.JFrame {
     private JButton[] increaseBtn = new JButton[6];
 
     private int[] values = {
-            countNonNullEmployees(this.app.getNickelodeon().getScreenwriters()),
-            countNonNullEmployees(this.app.getNickelodeon().getSetDesigners()),
-            countNonNullEmployees(this.app.getNickelodeon().getCharacterAnimators()),
-            countNonNullEmployees(this.app.getNickelodeon().getVoiceActors()),
-            countNonNullEmployees(this.app.getNickelodeon().getPlotTwistScreenwriters()),
-            countNonNullEmployees(this.app.getNickelodeon().getAssemblers())
+            countNonNullEmployees(this.app.getDell().getMotherboardProducers()),
+            countNonNullEmployees(this.app.getDell().getCpuProducers()),
+            countNonNullEmployees(this.app.getDell().getRamProducers()),
+            countNonNullEmployees(this.app.getDell().getPowerSupplyProducers()),
+            countNonNullEmployees(this.app.getDell().getGraphicsCardProducers()),
+            countNonNullEmployees(this.app.getDell().getAssemblers())
     };
 
     private JButton[] decreaseBtn1 = new JButton[6];
     private JButton[] increaseBtn1 = new JButton[6];
 
     private int[] values1 = {
-            countNonNullEmployees(this.app.getCartoonNetwork().getScreenwriters()),
-            countNonNullEmployees(this.app.getCartoonNetwork().getSetDesigners()),
-            countNonNullEmployees(this.app.getCartoonNetwork().getCharacterAnimators()),
-            countNonNullEmployees(this.app.getCartoonNetwork().getVoiceActors()),
-            countNonNullEmployees(this.app.getCartoonNetwork().getPlotTwistScreenwriters()),
-            countNonNullEmployees(this.app.getCartoonNetwork().getAssemblers())
+            countNonNullEmployees(this.app.getHP().getMotherboardProducers()),
+            countNonNullEmployees(this.app.getHP().getCpuProducers()),
+            countNonNullEmployees(this.app.getHP().getRamProducers()),
+            countNonNullEmployees(this.app.getHP().getPowerSupplyProducers()),
+            countNonNullEmployees(this.app.getHP().getGraphicsCardProducers()),
+            countNonNullEmployees(this.app.getHP().getAssemblers())
     };
 
     private void updateBtnStatus() {
@@ -208,21 +208,21 @@ public class ConfigParams extends javax.swing.JFrame {
     }
 
     private void updateValues() {
-        values[0] = countNonNullEmployees(this.app.getNickelodeon().getScreenwriters());
-        values[1] = countNonNullEmployees(this.app.getNickelodeon().getSetDesigners());
-        values[2] = countNonNullEmployees(this.app.getNickelodeon().getCharacterAnimators());
-        values[3] = countNonNullEmployees(this.app.getNickelodeon().getVoiceActors());
-        values[4] = countNonNullEmployees(this.app.getNickelodeon().getPlotTwistScreenwriters());
-        values[5] = countNonNullEmployees(this.app.getNickelodeon().getAssemblers());
+        values[0] = countNonNullEmployees(this.app.getDell().getMotherboardProducers());
+        values[1] = countNonNullEmployees(this.app.getDell().getCpuProducers());
+        values[2] = countNonNullEmployees(this.app.getDell().getRamProducers());
+        values[3] = countNonNullEmployees(this.app.getDell().getPowerSupplyProducers());
+        values[4] = countNonNullEmployees(this.app.getDell().getGraphicsCardProducers());
+        values[5] = countNonNullEmployees(this.app.getDell().getAssemblers());
     }
 
     private void updateValues1() {
-        values1[0] = countNonNullEmployees(this.app.getCartoonNetwork().getScreenwriters());
-        values1[1] = countNonNullEmployees(this.app.getCartoonNetwork().getSetDesigners());
-        values1[2] = countNonNullEmployees(this.app.getCartoonNetwork().getCharacterAnimators());
-        values1[3] = countNonNullEmployees(this.app.getCartoonNetwork().getVoiceActors());
-        values1[4] = countNonNullEmployees(this.app.getCartoonNetwork().getPlotTwistScreenwriters());
-        values1[5] = countNonNullEmployees(this.app.getCartoonNetwork().getAssemblers());
+        values1[0] = countNonNullEmployees(this.app.getHP().getMotherboardProducers());
+        values1[1] = countNonNullEmployees(this.app.getHP().getCpuProducers());
+        values1[2] = countNonNullEmployees(this.app.getHP().getRamProducers());
+        values1[3] = countNonNullEmployees(this.app.getHP().getPowerSupplyProducers());
+        values1[4] = countNonNullEmployees(this.app.getHP().getGraphicsCardProducers());
+        values1[5] = countNonNullEmployees(this.app.getHP().getAssemblers());
     }
 
     public ConfigParams() {

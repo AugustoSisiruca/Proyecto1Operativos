@@ -8,7 +8,7 @@ package GUI.Classes;
  *
  * @author Erika Hernández
  */
-import MainPackage.App;
+import proyecto.operativosproyecto.App;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -110,8 +110,8 @@ public class ChartManager {
     
     public void updateChartData() {
         // Se obtienen las nuevas ganancias
-        double nickelodeonProfit = app.getNickelodeon().getProfit(); 
-        double cartoonNetworkProfit = app.getCartoonNetwork().getProfit(); 
+        double nickelodeonProfit = app.getDell().getProfit(); 
+        double cartoonNetworkProfit = app.getHP().getProfit(); 
         int newTimePoint = seriesNickelodeon.getItemCount() + 1;
 
         seriesNickelodeon.addOrUpdate(newTimePoint, nickelodeonProfit);

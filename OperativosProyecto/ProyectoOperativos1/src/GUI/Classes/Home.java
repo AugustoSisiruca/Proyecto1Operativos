@@ -4,7 +4,7 @@
  */
 package GUI.Classes;
 
-import MainPackage.App;
+import proyecto.operativosproyecto.App;
 import java.awt.Point;
 import java.io.IOException;
 import java.net.URL;
@@ -16,7 +16,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
  *
- * @author angel
+ * @author angele
  */
 public class Home extends javax.swing.JFrame {
 

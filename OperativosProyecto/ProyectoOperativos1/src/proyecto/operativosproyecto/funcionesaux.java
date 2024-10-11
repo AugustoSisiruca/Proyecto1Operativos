@@ -5,7 +5,7 @@
 package proyecto.operativosproyecto;
 
 import java.util.concurrent.Semaphore;
-import proyectooperativos1.Funciones.FileFunctions;
+import Funciones.FileFunctions;
 /**
  *
  * @author acarr
