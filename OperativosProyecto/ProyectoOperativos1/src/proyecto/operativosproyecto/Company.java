@@ -195,7 +195,7 @@ public class Company {
         Company.drive = drive;
     }
 
-    public int getNumChapters() {
+    public int getNumPC() {
         return numChapters;
     }
 
@@ -203,15 +203,15 @@ public class Company {
         this.numChapters = numChapters;
     }
 
-    public int getPlotTwistTrigger() {
+    public int getGPUTrigger() {
         return plotTwistTrigger;
     }
 
-    public void setPlotTwistTrigger(int plotTwistTrigger) {
+    public void setGPUTrigger(int plotTwistTrigger) {
         this.plotTwistTrigger = plotTwistTrigger;
     }
 
-    public int getNumChaptersWithPlotTwist() {
+    public int getNumPCWithGPU() {
         return numChaptersWithPlotTwist;
     }
 
@@ -219,7 +219,7 @@ public class Company {
         this.numChaptersWithPlotTwist = numChaptersWithPlotTwist;
     }
 
-    public int getActualNumChaptersWithPlotTwist() {
+    public int getActualNumGPUPC() {
         return actualNumChaptersWithPlotTwist;
     }
 
@@ -227,7 +227,7 @@ public class Company {
         this.actualNumChaptersWithPlotTwist = actualNumChaptersWithPlotTwist;
     }
 
-    public int getActualNumChapters() {
+    public int getActualNumPC() {
         return actualNumChapters;
     }
 
@@ -235,7 +235,7 @@ public class Company {
         this.actualNumChapters = actualNumChapters;
     }
 
-    public int getActualNumNormalChapters() {
+    public int getActualNumNormalPC() {
         return actualNumNormalChapters;
     }
 
@@ -271,7 +271,7 @@ public class Company {
         this.remainingDays--;
     }
 
-    public int getLastNumNormalChapters() {
+    public int getLastNumNormalPC() {
         return lastNumNormalChapters;
     }
 
@@ -279,7 +279,7 @@ public class Company {
         this.lastNumNormalChapters = lastNumNormalChapters;
     }
 
-    public int getLastNumChaptersWithPlotTwist() {
+    public int getLastNumGPUPC() {
         return lastNumChaptersWithPlotTwist;
     }
 

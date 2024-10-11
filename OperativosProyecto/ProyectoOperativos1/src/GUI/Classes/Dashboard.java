@@ -744,7 +744,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-        CartoonNetwork v2 = new CartoonNetwork();
+        HP v2 = new HP();
         v2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
@@ -762,7 +762,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
     private void btn_nueva_rutaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_nueva_rutaMouseClicked
         // TODO add your handling code here:
-        CartoonNetwork v2 = new CartoonNetwork();
+        HP v2 = new HP();
         v2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_nueva_rutaMouseClicked
@@ -793,14 +793,14 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        Nickelodeon v1 = new Nickelodeon();
+        Dell v1 = new Dell();
         v1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void btn_cargar_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cargar_guardarMouseClicked
         // TODO add your handling code here:
-        Nickelodeon v1 = new Nickelodeon();
+        Dell v1 = new Dell();
         v1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_cargar_guardarMouseClicked

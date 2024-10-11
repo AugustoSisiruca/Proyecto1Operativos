@@ -161,8 +161,8 @@ public class FileFunctions {
                 + "GraphicsCardProducers=" + graphicsCardProducers + "\n"
                 + "Assemblers=" + assemblers + "\n"
                 + "ProjectManager=" + projectManager + "\n"
-                + "Director=" + director + "\n\n";
-
+                + "Director=" + director + "\n"
+                + "MaxCapacity=13\n\n";
         data += "[HP]\n";
         Company hp = app.getHP();
         motherboardProducers = hp.countNonNull(hp.getMotherboardProducers());
@@ -181,7 +181,8 @@ public class FileFunctions {
                 + "GraphicsCardProducers=" + graphicsCardProducers + "\n"
                 + "Assemblers=" + assemblers + "\n"
                 + "ProjectManager=" + projectManager + "\n"
-                + "Director=" + director + "\n\n";
+                + "Director=" + director + "\n"
+                + "MaxCapacity=14\n\n";
 
         return data;
     }

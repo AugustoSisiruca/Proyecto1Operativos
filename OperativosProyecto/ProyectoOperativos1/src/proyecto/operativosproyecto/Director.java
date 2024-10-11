@@ -44,7 +44,7 @@ public class Director extends Empleado {
 
                     this.getMutex().acquire();
                     // Se envian los capitulos
-                    this.sendChaptersToTV();
+                    this.sendPcs();
 
                     funcionesaux.calculateTotalCost(this.company, this.getAccumulatedSalary());
                     this.setAccumulatedSalary(0);
@@ -88,9 +88,9 @@ public class Director extends Empleado {
         co.setRemainingDays(app.getDeadline());
     }
 
-    private void sendChaptersToTV() {
+    private void sendPcs() {
         try {
-            this.setStatus("Enviando capítulos");
+            this.setStatus("Enviando Pcs");
 
             // Esperar un día completo (simulado)
             Thread.sleep(app.getDayDuration());
@@ -100,11 +100,11 @@ public class Director extends Empleado {
             Company tv = funcionesaux.getCompany(this.company);
 
             // Enviamos los capitulos
-            tv.getDrive().resetChapters();
+            tv.getDrive().resetPC();
 
             // Settiamos los valores actuales como los anteriores para estadisticas
-            tv.setLastNumChaptersWithPlotTwist(tv.getActualNumChaptersWithPlotTwist());
-            tv.setLastNumNormalChapters(tv.getActualNumNormalChapters());
+            tv.setLastNumChaptersWithPlotTwist(tv.getActualNumGPUPC());
+            tv.setLastNumNormalChapters(tv.getActualNumNormalPC());
 
             // Settiamos los valores actuales a 0
             tv.setActualNumChaptersWithPlotTwist(0);
@@ -122,10 +122,10 @@ public class Director extends Empleado {
     }
 
     private void calculateBatchLastProfit(Company co) {
-        float profit = (co.getLastNumNormalChapters()
-                * constantes.profitPerChapter[this.company][0])
-                + (co.getNumChaptersWithPlotTwist()
-                        * constantes.profitPerChapter[this.company][1])
+        float profit = (co.getLastNumNormalPC()
+                * constantes.profitPerPc[this.company][0])
+                + (co.getNumPCWithGPU()
+                        * constantes.profitPerPc[this.company][1])
                 - (co.getLastOpsCost());
 
         co.setBatchLastProfit(profit);
