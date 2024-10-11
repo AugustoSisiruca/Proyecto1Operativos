@@ -8,7 +8,7 @@ package proyecto.operativosproyecto;
  *
  * @author sisir
  */
-import GUI.MenuInicio;
+import GUI.Classes.Home;
 import Funciones.FileFunctions;
 import GUI.Classes.ChartManager;
 import java.io.File;
@@ -51,8 +51,8 @@ public class App {
         // Inicia la simulación
         getDell().start();
         getHP().start();
-       // chartManager = new ChartManager();
-        MenuInicio home = new MenuInicio();
+       chartManager = new ChartManager();
+        Home home = new Home();
         home.setVisible(true);
     }
 

@@ -148,13 +148,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        exit = new javax.swing.JLabel();
         driveTitle = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         JPanelJChart = new javax.swing.JPanel();
         driveTitle9 = new javax.swing.JLabel();
         driveTitle10 = new javax.swing.JLabel();
@@ -239,7 +235,6 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Dashboard");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -463,10 +458,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jSeparator1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         SidePanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 220, 26));
-        SidePanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 280, 80));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Assets/AS.png"))); // NOI18N
-        SidePanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         jPanel1.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 720));
 
@@ -484,29 +475,15 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        exit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Assets/exit.png"))); // NOI18N
-        exit.setText("Exit");
-        exit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                exitMousePressed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 1059, Short.MAX_VALUE)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 1130, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 32, Short.MAX_VALUE)
         );
 
         driveTitle.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
@@ -534,7 +511,6 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 190));
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, -1, -1));
 
         javax.swing.GroupLayout JPanelJChartLayout = new javax.swing.GroupLayout(JPanelJChart);
         JPanelJChart.setLayout(JPanelJChartLayout);
@@ -550,20 +526,17 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.add(JPanelJChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 750, 320));
 
         driveTitle9.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle9.setForeground(java.awt.Color.black);
         driveTitle9.setText("CARTOON NETWORK");
         driveTitle9.setFocusable(false);
         jPanel1.add(driveTitle9, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 590, -1, -1));
 
         driveTitle10.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle10.setForeground(java.awt.Color.black);
         driveTitle10.setText("Costos operativos:");
         driveTitle10.setFocusable(false);
         jPanel1.add(driveTitle10, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 630, -1, -1));
 
         currentDeadline.setBackground(new java.awt.Color(204, 204, 204));
         currentDeadline.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        currentDeadline.setForeground(java.awt.Color.black);
         currentDeadline.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         currentDeadline.setText("0");
         currentDeadline.setBorder(null);
@@ -577,7 +550,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         earning.setBackground(new java.awt.Color(204, 204, 204));
         earning.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        earning.setForeground(java.awt.Color.black);
         earning.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         earning.setText("0");
         earning.setBorder(null);
@@ -591,7 +563,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         profit.setBackground(new java.awt.Color(204, 204, 204));
         profit.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        profit.setForeground(java.awt.Color.black);
         profit.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         profit.setText("0");
         profit.setBorder(null);
@@ -609,32 +580,27 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.add(profit, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 690, 110, -1));
 
         driveTitle17.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle17.setForeground(java.awt.Color.black);
         driveTitle17.setText("Ganancia neta:");
         driveTitle17.setFocusable(false);
         jPanel1.add(driveTitle17, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 690, -1, -1));
 
         driveTitle11.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle11.setForeground(java.awt.Color.black);
         driveTitle11.setText("Ganancia bruta:");
         driveTitle11.setFocusable(false);
         jPanel1.add(driveTitle11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 660, -1, -1));
 
         driveTitle12.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle12.setForeground(java.awt.Color.black);
         driveTitle12.setText("DÍAS PARA LA ENTREGA: ");
         driveTitle12.setFocusable(false);
         jPanel1.add(driveTitle12, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, -1, -1));
 
         driveTitle13.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle13.setForeground(java.awt.Color.black);
         driveTitle13.setText("Ganancia bruta:");
         driveTitle13.setFocusable(false);
         jPanel1.add(driveTitle13, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 660, -1, -1));
 
         cost1.setBackground(new java.awt.Color(204, 204, 204));
         cost1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        cost1.setForeground(java.awt.Color.black);
         cost1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         cost1.setText("0");
         cost1.setBorder(null);
@@ -647,14 +613,12 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.add(cost1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 630, 100, -1));
 
         driveTitle14.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle14.setForeground(java.awt.Color.black);
         driveTitle14.setText("Costos operativos:");
         driveTitle14.setFocusable(false);
         jPanel1.add(driveTitle14, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 630, -1, -1));
 
         earning1.setBackground(new java.awt.Color(204, 204, 204));
         earning1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        earning1.setForeground(java.awt.Color.black);
         earning1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         earning1.setText("0");
         earning1.setBorder(null);
@@ -667,14 +631,12 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.add(earning1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 660, 100, -1));
 
         driveTitle18.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle18.setForeground(java.awt.Color.black);
         driveTitle18.setText("Ganancia neta:");
         driveTitle18.setFocusable(false);
         jPanel1.add(driveTitle18, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 690, -1, -1));
 
         profit1.setBackground(new java.awt.Color(204, 204, 204));
         profit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        profit1.setForeground(java.awt.Color.black);
         profit1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         profit1.setText("0");
         profit1.setBorder(null);
@@ -687,20 +649,17 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.add(profit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 690, 100, -1));
 
         driveTitle15.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle15.setForeground(java.awt.Color.black);
         driveTitle15.setText("NICKELODEON");
         driveTitle15.setFocusable(false);
         jPanel1.add(driveTitle15, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 590, -1, -1));
 
         driveTitle16.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle16.setForeground(java.awt.Color.black);
         driveTitle16.setText("DÍAS: ");
         driveTitle16.setFocusable(false);
         jPanel1.add(driveTitle16, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, -1, -1));
 
         cost2.setBackground(new java.awt.Color(204, 204, 204));
         cost2.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        cost2.setForeground(java.awt.Color.black);
         cost2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         cost2.setText("0");
         cost2.setBorder(null);
@@ -714,7 +673,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         totalDays.setBackground(new java.awt.Color(204, 204, 204));
         totalDays.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        totalDays.setForeground(java.awt.Color.black);
         totalDays.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         totalDays.setText("0");
         totalDays.setBorder(null);
@@ -866,11 +824,6 @@ public class Dashboard extends javax.swing.JFrame {
         initialClick = evt.getPoint();
     }//GEN-LAST:event_jPanel4MousePressed
 
-    private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_exitMousePressed
-
     private void btn_reporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reporteMouseClicked
         // TODO add your handling code here:
 
@@ -999,7 +952,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel driveTitle9;
     private javax.swing.JTextField earning;
     private javax.swing.JTextField earning1;
-    private javax.swing.JLabel exit;
     private javax.swing.JLabel icono1;
     private javax.swing.JLabel icono3;
     private javax.swing.JLabel icono4;
@@ -1007,10 +959,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel icono7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

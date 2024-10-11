@@ -3,23 +3,22 @@ DayDuration=2000
 Deadline=30
 
 [Dell]
-MotherboardProducers=5
-CpuProducers=4
-RamProducers=3
+MotherboardProducers=1
+CPUProducers=1
+RAMProducers=1
 PowerSupplyProducers=1
 GraphicsCardProducers=1
 Assemblers=1
 ProjectManager=1
 Director=1
-MaxCapacity=15
 
 [HP]
 MotherboardProducers=1
-CpuProducers=1
-RamProducers=1
+CPUProducers=1
+RAMProducers=1
 PowerSupplyProducers=1
 GraphicsCardProducers=1
 Assemblers=1
 ProjectManager=1
 Director=1
-MaxCapacity=18
+
