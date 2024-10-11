@@ -115,17 +115,17 @@ int company;
         // Requisito minimo para un cap (cap regular)
         for (int i = 0; i < co.getDrive().getSections().length - 2; i++) {
             // Si no hay la cantidad minima entonces el assembler no puede tranbajar
-            if (co.getDrive().getSections()[i] < constantes.chaptersComposition[this.company][i]) {
+            if (co.getDrive().getSections()[i] < constantes.PcComposition[this.company][i]) {
                 return false;
             }
         }
         // si es plottwist
-        boolean isNextPlotTwist = (co.getNumChapters() != 0
-                && ((co.getNumChapters()) % constantes.plotTwistFreq[this.company]) == 0);
+        boolean isNextPlotTwist = (co.getNumPC() != 0
+                && ((co.getNumPC()) % constantes.GpuFreq[this.company]) == 0);
 
         if (isNextPlotTwist) {
             // Verifica si NO hay para hacer un plottwist
-            if (co.getDrive().getSections()[4] < constantes.chaptersComposition[this.company][4]) {
+            if (co.getDrive().getSections()[4] < constantes.PcComposition[this.company][4]) {
                 return false;
             }
         }
@@ -138,31 +138,31 @@ int company;
         if (this.evaluateAssemble()) {
             // Evaluar si el siguiente capítulo debe ser un plot twist antes de incrementar
             // numChapters
-            boolean isNextPlotTwist = (co.getPlotTwistTrigger() != 0
-                    && ((co.getPlotTwistTrigger()) % constantes.plotTwistFreq[this.company]) == 0);
+            boolean isNextPlotTwist = (co.getGPUTrigger() != 0
+                    && ((co.getGPUTrigger()) % constantes.GpuFreq[this.company]) == 0);
 
             if (isNextPlotTwist) {
                 for (int i = 0; i < co.getDrive().getSections().length - 1; i++) {
                     co.getDrive().getSections()[i] = Math.max(0,
-                            co.getDrive().getSections()[i] - constantes.chaptersComposition[this.company][i]);
+                            co.getDrive().getSections()[i] - constantes.PcComposition[this.company][i]);
                 }
-                co.setNumChaptersWithPlotTwist(co.getNumChaptersWithPlotTwist() + 1);
-                co.setActualNumChaptersWithPlotTwist(co.getActualNumChaptersWithPlotTwist() + 1);
-                co.setPlotTwistTrigger(0);
+                co.setNumChaptersWithPlotTwist(co.getNumPCWithGPU() + 1);
+                co.setActualNumChaptersWithPlotTwist(co.getActualNumGPUPC() + 1);
+                co.setGPUTrigger(0);
             } else {
                 // Capitulo regular
                 for (int i = 0; i < co.getDrive().getSections().length - 2; i++) {
                     co.getDrive().getSections()[i] = Math.max(0,
-                            co.getDrive().getSections()[i] - constantes.chaptersComposition[this.company][i]);
+                            co.getDrive().getSections()[i] - constantes.PcComposition[this.company][i]);
                 }
                 co.setNumNormalChapters(co.getNumNormalChapters() + 1);
-                co.setActualNumNormalChapters(co.getActualNumNormalChapters() + 1);
-                co.setPlotTwistTrigger(co.getPlotTwistTrigger() + 1);
+                co.setActualNumNormalChapters(co.getActualNumNormalPC() + 1);
+                co.setGPUTrigger(co.getGPUTrigger() + 1);
             }
 
             // Incrementa el número de capítulos
-            co.setNumChapters(co.getNumChapters() + 1);
-            co.setActualNumChapters(co.getActualNumChapters() + 1);
+            co.setNumChapters(co.getNumPC() + 1);
+            co.setActualNumChapters(co.getActualNumPC() + 1);
             this.getDriveRef().getSections()[5] += 1;
         } else {
             this.setTotalWork(0);

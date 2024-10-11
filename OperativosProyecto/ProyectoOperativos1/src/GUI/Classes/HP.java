@@ -4,10 +4,10 @@
  */
 package GUI.Classes;
 
-import FileFunctions.FileFunctions;
-import Helpers.HelpersFunctions;
-import MainClasses.Employee;
-import MainPackage.App;
+import Funciones.FileFunctions;
+import proyecto.operativosproyecto.App;
+import proyecto.operativosproyecto.funcionesaux;
+import proyecto.operativosproyecto.Empleado;
 import java.awt.Point;
 import java.io.File;
 import java.io.IOException;
@@ -26,25 +26,25 @@ import javax.swing.UIManager;
  *
  * @author Erika A. Hernández Z.
  */
-public class Nickelodeon extends javax.swing.JFrame {
+public class HP extends javax.swing.JFrame {
 
     private Point initialClick;
     private final App app = App.getInstance();
     private int maxEmployees;
     private int actualEmployees;
-    private static Nickelodeon nickelodeon;
-    private HelpersFunctions helper = new HelpersFunctions();
+    private static HP hp;
+    private funcionesaux helper = new funcionesaux();
     private FileFunctions filefunctions = new FileFunctions();
     private File selectedFile = app.getSelectedFile();
     private JButton[] decreaseBtn = new JButton[6];
     private JButton[] increaseBtn = new JButton[6];
     private int[] values = {
-        countNonNullEmployees(this.app.getNickelodeon().getScreenwriters()),
-        countNonNullEmployees(this.app.getNickelodeon().getSetDesigners()),
-        countNonNullEmployees(this.app.getNickelodeon().getCharacterAnimators()),
-        countNonNullEmployees(this.app.getNickelodeon().getVoiceActors()),
-        countNonNullEmployees(this.app.getNickelodeon().getPlotTwistScreenwriters()),
-        countNonNullEmployees(this.app.getNickelodeon().getAssemblers())
+        countNonNullEmployees(this.app.getHP().getMotherboardProducers()),
+        countNonNullEmployees(this.app.getHP().getCpuProducers()),
+        countNonNullEmployees(this.app.getHP().getRamProducers()),
+        countNonNullEmployees(this.app.getHP().getPowerSupplyProducers()),
+        countNonNullEmployees(this.app.getHP().getGraphicsCardProducers()),
+        countNonNullEmployees(this.app.getHP().getAssemblers())
     };
 
     private void updateBtnStatus() {
@@ -75,22 +75,22 @@ public class Nickelodeon extends javax.swing.JFrame {
     }
 
     private void updateValues() {
-        values[0] = countNonNullEmployees(this.app.getNickelodeon().getScreenwriters());
-        values[1] = countNonNullEmployees(this.app.getNickelodeon().getSetDesigners());
-        values[2] = countNonNullEmployees(this.app.getNickelodeon().getCharacterAnimators());
-        values[3] = countNonNullEmployees(this.app.getNickelodeon().getVoiceActors());
-        values[4] = countNonNullEmployees(this.app.getNickelodeon().getPlotTwistScreenwriters());
-        values[5] = countNonNullEmployees(this.app.getNickelodeon().getAssemblers());
+        values[0] = countNonNullEmployees(this.app.getHP().getMotherboardProducers());
+        values[1] = countNonNullEmployees(this.app.getHP().getCpuProducers());
+        values[2] = countNonNullEmployees(this.app.getHP().getRamProducers());
+        values[3] = countNonNullEmployees(this.app.getHP().getPowerSupplyProducers());
+        values[4] = countNonNullEmployees(this.app.getHP().getGraphicsCardProducers());
+        values[5] = countNonNullEmployees(this.app.getHP().getAssemblers());
     }
 
-    public static synchronized Nickelodeon getInstance() {
-        if (nickelodeon == null) {
-            nickelodeon = new Nickelodeon();
+    public static synchronized HP getInstance() {
+        if (hp == null) {
+            hp = new HP();
         }
-        return nickelodeon;
+        return hp;
     }
 
-    public Nickelodeon() {
+    public HP() {
         try {
             // Código para el Look and Feel
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -107,8 +107,8 @@ public class Nickelodeon extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         initializeValues();
-        cartoonPlayMusic("/GUI/Assets/nickelodeonTheme.wav");
-
+       // cartoonPlayMusic("/GUI/Assets/cartoonNetworkTheme.wav");
+        
 
         this.decreaseBtn[0] = decreaseScripts;
         this.decreaseBtn[1] = decreaseScenary;
@@ -125,8 +125,10 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         updateBtnStatus();
         this.start();
+
     }
 
+    //
     private void start() {
         // Crear un nuevo hilo para el bucle infinito
         Thread updateThread = new Thread(new Runnable() {
@@ -140,59 +142,58 @@ public class Nickelodeon extends javax.swing.JFrame {
                             public void run() {
                                 // Aquí van tus actualizaciones de la UI
                                 scriptDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[0]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[0]));
                                 scenaryDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[1]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[1]));
                                 animationDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[2]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[2]));
                                 dubbingDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[3]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[3]));
                                 plotTwistDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[4]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[4]));
                                 assemblerDrive
-                                        .setText(String.valueOf(app.getNickelodeon().getDrive().getSections()[5]));
+                                        .setText(String.valueOf(app.getHP().getDrive().getSections()[5]));
 
                                 projectManagerStatus
-                                        .setText(app.getNickelodeon().getProjectManagerInstance().getCurrentState());
+                                        .setText(app.getHP().getProjectManagerInstance().getCurrentState());
 
                                 currentDeadline.setText(
-                                        String.valueOf(app.getNickelodeon().getRemainingDays()));
+                                        String.valueOf(app.getHP().getRemainingDays()));
 
-                                totalDays.setText(String.valueOf(app.getNickelodeon().getTotalDays()));
+                                totalDays.setText(String.valueOf(app.getHP().getTotalDays()));
 
                                 strikeCounter.setText(String
-                                        .valueOf(app.getNickelodeon().getProjectManagerInstance().getStrikes()));
+                                        .valueOf(app.getHP().getProjectManagerInstance().getStrikes()));
                                 cashPenality.setText(String.valueOf(Integer.parseInt(strikeCounter.getText()) * 100));
-                                directorStatus.setText(app.getNickelodeon().getDirectorInstance().getStatus());
+                                directorStatus.setText(app.getHP().getDirectorInstance().getStatus());
 
                                 totalChapters.setText(
-                                        String.valueOf(app.getNickelodeon().getNumChapters()));
+                                        String.valueOf(app.getHP().getNumPC()));
                                 standardChapters.setText(
-                                        String.valueOf(app.getNickelodeon().getNumNormalChapters()));
+                                        String.valueOf(app.getHP().getNumNormalChapters()));
 
                                 plotTwistChapters.setText(
-                                        String.valueOf(app.getNickelodeon().getNumChaptersWithPlotTwist()));
+                                        String.valueOf(app.getHP().getNumPCWithGPU()));
 
                                 standardChaptes2.setText(
-                                        String.valueOf(app.getNickelodeon().getActualNumNormalChapters())
+                                        String.valueOf(app.getHP().getActualNumNormalPC())
                                 );
                                 plotTwistChapters2.setText(
-                                        String.valueOf(app.getNickelodeon().getActualNumChaptersWithPlotTwist())
+                                        String.valueOf(app.getHP().getActualNumGPUPC())
                                 );
 
                                 standardChaptes1.setText(
-                                        String.valueOf(app.getNickelodeon().getLastNumNormalChapters())
+                                        String.valueOf(app.getHP().getLastNumNormalPC())
                                 );
                                 plotTwistChapters1.setText(
-                                        String.valueOf(app.getNickelodeon().getLastNumChaptersWithPlotTwist())
+                                        String.valueOf(app.getHP().getLastNumGPUPC())
                                 );
 
-                                profit.setText(formatNumberAsK((int) app.getNickelodeon().getEarning() -  (int) app.getNickelodeon().getTotalCost()));
-                                cost.setText(formatNumberAsK((int) app.getNickelodeon().getTotalCost()));
-                                earning.setText(formatNumberAsK((int) app.getNickelodeon().getEarning()));
+                                profit.setText(formatNumberAsK((int) app.getHP().getEarning() -  (int) app.getHP().getTotalCost()));
+                                cost.setText(formatNumberAsK((int) app.getHP().getTotalCost()));
+                                earning.setText(formatNumberAsK((int) app.getHP().getEarning()));
                                 batchLastProfit.setText(
-                                        formatNumberAsK((int) app.getNickelodeon().getBatchLastProfit()));
-
+                                        formatNumberAsK((int) app.getHP().getBatchLastProfit()));
                             }
                         });
 
@@ -200,7 +201,6 @@ public class Nickelodeon extends javax.swing.JFrame {
                         Thread.sleep(app.getDayDuration() / 48);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
-                        // Opcionalmente, podrías salir del bucle si el hilo es interrumpido
                         break;
                     }
                 }
@@ -212,28 +212,28 @@ public class Nickelodeon extends javax.swing.JFrame {
     }
 
     private void initializeValues() {
-        if (this.app.getNickelodeon() != null) {
-            this.maxEmployees = this.app.getNickelodeon().getMaxEmployeesQuantity();
-            this.actualEmployees = this.app.getNickelodeon().getActualEmployeesQuantity();
+        if (this.app.getHP() != null) {
+            this.maxEmployees = this.app.getHP().getMaxEmployeesQuantity();
+            this.actualEmployees = this.app.getHP().getActualEmployeesQuantity();
             this.scriptsValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getScreenwriters())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getMotherboardProducers())));
             this.scenaryValue
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getSetDesigners())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getCpuProducers())));
             this.animationValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getCharacterAnimators())));
+                    String.valueOf(countNonNullEmployees(this.app.getHP().getRamProducers())));
             this.dubbingValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getVoiceActors())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getPowerSupplyProducers())));
             this.plotTwistValues.setText(
-                    String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getPlotTwistScreenwriters())));
+                    String.valueOf(countNonNullEmployees(this.app.getHP().getGraphicsCardProducers())));
             this.assemblerValues
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getAssemblers())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHP().getAssemblers())));
             this.maxCap.setText(String.valueOf(this.maxEmployees) + "     trabajadores");
         }
     }
 
-    private int countNonNullEmployees(Employee[] employees) {
+    private int countNonNullEmployees(Empleado[] employees) {
         int count = 0;
-        for (Employee employee : employees) {
+        for (Empleado employee : employees) {
             if (employee != null) {
                 count++;
             }
@@ -270,6 +270,13 @@ public class Nickelodeon extends javax.swing.JFrame {
      * regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -279,12 +286,12 @@ public class Nickelodeon extends javax.swing.JFrame {
         icono1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btn_nuevo_pedido = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        dashboardLabel = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         btn_nueva_ruta = new javax.swing.JPanel();
         icono3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        btn_nuevo_almacen = new javax.swing.JPanel();
+        config_btn = new javax.swing.JPanel();
         icono4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         btn_reporte = new javax.swing.JPanel();
@@ -293,13 +300,8 @@ public class Nickelodeon extends javax.swing.JFrame {
         btn_cargar_guardar = new javax.swing.JPanel();
         icono7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        exit = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         driveTitle4 = new javax.swing.JLabel();
         plotTwistChapters = new javax.swing.JTextField();
@@ -316,6 +318,8 @@ public class Nickelodeon extends javax.swing.JFrame {
         currentDeadline = new javax.swing.JTextField();
         driveTitle23 = new javax.swing.JLabel();
         totalDays = new javax.swing.JTextField();
+        Titulo = new javax.swing.JLabel();
+        Logo = new javax.swing.JLabel();
         workersConfigurations = new javax.swing.JPanel();
         driveTitle1 = new javax.swing.JLabel();
         scripts = new javax.swing.JPanel();
@@ -349,8 +353,8 @@ public class Nickelodeon extends javax.swing.JFrame {
         assemblerValues = new javax.swing.JTextField();
         decreaceAssembler = new javax.swing.JButton();
         driveTitle21 = new javax.swing.JLabel();
-        maxCap = new javax.swing.JLabel();
         driveTitle27 = new javax.swing.JLabel();
+        maxCap = new javax.swing.JLabel();
         drivePanel = new javax.swing.JPanel();
         driveTitle2 = new javax.swing.JLabel();
         driveTitle3 = new javax.swing.JLabel();
@@ -412,6 +416,7 @@ public class Nickelodeon extends javax.swing.JFrame {
         standardChaptes2 = new javax.swing.JTextField();
         driveTitle24 = new javax.swing.JLabel();
         driveTitle26 = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -419,6 +424,7 @@ public class Nickelodeon extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1130, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         SidePanel.setBackground(new java.awt.Color(34, 46, 60));
@@ -472,12 +478,12 @@ public class Nickelodeon extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Dashboard");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        dashboardLabel.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        dashboardLabel.setForeground(new java.awt.Color(255, 255, 255));
+        dashboardLabel.setText("Estadistica");
+        dashboardLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                dashboardLabelMouseClicked(evt);
             }
         });
 
@@ -489,8 +495,8 @@ public class Nickelodeon extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addComponent(dashboardLabel)
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         btn_nuevo_pedidoLayout.setVerticalGroup(
             btn_nuevo_pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -498,13 +504,13 @@ public class Nickelodeon extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(btn_nuevo_pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(dashboardLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 16, Short.MAX_VALUE))
         );
 
         SidePanel.add(btn_nuevo_pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 330, 60));
 
-        btn_nueva_ruta.setBackground(new java.awt.Color(55, 71, 90));
+        btn_nueva_ruta.setBackground(new java.awt.Color(204, 255, 255));
         btn_nueva_ruta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_nueva_rutaMouseClicked(evt);
@@ -519,7 +525,6 @@ public class Nickelodeon extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("HP");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -550,10 +555,13 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         SidePanel.add(btn_nueva_ruta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 330, 60));
 
-        btn_nuevo_almacen.setBackground(new java.awt.Color(55, 71, 90));
-        btn_nuevo_almacen.addMouseListener(new java.awt.event.MouseAdapter() {
+        config_btn.setBackground(new java.awt.Color(55, 71, 90));
+        config_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_nuevo_almacenMouseClicked(evt);
+                config_btnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                config_btnMouseEntered(evt);
             }
         });
 
@@ -573,30 +581,30 @@ public class Nickelodeon extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout btn_nuevo_almacenLayout = new javax.swing.GroupLayout(btn_nuevo_almacen);
-        btn_nuevo_almacen.setLayout(btn_nuevo_almacenLayout);
-        btn_nuevo_almacenLayout.setHorizontalGroup(
-            btn_nuevo_almacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_nuevo_almacenLayout.createSequentialGroup()
+        javax.swing.GroupLayout config_btnLayout = new javax.swing.GroupLayout(config_btn);
+        config_btn.setLayout(config_btnLayout);
+        config_btnLayout.setHorizontalGroup(
+            config_btnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(config_btnLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(icono4)
                 .addContainerGap(153, Short.MAX_VALUE))
         );
-        btn_nuevo_almacenLayout.setVerticalGroup(
-            btn_nuevo_almacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_nuevo_almacenLayout.createSequentialGroup()
+        config_btnLayout.setVerticalGroup(
+            config_btnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(config_btnLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(btn_nuevo_almacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(config_btnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(icono4, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                    .addGroup(btn_nuevo_almacenLayout.createSequentialGroup()
+                    .addGroup(config_btnLayout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(0, 7, Short.MAX_VALUE))
         );
 
-        SidePanel.add(btn_nuevo_almacen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 330, 60));
+        SidePanel.add(config_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 330, 60));
 
         btn_reporte.setBackground(new java.awt.Color(55, 71, 90));
         btn_reporte.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -636,17 +644,15 @@ public class Nickelodeon extends javax.swing.JFrame {
             btn_reporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_reporteLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(icono5, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                .addGroup(btn_reporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(icono5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 14, Short.MAX_VALUE))
-            .addGroup(btn_reporteLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         SidePanel.add(btn_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 330, 60));
 
-        btn_cargar_guardar.setBackground(new java.awt.Color(243, 168, 71));
+        btn_cargar_guardar.setBackground(new java.awt.Color(55, 71, 90));
         btn_cargar_guardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_cargar_guardarMouseClicked(evt);
@@ -661,6 +667,7 @@ public class Nickelodeon extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Dell");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -691,59 +698,12 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         SidePanel.add(btn_cargar_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 330, 60));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Unimet 2024 ®");
-        SidePanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 680, -1, -1));
-
         jSeparator1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         SidePanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 220, 26));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Assets/AS.png"))); // NOI18N
-        SidePanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
-
-        jPanel1.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 730));
+        jPanel1.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 240, 490));
 
         jPanel2.setBackground(new java.awt.Color(34, 46, 60));
-
-        jPanel4.setBackground(new java.awt.Color(246, 183, 102));
-        jPanel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel4MouseDragged(evt);
-            }
-        });
-        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel4MousePressed(evt);
-            }
-        });
-
-        exit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Assets/exit.png"))); // NOI18N
-        exit.setText("Exit");
-        exit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                exitMousePressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Assets/nickelodeonImage (1).png"))); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(34, 46, 60));
         jPanel3.setForeground(new java.awt.Color(51, 51, 51));
@@ -868,6 +828,11 @@ public class Nickelodeon extends javax.swing.JFrame {
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField8.setText("0");
         jTextField8.setEnabled(false);
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
 
         driveTitle19.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle19.setForeground(new java.awt.Color(204, 204, 204));
@@ -907,12 +872,23 @@ public class Nickelodeon extends javax.swing.JFrame {
             }
         });
 
+        Titulo.setFont(new java.awt.Font("Stencil", 0, 65)); // NOI18N
+        Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Titulo.setText("PANEL HP");
+
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/logo-HP_1.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -926,11 +902,10 @@ public class Nickelodeon extends javax.swing.JFrame {
                                 .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(driveTitle8)
                             .addComponent(driveTitle6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -938,23 +913,31 @@ public class Nickelodeon extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(driveTitle23)
-                    .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(driveTitle19, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(144, 144, 144)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(driveTitle8)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(driveTitle6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(driveTitle23)
+                                    .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(driveTitle19, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(141, 141, 141)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(driveTitle8)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(7, 7, 7)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(driveTitle6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -962,38 +945,29 @@ public class Nickelodeon extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(255, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(19, 19, 19))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(62, 62, 62)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 190));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 190));
 
-        workersConfigurations.setBackground(new java.awt.Color(243, 168, 71));
+        workersConfigurations.setBackground(new java.awt.Color(0, 0, 51));
 
         driveTitle1.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle1.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle1.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle1.setText("TRABAJADORES");
 
@@ -1002,7 +976,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         scriptsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scriptsTitle.setText("P. Place Base:");
+        scriptsTitle.setText("P. Placa Base");
 
         increaseScripts.setBackground(new java.awt.Color(51, 51, 51));
         increaseScripts.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1053,7 +1027,7 @@ public class Nickelodeon extends javax.swing.JFrame {
             scriptsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scriptsLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(scriptsTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(scriptsTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                 .addGap(36, 36, 36)
                 .addComponent(decreaseScripts)
                 .addGap(18, 18, 18)
@@ -1458,18 +1432,18 @@ public class Nickelodeon extends javax.swing.JFrame {
         );
 
         driveTitle21.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle21.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle21.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle21.setText("CONFIGURACIÓN");
+
+        driveTitle27.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
+        driveTitle27.setForeground(new java.awt.Color(255, 255, 255));
+        driveTitle27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        driveTitle27.setText("Máximo:");
 
         maxCap.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
         maxCap.setForeground(new java.awt.Color(51, 51, 51));
         maxCap.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-
-        driveTitle27.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle27.setForeground(new java.awt.Color(51, 51, 51));
-        driveTitle27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        driveTitle27.setText("Máximo:");
 
         javax.swing.GroupLayout workersConfigurationsLayout = new javax.swing.GroupLayout(workersConfigurations);
         workersConfigurations.setLayout(workersConfigurationsLayout);
@@ -1478,18 +1452,18 @@ public class Nickelodeon extends javax.swing.JFrame {
             .addComponent(driveTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(driveTitle21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workersConfigurationsLayout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
-                .addGroup(workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, workersConfigurationsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(workersConfigurationsLayout.createSequentialGroup()
                         .addComponent(driveTitle27, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(maxCap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(plotTwist2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                    .addComponent(plotTwist, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                    .addComponent(dubbing, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                    .addComponent(animations, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                    .addComponent(scenary, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                    .addComponent(scripts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(plotTwist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                    .addComponent(dubbing, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                    .addComponent(animations, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                    .addComponent(scenary, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                    .addComponent(scripts, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(plotTwist2, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
         );
         workersConfigurationsLayout.setVerticalGroup(
@@ -1513,22 +1487,22 @@ public class Nickelodeon extends javax.swing.JFrame {
                 .addComponent(plotTwist2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(driveTitle27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(driveTitle27, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(maxCap, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jPanel1.add(workersConfigurations, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 300, 510));
 
-        drivePanel.setBackground(new java.awt.Color(243, 168, 71));
+        drivePanel.setBackground(new java.awt.Color(0, 0, 51));
 
         driveTitle2.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle2.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle2.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle2.setText("ESTATUS DEL AlMACEN");
+        driveTitle2.setText("ESTATUS DEL ALMACEN");
 
         driveTitle3.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle3.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle3.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle3.setText("(Disponiblidad)");
 
@@ -1564,21 +1538,21 @@ public class Nickelodeon extends javax.swing.JFrame {
             scripts1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scripts1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(scriptTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(scriptDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scriptTitle1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(scriptDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scriptsLimit1)
                 .addGap(16, 16, 16))
         );
         scripts1Layout.setVerticalGroup(
             scripts1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, scripts1Layout.createSequentialGroup()
+            .addGroup(scripts1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(scripts1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(scriptTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(scriptsLimit1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scriptDrive))
+                .addGroup(scripts1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scriptDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(scriptTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scriptsLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1589,7 +1563,6 @@ public class Nickelodeon extends javax.swing.JFrame {
         scenaryTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryTitle1.setForeground(new java.awt.Color(51, 51, 51));
         scenaryTitle1.setText("CPUs:");
-        scenaryTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         scenaryLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryLimit1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1615,9 +1588,9 @@ public class Nickelodeon extends javax.swing.JFrame {
             scenary1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scenary1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(scenaryTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(scenaryTitle1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scenaryDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scenaryDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scenaryLimit1)
                 .addGap(15, 15, 15))
@@ -1627,9 +1600,9 @@ public class Nickelodeon extends javax.swing.JFrame {
             .addGroup(scenary1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(scenary1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scenaryDrive)
                     .addComponent(scenaryTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(scenaryLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(scenaryLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scenaryDrive))
                 .addContainerGap())
         );
 
@@ -1640,7 +1613,6 @@ public class Nickelodeon extends javax.swing.JFrame {
         animationsTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle1.setForeground(new java.awt.Color(51, 51, 51));
         animationsTitle1.setText("RAM:");
-        animationsTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         animationsLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsLimit1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1666,9 +1638,9 @@ public class Nickelodeon extends javax.swing.JFrame {
             animations1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(animations1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(animationsTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(animationDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(animationsTitle1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addComponent(animationDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(animationsLimit1)
                 .addGap(14, 14, 14))
@@ -1691,7 +1663,6 @@ public class Nickelodeon extends javax.swing.JFrame {
         dubbingTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle1.setForeground(new java.awt.Color(51, 51, 51));
         dubbingTitle1.setText("Fuente A:");
-        dubbingTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         dubbingLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingLimit1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1717,8 +1688,8 @@ public class Nickelodeon extends javax.swing.JFrame {
             dubbing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dubbing1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(dubbingTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(dubbingTitle1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(dubbingDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dubbingLimit1)
@@ -1729,10 +1700,9 @@ public class Nickelodeon extends javax.swing.JFrame {
             .addGroup(dubbing1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(dubbing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dubbingTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addGroup(dubbing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(dubbingLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(dubbingDrive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(dubbingDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(dubbingTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dubbingLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1749,7 +1719,6 @@ public class Nickelodeon extends javax.swing.JFrame {
         plotTwistTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle1.setForeground(new java.awt.Color(51, 51, 51));
         plotTwistTitle1.setText("Tarjeta Graf:");
-        plotTwistTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         plotTwistDrive.setBackground(java.awt.Color.lightGray);
         plotTwistDrive.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1770,8 +1739,8 @@ public class Nickelodeon extends javax.swing.JFrame {
             plotTwist1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plotTwist1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(plotTwistTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(plotTwistTitle1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(plotTwistDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(plotTwistLimit1)
@@ -1782,10 +1751,9 @@ public class Nickelodeon extends javax.swing.JFrame {
             .addGroup(plotTwist1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(plotTwist1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(plotTwistTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addGroup(plotTwist1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(plotTwistLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(plotTwistDrive, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(plotTwistDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(plotTwistTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(plotTwistLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1801,7 +1769,6 @@ public class Nickelodeon extends javax.swing.JFrame {
         assemblerTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         assemblerTitle1.setForeground(new java.awt.Color(51, 51, 51));
         assemblerTitle1.setText("Ensambladores:");
-        assemblerTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         assemblerDrive.setBackground(java.awt.Color.lightGray);
         assemblerDrive.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1822,11 +1789,11 @@ public class Nickelodeon extends javax.swing.JFrame {
             plotTwist4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plotTwist4Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(assemblerTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(plotTwistLimit3)
+                .addComponent(assemblerTitle1)
+                .addGap(18, 18, 18)
+                .addComponent(assemblerDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 47, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(assemblerDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(plotTwistLimit3)
                 .addGap(14, 14, 14))
         );
         plotTwist4Layout.setVerticalGroup(
@@ -1835,8 +1802,8 @@ public class Nickelodeon extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(plotTwist4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(plotTwistLimit3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(assemblerDrive)
-                    .addComponent(assemblerTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(assemblerTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(assemblerDrive))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1852,12 +1819,12 @@ public class Nickelodeon extends javax.swing.JFrame {
                             .addGroup(drivePanelLayout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addGroup(drivePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(dubbing1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                                    .addComponent(animations1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                                    .addComponent(scenary1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                                    .addComponent(scripts1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                                    .addComponent(plotTwist1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                                    .addComponent(plotTwist4, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)))
+                                    .addComponent(dubbing1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                    .addComponent(animations1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                    .addComponent(scenary1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                    .addComponent(scripts1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                    .addComponent(plotTwist1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                    .addComponent(plotTwist4, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)))
                             .addGroup(drivePanelLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(driveTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2036,8 +2003,8 @@ public class Nickelodeon extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(driveTitle18)
-                .addGap(29, 29, 29)
-                .addComponent(directorStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+                .addComponent(directorStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(driveTitle14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -2126,20 +2093,17 @@ public class Nickelodeon extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(driveTitle13, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(driveTitle16))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(strikeCounter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(cashPenality)))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(driveTitle12, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(projectManagerStatus)))
+                    .addComponent(driveTitle13, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(driveTitle16)
+                    .addComponent(driveTitle12, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cashPenality)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel8Layout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(strikeCounter))
+                        .addComponent(projectManagerStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -2150,7 +2114,7 @@ public class Nickelodeon extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(driveTitle15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(driveTitle12)
                     .addComponent(projectManagerStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2168,7 +2132,7 @@ public class Nickelodeon extends javax.swing.JFrame {
         jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 380, 300, 120));
 
         driveTitle.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        driveTitle.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle.setText("Lote Actual");
         jPanel1.add(driveTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 500, 300, -1));
@@ -2178,7 +2142,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         driveTitle7.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle7.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle7.setText("Capítulos plotTwist:");
+        driveTitle7.setText("Computadora con GPU:");
         driveTitle7.setFocusable(false);
 
         plotTwistChapters1.setBackground(new java.awt.Color(51, 51, 51));
@@ -2209,7 +2173,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         driveTitle22.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle22.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle22.setText("Capítulos normales:");
+        driveTitle22.setText("Computadora normales:");
         driveTitle22.setFocusable(false);
 
         driveTitle28.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -2247,8 +2211,10 @@ public class Nickelodeon extends javax.swing.JFrame {
                             .addComponent(driveTitle22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(plotTwistChapters1, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                            .addComponent(standardChaptes1))))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(standardChaptes1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(plotTwistChapters1))))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -2266,7 +2232,7 @@ public class Nickelodeon extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(driveTitle28)
                     .addComponent(batchLastProfit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 620, 300, 90));
@@ -2276,7 +2242,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         driveTitle20.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle20.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle20.setText("Capítulos plotTwist:");
+        driveTitle20.setText("Computadora con GPU:");
         driveTitle20.setFocusable(false);
 
         plotTwistChapters2.setBackground(new java.awt.Color(51, 51, 51));
@@ -2307,7 +2273,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         driveTitle24.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle24.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle24.setText("Capítulos normales:");
+        driveTitle24.setText("Computadora normales:");
         driveTitle24.setFocusable(false);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -2321,7 +2287,7 @@ public class Nickelodeon extends javax.swing.JFrame {
                     .addComponent(driveTitle24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(plotTwistChapters2, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                    .addComponent(plotTwistChapters2, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                     .addComponent(standardChaptes2))
                 .addContainerGap())
         );
@@ -2342,425 +2308,28 @@ public class Nickelodeon extends javax.swing.JFrame {
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 530, 300, -1));
 
         driveTitle26.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        driveTitle26.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle26.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle26.setText("Último Lote");
         jPanel1.add(driveTitle26, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 590, 300, -1));
+
+        Fondo.setFont(new java.awt.Font("Centaur", 1, 12)); // NOI18N
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/fondoPantalla.jpg"))); // NOI18N
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 730));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1210, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
-        // TODO add your handling code here:
-        initialClick = evt.getPoint();
-    }//GEN-LAST:event_jPanel4MousePressed
-
-    private void jPanel4MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseDragged
-        // TODO add your handling code here:
-        int x = getLocation().x - initialClick.x + evt.getX();
-        int y = getLocation().y - initialClick.y + evt.getY();
-        setLocation(x, y);
-    }//GEN-LAST:event_jPanel4MouseDragged
-
-    private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_exitMousePressed
-
-    private void btn_cargar_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cargar_guardarMouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_btn_cargar_guardarMouseClicked
-
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jLabel10MouseClicked
-
-    private void icono7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono7MouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_icono7MouseClicked
-
-    private void btn_reporteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reporteMouseClicked
-        // TODO add your handling code here:
-        try {
-            this.filefunctions.write(this.selectedFile);
-            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
-        }
-    }//GEN-LAST:event_btn_reporteMouseClicked
-
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
-        try {
-            this.filefunctions.write(this.selectedFile);
-            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
-        }
-    }//GEN-LAST:event_jLabel8MouseClicked
-
-    private void icono5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_icono5MouseClicked
-
-    private void btn_nuevo_almacenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_nuevo_almacenMouseClicked
-        // TODO add your handling code here:
-        ConfigParams v2 = new ConfigParams();
-        v2.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btn_nuevo_almacenMouseClicked
-
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        // TODO add your handling code here:
-        ConfigParams v2 = new ConfigParams();
-        v2.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel7MouseClicked
-
-    private void icono4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono4MouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_icono4MouseClicked
-
-    private void btn_nueva_rutaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_nueva_rutaMouseClicked
-        // TODO add your handling code here:
-        CartoonNetwork v3 = new CartoonNetwork();
-        v3.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btn_nueva_rutaMouseClicked
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        // TODO add your handling code here:
-        CartoonNetwork v3 = new CartoonNetwork();
-        v3.setVisible(true);
-        this.dispose();
-
-    }//GEN-LAST:event_jLabel6MouseClicked
-
-    private void icono3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono3MouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_icono3MouseClicked
-
-    private void btn_nuevo_pedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_nuevo_pedidoMouseClicked
-        // TODO add your handling code here:
-        Dashboard dashboard = Dashboard.getInstance();
-        dashboard.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btn_nuevo_pedidoMouseClicked
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
-        Dashboard dashboard = Dashboard.getInstance();
-        dashboard.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel5MouseClicked
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-        Home v1 = new Home();
-        v1.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void btn_InicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InicioMouseClicked
-        // TODO add your handling code here:
-        Home v1 = new Home();
-        v1.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btn_InicioMouseClicked
-
-    private void increaseScriptsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseScriptsMouseClicked
-        // TODO add your handling code here:
-        if (this.canIncreaseQuantity(0)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            this.scriptsValues.setText(increaseQuantity(this.scriptsValues.getText(), increaseScripts));
-            helper.addWorker(0, 0);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_increaseScriptsMouseClicked
-
-    private void increaseScriptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseScriptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_increaseScriptsActionPerformed
-
-    private void scriptsValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scriptsValuesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_scriptsValuesActionPerformed
-
-    private void decreaseScriptsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseScriptsMouseClicked
-        // TODO add your handling code here:
-        if (canDecreaseQuantity(0)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            this.scriptsValues.setText(decreaseQuantity(this.scriptsValues.getText(), this.decreaseScripts));
-            helper.deleteWorker(0, 0);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_decreaseScriptsMouseClicked
-
-    private void decreaseScriptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseScriptsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_decreaseScriptsActionPerformed
-
-    private void scenaryValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scenaryValueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_scenaryValueActionPerformed
-
-    private void increaseScenaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseScenaryMouseClicked
-        // TODO add your handling code here:
-        if (canIncreaseQuantity(1)) {
-            this.scenaryValue.setText(increaseQuantity(this.scenaryValue.getText(), increaseScenary));
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            helper.addWorker(0, 1);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_increaseScenaryMouseClicked
-
-    private void increaseScenaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseScenaryActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_increaseScenaryActionPerformed
-
-    private void decreaseScenaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseScenaryMouseClicked
-        // TODO add your handling code here:
-        if (canDecreaseQuantity(1)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            this.scenaryValue.setText(decreaseQuantity(this.scenaryValue.getText(), decreaseScenary));
-            helper.deleteWorker(0, 1);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_decreaseScenaryMouseClicked
-
-    private void decreaseScenaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseScenaryActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_decreaseScenaryActionPerformed
-
-    private void animationValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_animationValuesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_animationValuesActionPerformed
-
-    private void decreaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseAnimationMouseClicked
-        // TODO add your handling code here:
-        if (canDecreaseQuantity(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            this.animationValues.setText(decreaseQuantity(this.animationValues.getText(), decreaseAnimation));
-            helper.deleteWorker(0, 2);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_decreaseAnimationMouseClicked
-
-    private void decreaseAnimationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseAnimationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_decreaseAnimationActionPerformed
-
-    private void increaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseAnimationMouseClicked
-        // TODO add your handling code here:
-        if (canIncreaseQuantity(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            this.animationValues.setText(increaseQuantity(this.animationValues.getText(), increaseAnimation));
-            helper.addWorker(0, 2);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_increaseAnimationMouseClicked
-
-    private void increaseAnimationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseAnimationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_increaseAnimationActionPerformed
-
-    private void decreaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseDubbingMouseClicked
-        // TODO add your handling code here:
-        if (canDecreaseQuantity(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            this.dubbingValues.setText(decreaseQuantity(this.dubbingValues.getText(), decreaseDubbing));
-            helper.deleteWorker(0, 3);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_decreaseDubbingMouseClicked
-
-    private void decreaseDubbingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseDubbingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_decreaseDubbingActionPerformed
-
-    private void dubbingValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dubbingValuesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dubbingValuesActionPerformed
-
-    private void increaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseDubbingMouseClicked
-        // TODO add your handling code here:
-        if (canIncreaseQuantity(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            this.dubbingValues.setText(increaseQuantity(this.dubbingValues.getText(), increaseDubbing));
-            helper.addWorker(0, 3);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_increaseDubbingMouseClicked
-
-    private void increaseDubbingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseDubbingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_increaseDubbingActionPerformed
-
-    private void increasePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increasePlotTwistMouseClicked
-        // TODO add your handling code here:
-        if (canIncreaseQuantity(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            this.plotTwistValues.setText(increaseQuantity(this.plotTwistValues.getText(), increasePlotTwist));
-            helper.addWorker(0, 4);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_increasePlotTwistMouseClicked
-
-    private void increasePlotTwistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increasePlotTwistActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_increasePlotTwistActionPerformed
-
-    private void plotTwistValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotTwistValuesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_plotTwistValuesActionPerformed
-
-    private void decreacePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreacePlotTwistMouseClicked
-        // TODO add your handling code here:
-        if (canDecreaseQuantity(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            this.plotTwistValues.setText(decreaseQuantity(this.plotTwistValues.getText(), decreacePlotTwist));
-            helper.deleteWorker(0, 4);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_decreacePlotTwistMouseClicked
-
-    private void decreacePlotTwistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreacePlotTwistActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_decreacePlotTwistActionPerformed
-
-    private void increaseAssemblerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseAssemblerMouseClicked
-        // TODO add your handling code here:
-        if (canIncreaseQuantity(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            this.assemblerValues.setText(increaseQuantity(this.assemblerValues.getText(), increaseAssembler));
-            helper.addWorker(0, 5);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_increaseAssemblerMouseClicked
-
-    private void increaseAssemblerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseAssemblerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_increaseAssemblerActionPerformed
-
-    private void assemblerValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assemblerValuesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_assemblerValuesActionPerformed
-
-    private void decreaceAssemblerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaceAssemblerMouseClicked
-        // TODO add your handling code here:
-        if (canDecreaseQuantity(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
-            this.assemblerValues.setText(decreaseQuantity(this.assemblerValues.getText(), decreaceAssembler));
-            helper.deleteWorker(0, 5);
-        }
-        updateBtnStatus();
-    }//GEN-LAST:event_decreaceAssemblerMouseClicked
-
-    private void decreaceAssemblerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaceAssemblerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_decreaceAssemblerActionPerformed
-
-    private void scriptDriveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scriptDriveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_scriptDriveActionPerformed
-
-    private void scenaryDriveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scenaryDriveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_scenaryDriveActionPerformed
-
-    private void animationDriveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_animationDriveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_animationDriveActionPerformed
-
-    private void dubbingDriveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dubbingDriveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dubbingDriveActionPerformed
-
-    private void plotTwistDriveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotTwistDriveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_plotTwistDriveActionPerformed
-
-    private void assemblerDriveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assemblerDriveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_assemblerDriveActionPerformed
-
-    private void plotTwistChaptersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotTwistChaptersActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_plotTwistChaptersActionPerformed
-
-    private void standardChaptersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standardChaptersActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_standardChaptersActionPerformed
-
-    private void totalChaptersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalChaptersActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_totalChaptersActionPerformed
-
-    private void currentDeadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentDeadlineActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_currentDeadlineActionPerformed
-
-    private void totalDaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalDaysActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_totalDaysActionPerformed
-
-    private void costActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_costActionPerformed
-
-    private void earningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_earningActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_earningActionPerformed
-
-    private void profitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_profitActionPerformed
-
-    private void directorStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_directorStatusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_directorStatusActionPerformed
-
-    private void projectManagerStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projectManagerStatusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_projectManagerStatusActionPerformed
-
-    private void strikeCounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_strikeCounterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_strikeCounterActionPerformed
-
-    private void cashPenalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashPenalityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cashPenalityActionPerformed
-
-    private void plotTwistChapters1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotTwistChapters1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_plotTwistChapters1ActionPerformed
-
-    private void standardChaptes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standardChaptes1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_standardChaptes1ActionPerformed
-
-    private void batchLastProfitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batchLastProfitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_batchLastProfitActionPerformed
 
     private void plotTwistChapters2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotTwistChapters2ActionPerformed
         // TODO add your handling code here:
@@ -2769,6 +2338,454 @@ public class Nickelodeon extends javax.swing.JFrame {
     private void standardChaptes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standardChaptes2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_standardChaptes2ActionPerformed
+
+    private void batchLastProfitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batchLastProfitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_batchLastProfitActionPerformed
+
+    private void totalDaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalDaysActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalDaysActionPerformed
+
+    private void currentDeadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentDeadlineActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_currentDeadlineActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void totalChaptersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalChaptersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalChaptersActionPerformed
+
+    private void standardChaptersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standardChaptersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_standardChaptersActionPerformed
+
+    private void plotTwistChaptersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotTwistChaptersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_plotTwistChaptersActionPerformed
+
+    private void totalDaysActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_totalDaysActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_totalDaysActionPerformed
+
+    private void currentDeadlineActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_totalDaysActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_totalDaysActionPerformed
+
+    private void standardChaptersActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void assemblerValuesActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void totalChaptersActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_totalChaptersActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_totalChaptersActionPerformed
+
+    private void increaseAssemblerActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_increaseAssemblerActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_increaseAssemblerActionPerformed
+
+    private void AssemblerValuesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_AssemblerValuesActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_AssemblerValuesActionPerformed
+
+    private void decreaceAssemblerActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_decreaceAssemblerActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_decreaceAssemblerActionPerformed
+
+    private void assemblerDriveActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_assemblerDriveActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_assemblerDriveActionPerformed
+
+    private void standardChaptesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_standardChaptesActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_standardChaptesActionPerformed
+
+    private void plotTwistChaptersActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_plotTwistChaptersActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_plotTwistChaptersActionPerformed
+
+    private void plotTwistChapters1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_plotTwistChapters1ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_plotTwistChapters1ActionPerformed
+
+    private void standardChaptes1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_standardChaptes1ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_standardChaptes1ActionPerformed
+
+    private void directorStatus1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_directorStatus1ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_directorStatus1ActionPerformed
+
+    private void config_btnMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_config_btnMouseEntered
+        // TODO add your handling code here:
+    }// GEN-LAST:event_config_btnMouseEntered
+
+    private void dashboardLabelMouseClicked(java.awt.event.MouseEvent evt) {
+        Dashboard dashboard = Dashboard.getInstance();
+        dashboard.setVisible(true);
+        this.dispose();
+    }
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+        Home v1 = new Home();
+        v1.setVisible(true);
+        this.dispose();
+    }// GEN-LAST:event_jLabel4MouseClicked
+
+    private void btn_InicioMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_InicioMouseClicked
+        // TODO add your handling code here:
+        Home v1 = new Home();
+        v1.setVisible(true);
+        this.dispose();
+    }// GEN-LAST:event_btn_InicioMouseClicked
+
+    private void config_btnMouseClicked(java.awt.event.MouseEvent evt) {
+        ConfigParams v2 = new ConfigParams();
+        v2.setVisible(true);
+        this.setVisible(false);
+    }
+
+    private void plotTwistValuesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_plotTwistValuesActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_plotTwistValuesActionPerformed
+
+    private void decreacePlotTwistActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_decreacePlotTwistActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_decreacePlotTwistActionPerformed
+
+    private void increasePlotTwistActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_increasePlotTwistActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_increasePlotTwistActionPerformed
+
+    private void dubbingValuesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_dubbingValuesActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_dubbingValuesActionPerformed
+
+    private void increaseDubbingActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_increaseDubbingActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_increaseDubbingActionPerformed
+
+    private void decreaseDubbingActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_decreaseDubbingActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_decreaseDubbingActionPerformed
+
+    private void decreaseAnimationActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_decreaseAnimationActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_decreaseAnimationActionPerformed
+
+    private void increaseAnimationActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_increaseAnimationActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_increaseAnimationActionPerformed
+
+    private void animationValuesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_animationValuesActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_animationValuesActionPerformed
+
+    private void decreaseScenaryActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_decreaseScenaryActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_decreaseScenaryActionPerformed
+
+    private void increaseScenaryActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_increaseScenaryActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_increaseScenaryActionPerformed
+
+    private void scenaryValueActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_scenaryValueActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_scenaryValueActionPerformed
+
+    private void scriptsValuesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_scriptsValuesActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_scriptsValuesActionPerformed
+
+    private void increaseScriptsActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_increaseScriptsActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_increaseScriptsActionPerformed
+
+    private void decreaseScriptsActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_decreaseScriptsActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_decreaseScriptsActionPerformed
+
+    private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jPanel4MousePressed
+        // TODO add your handling code here:
+        initialClick = evt.getPoint();
+    }// GEN-LAST:event_jPanel4MousePressed
+
+    private void jPanel4MouseDragged(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jPanel4MouseDragged
+        // TODO add your handling code here:
+        int x = getLocation().x - initialClick.x + evt.getX();
+        int y = getLocation().y - initialClick.y + evt.getY();
+        setLocation(x, y);
+    }// GEN-LAST:event_jPanel4MouseDragged
+
+    private void exitMousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_exitMousePressed
+        // TODO add your handling code here:
+        System.exit(0);
+    }// GEN-LAST:event_exitMousePressed
+
+    private void btn_cargar_guardarMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_cargar_guardarMouseClicked
+        // TODO add your handling code here:
+        Dell v3 = new Dell();
+        v3.setVisible(true);
+        this.dispose();
+    }// GEN-LAST:event_btn_cargar_guardarMouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+        Dell v3 = new Dell();
+        v3.setVisible(true);
+        this.setVisible(false);
+
+    }// GEN-LAST:event_jLabel10MouseClicked
+
+    private void icono7MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_icono7MouseClicked
+        // TODO add your handling code here:
+
+    }// GEN-LAST:event_icono7MouseClicked
+
+    private void btn_reporteMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_reporteMouseClicked
+        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
+    }// GEN-LAST:event_btn_reporteMouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
+    }// GEN-LAST:event_jLabel8MouseClicked
+
+    private void icono5MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_icono5MouseClicked
+        // TODO add your handling code here:
+    }// GEN-LAST:event_icono5MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel7MouseClicked
+        // TODO add your handling code here:
+        ConfigParams v2 = new ConfigParams();
+        v2.setVisible(true);
+        this.setVisible(false);
+    }// GEN-LAST:event_jLabel7MouseClicked
+
+    private void icono4MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_icono4MouseClicked
+        // TODO add your handling code here:
+
+    }// GEN-LAST:event_icono4MouseClicked
+
+    private void btn_nueva_rutaMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_nueva_rutaMouseClicked
+        // TODO add your handling code here:
+
+    }// GEN-LAST:event_btn_nueva_rutaMouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel6MouseClicked
+        // TODO add your handling code here:
+
+    }// GEN-LAST:event_jLabel6MouseClicked
+
+    private void icono3MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_icono3MouseClicked
+        // TODO add your handling code here:
+
+    }// GEN-LAST:event_icono3MouseClicked
+
+    private void btn_nuevo_pedidoMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_nuevo_pedidoMouseClicked
+        // TODO add your handling code here:
+//        Dashboard v4 = new Dashboard();
+//        v4.setVisible(true);
+//        this.dispose();
+    }// GEN-LAST:event_btn_nuevo_pedidoMouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+
+    }// GEN-LAST:event_jLabel5MouseClicked
+
+    private void scriptDriveActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_scriptDriveActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_scriptDriveActionPerformed
+
+    private void scenaryDriveActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_scenaryDriveActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_scenaryDriveActionPerformed
+
+    private void animationDriveActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_animationDriveActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_animationDriveActionPerformed
+
+    private void dubbingDriveActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_dubbingDriveActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_dubbingDriveActionPerformed
+
+    private void plotTwistDriveActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_plotTwistDriveActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_plotTwistDriveActionPerformed
+
+    private void currentDaysActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_currentDaysActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_currentDaysActionPerformed
+
+    private void remainingDaysActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_remainingDaysActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_remainingDaysActionPerformed
+
+    private void strikeCounterActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_strikeCounterActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_strikeCounterActionPerformed
+
+    private void projectManagerStatusActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_projectManagerStatusActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_projectManagerStatusActionPerformed
+
+    private void directorStatusActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_directorStatusActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_directorStatusActionPerformed
+
+    private void cashPenalityActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cashPenalityActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_cashPenalityActionPerformed
+
+    private void costActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_costActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_costActionPerformed
+
+    private void earningActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_earningActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_earningActionPerformed
+
+    private void profitActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_profitActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_profitActionPerformed
+
+    private void increaseScriptsMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseScriptsMouseClicked
+        // TODO add your handling code here:
+        if (this.canIncreaseQuantity(0)) {
+            this.scriptsValues.setText(increaseQuantity(this.scriptsValues.getText(), increaseScripts));
+            helper.addWorker(1, 0);
+        }
+        updateBtnStatus();
+
+    }// GEN-LAST:event_increaseScriptsMouseClicked
+
+    private void increaseScenaryMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseScenaryMouseClicked
+        // TODO add your handling code here:
+        if (canIncreaseQuantity(1)) {
+            this.scenaryValue.setText(increaseQuantity(this.scenaryValue.getText(), increaseScenary));
+            helper.addWorker(1, 1);
+        }
+        updateBtnStatus();
+
+    }// GEN-LAST:event_increaseScenaryMouseClicked
+
+    private void increaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseAnimationMouseClicked
+        // TODO add your handling code here:
+        if (canIncreaseQuantity(2)) {
+            this.animationValues.setText(increaseQuantity(this.animationValues.getText(), increaseAnimation));
+            helper.addWorker(1, 2);
+        }
+        updateBtnStatus();
+    }// GEN-LAST:event_increaseAnimationMouseClicked
+
+    private void increaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseDubbingMouseClicked
+        // TODO add your handling code here:
+        if (canIncreaseQuantity(3)) {
+            this.dubbingValues.setText(increaseQuantity(this.dubbingValues.getText(), increaseDubbing));
+            helper.addWorker(1, 3);
+        }
+        updateBtnStatus();
+
+    }// GEN-LAST:event_increaseDubbingMouseClicked
+
+    private void increasePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increasePlotTwistMouseClicked
+        // TODO add your handling code here:
+        if (canIncreaseQuantity(4)) {
+            this.plotTwistValues.setText(increaseQuantity(this.plotTwistValues.getText(), increasePlotTwist));
+            helper.addWorker(1, 4);
+        }
+        updateBtnStatus();
+    }// GEN-LAST:event_increasePlotTwistMouseClicked
+
+    private void increaseAssemblerMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increasePlotTwistMouseClicked
+        // TODO add your handling code here:
+        if (canIncreaseQuantity(5)) {
+            this.assemblerValues.setText(increaseQuantity(this.assemblerValues.getText(), increaseAssembler));
+            helper.addWorker(1, 5);
+        }
+        updateBtnStatus();
+    }// GEN-LAST:event_increasePlotTwistMouseClicked
+
+    private void decreaceAssemblerMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreacePlotTwistMouseClicked
+        // TODO add your handling code here:
+        if (canDecreaseQuantity(5)) {
+            this.assemblerValues.setText(decreaseQuantity(this.assemblerValues.getText(), decreaceAssembler));
+            helper.deleteWorker(1, 5);
+        }
+        updateBtnStatus();
+    }// GEN-LAST:event_decreacePlotTwistMouseClicked
+
+    private void decreacePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreacePlotTwistMouseClicked
+        // TODO add your handling code here:
+        if (canDecreaseQuantity(4)) {
+            this.plotTwistValues.setText(decreaseQuantity(this.plotTwistValues.getText(), decreacePlotTwist));
+            helper.deleteWorker(1, 4);
+        }
+        updateBtnStatus();
+    }// GEN-LAST:event_decreacePlotTwistMouseClicked
+
+    private void decreaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseDubbingMouseClicked
+        // TODO add your handling code here:
+        if (canDecreaseQuantity(3)) {
+            this.dubbingValues.setText(decreaseQuantity(this.dubbingValues.getText(), decreaseDubbing));
+            helper.deleteWorker(1, 3);
+        }
+        updateBtnStatus();
+
+    }// GEN-LAST:event_decreaseDubbingMouseClicked
+
+    private void decreaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseAnimationMouseClicked
+        // TODO add your handling code here:
+        if (canDecreaseQuantity(2)) {
+            this.animationValues.setText(decreaseQuantity(this.animationValues.getText(), decreaseAnimation));
+            helper.deleteWorker(1, 2);
+        }
+        updateBtnStatus();
+
+    }// GEN-LAST:event_decreaseAnimationMouseClicked
+
+    private void decreaseScenaryMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseScenaryMouseClicked
+        // TODO add your handling code here:
+        if (canDecreaseQuantity(1)) {
+            this.scenaryValue.setText(decreaseQuantity(this.scenaryValue.getText(), decreaseScenary));
+            helper.deleteWorker(1, 1);
+        }
+        updateBtnStatus();
+
+    }// GEN-LAST:event_decreaseScenaryMouseClicked
+
+    private void decreaseScriptsMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseScriptsMouseClicked
+        // TODO add your handling code here:
+        updateValues();
+        if (canDecreaseQuantity(0)) {
+            this.scriptsValues.setText(decreaseQuantity(this.scriptsValues.getText(), this.decreaseScripts));
+            helper.deleteWorker(1, 0);
+        }
+        updateBtnStatus();
+
+    }// GEN-LAST:event_decreaseScriptsMouseClicked
 
     private String increaseQuantity(String actualValue, JButton btn) {
         int intValue = 0;
@@ -2817,9 +2834,13 @@ public class Nickelodeon extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -2829,29 +2850,36 @@ public class Nickelodeon extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Nickelodeon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HP.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Nickelodeon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HP.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Nickelodeon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HP.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Nickelodeon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HP.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Nickelodeon().setVisible(true);
+                new HP().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JLabel Logo;
     private javax.swing.JPanel SidePanel;
+    private javax.swing.JLabel Titulo;
     private javax.swing.JTextField animationDrive;
     private javax.swing.JTextField animationValues;
     private javax.swing.JPanel animations;
@@ -2867,12 +2895,13 @@ public class Nickelodeon extends javax.swing.JFrame {
     private javax.swing.JPanel btn_Inicio;
     private javax.swing.JPanel btn_cargar_guardar;
     private javax.swing.JPanel btn_nueva_ruta;
-    private javax.swing.JPanel btn_nuevo_almacen;
     private javax.swing.JPanel btn_nuevo_pedido;
     private javax.swing.JPanel btn_reporte;
     private javax.swing.JTextField cashPenality;
+    private javax.swing.JPanel config_btn;
     private javax.swing.JTextField cost;
     private javax.swing.JTextField currentDeadline;
+    private javax.swing.JLabel dashboardLabel;
     private javax.swing.JButton decreaceAssembler;
     private javax.swing.JButton decreacePlotTwist;
     private javax.swing.JButton decreaseAnimation;
@@ -2918,7 +2947,6 @@ public class Nickelodeon extends javax.swing.JFrame {
     private javax.swing.JLabel dubbingTitle1;
     private javax.swing.JTextField dubbingValues;
     private javax.swing.JTextField earning;
-    private javax.swing.JLabel exit;
     private javax.swing.JLabel icono1;
     private javax.swing.JLabel icono3;
     private javax.swing.JLabel icono4;
@@ -2930,21 +2958,16 @@ public class Nickelodeon extends javax.swing.JFrame {
     private javax.swing.JButton increasePlotTwist;
     private javax.swing.JButton increaseScenary;
     private javax.swing.JButton increaseScripts;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;

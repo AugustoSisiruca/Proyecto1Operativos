@@ -8,8 +8,9 @@ package proyecto.operativosproyecto;
  *
  * @author sisir
  */
-import GUI.MenuInicio;
-import proyectooperativos1.Funciones.FileFunctions;
+import GUI.Classes.Home;
+import Funciones.FileFunctions;
+import GUI.Classes.ChartManager;
 import java.io.File;
 import proyecto.operativosproyecto.funcionesaux;
 import proyecto.operativosproyecto.Company;
@@ -27,7 +28,7 @@ public class App {
     // General variables
     private Company dell;
     private Company hp;
-    //private static ChartManager chartManager;
+    private static ChartManager chartManager;
 
     private static App app;
 
@@ -50,8 +51,8 @@ public class App {
         // Inicia la simulación
         getDell().start();
         getHP().start();
-       // chartManager = new ChartManager();
-        MenuInicio home = new MenuInicio();
+       chartManager = new ChartManager();
+        Home home = new Home();
         home.setVisible(true);
     }
 
@@ -166,5 +167,9 @@ public class App {
      */
     public static void setApp(App aApp) {
         app = aApp;
+    }
+    
+    public static ChartManager getChartManager() {
+        return chartManager;
     }
 }
