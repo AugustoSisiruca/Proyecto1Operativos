@@ -4,6 +4,15 @@
  */
 package GUI;
 
+import java.awt.Point;
+import java.io.File;
+import javax.swing.JButton;
+import proyecto.operativosproyecto.funcionesaux;
+import proyecto.operativosproyecto.App;
+import proyecto.operativosproyecto.Empleado;
+import Funciones.FileFunctions;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 /**
  *
  * @author sisir
@@ -13,10 +22,229 @@ public class MenuDell extends javax.swing.JFrame {
     /**
      * Creates new form MenuHP
      */
+    
+    
+    private Point initialClick;
+    private final App app = App.getInstance();
+    private int maxEmployees;
+    private int actualEmployees;
+    private static MenuDell nickelodeon;
+    private funcionesaux helper = new funcionesaux();
+    private FileFunctions filefunctions = new FileFunctions();
+    private File selectedFile = app.getSelectedFile();
+    private JButton[] decreaseBtn = new JButton[6];
+    private JButton[] increaseBtn = new JButton[6];
+    private int[] values = {
+        countNonNullEmployees(this.app.getDell().getMotherboardProducers()),
+        countNonNullEmployees(this.app.getDell().getCpuProducers()),
+        countNonNullEmployees(this.app.getDell().getRamProducers()),
+        countNonNullEmployees(this.app.getDell().getPowerSupplyProducers()),
+        countNonNullEmployees(this.app.getDell().getGraphicsCardProducers()),
+        countNonNullEmployees(this.app.getDell().getAssemblers())
+    };
+    private void updateBtnStatus() {
+        updateValues();
+
+        if (this.actualEmployees == this.maxEmployees) {
+            for (JButton btn : increaseBtn) {
+                btn.setEnabled(false);
+                btn.setFocusable(false);
+            }
+        } else {
+            for (JButton btn : increaseBtn) {
+                btn.setEnabled(true);
+                btn.setFocusable(true);
+            }
+        }
+
+        for (int i = 0; i < this.values.length; i++) {
+            if (this.values[i] == 1) {
+                this.decreaseBtn[i].setEnabled(false);
+                this.decreaseBtn[i].setFocusable(false);
+            } else {
+                this.decreaseBtn[i].setEnabled(true);
+                this.decreaseBtn[i].setFocusable(true);
+
+            }
+        }
+    }
+    
+    private void updateValues() {
+        values[0] = countNonNullEmployees(this.app.getDell().getMotherboardProducers());
+        values[1] = countNonNullEmployees(this.app.getDell().getCpuProducers());
+        values[2] = countNonNullEmployees(this.app.getDell().getRamProducers());
+        values[3] = countNonNullEmployees(this.app.getDell().getPowerSupplyProducers());
+        values[4] = countNonNullEmployees(this.app.getDell().getGraphicsCardProducers());
+        values[5] = countNonNullEmployees(this.app.getDell().getAssemblers());
+    }
+    
+    public static synchronized MenuDell getInstance() {
+        if (nickelodeon == null) {
+            nickelodeon = new MenuDell();
+        }
+        return nickelodeon;
+    }
+    
     public MenuDell() {
+        try {
+            // Código para el Look and Feel
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        initializeValues();
+        
+        this.decreaseBtn[0] = decreaseScripts; //botones por arreglar
+        this.decreaseBtn[1] = decreaseScenary;
+        this.decreaseBtn[2] = decreaseAnimation;
+        this.decreaseBtn[3] = decreaseDubbing;
+        this.decreaseBtn[4] = decreacePlotTwist;
+        this.decreaseBtn[5] = decreaceAssembler;
+        this.increaseBtn[0] = increaseScripts;
+        this.increaseBtn[1] = increaseScenary;
+        this.increaseBtn[2] = increaseAnimation;
+        this.increaseBtn[3] = increaseDubbing;
+        this.increaseBtn[4] = increasePlotTwist;
+        this.increaseBtn[5] = increaseAssembler;
+        
+        updateBtnStatus();
+        this.start();
     }
 
+    private void start() {
+        // Crear un nuevo hilo para el bucle infinito
+        Thread updateThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        // Ejecutar las actualizaciones de la UI en el EDT
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                // Aquí van tus actualizaciones de la UI
+                                scriptDrive
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[0]));
+                                scenaryDrive
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[1]));
+                                animationDrive
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[2]));
+                                dubbingDrive
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[3]));
+                                plotTwistDrive
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[4]));
+                                assemblerDrive
+                                        .setText(String.valueOf(app.getDell().getDrive().getSections()[5]));
+
+                                projectManagerStatus
+                                        .setText(app.getDell().getProjectManagerInstance().getCurrentState());
+
+                                currentDeadline.setText(
+                                        String.valueOf(app.getDell().getRemainingDays()));
+
+                                totalDays.setText(String.valueOf(app.getDell().getTotalDays()));
+
+                                strikeCounter.setText(String
+                                        .valueOf(app.getDell().getProjectManagerInstance().getStrikes()));
+                                cashPenality.setText(String.valueOf(Integer.parseInt(strikeCounter.getText()) * 100));
+                                directorStatus.setText(app.getDell().getDirectorInstance().getStatus());
+
+                                totalChapters.setText(
+                                        String.valueOf(app.getDell().getNumChapters()));
+                                standardChapters.setText(
+                                        String.valueOf(app.getDell().getNumNormalChapters()));
+
+                                plotTwistChapters.setText(
+                                        String.valueOf(app.getDell().getNumChaptersWithPlotTwist()));
+
+                                standardChaptes2.setText(
+                                        String.valueOf(app.getDell().getActualNumNormalChapters())
+                                );
+                                plotTwistChapters2.setText(
+                                        String.valueOf(app.getDell().getActualNumChaptersWithPlotTwist())
+                                );
+
+                                standardChaptes1.setText(
+                                        String.valueOf(app.getDell().getLastNumNormalChapters())
+                                );
+                                plotTwistChapters1.setText(
+                                        String.valueOf(app.getDell().getLastNumChaptersWithPlotTwist())
+                                );
+
+                                profit.setText(formatNumberAsK((int) app.getDell().getEarning() -  (int) app.getNickelodeon().getTotalCost()));
+                                cost.setText(formatNumberAsK((int) app.getDell().getTotalCost()));
+                                earning.setText(formatNumberAsK((int) app.getDell().getEarning()));
+                                batchLastProfit.setText(
+                                        formatNumberAsK((int) app.getDell().getBatchLastProfit()));
+
+                            }
+                        });
+
+                        // Pausar el hilo separado, no el EDT
+                        Thread.sleep(app.getDayDuration() / 48);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        // Opcionalmente, podrías salir del bucle si el hilo es interrumpido
+                        break;
+                    }
+                }
+            }
+        });
+
+        // Iniciar el hilo
+        updateThread.start();
+    }
+    
+    private void initializeValues() {
+        if (this.app.getDell() != null) {
+            this.maxEmployees = this.app.getDell().getMaxEmployeesQuantity();
+            this.actualEmployees = this.app.getDell().getActualEmployeesQuantity();
+            this.scriptsValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getScreenwriters())));
+            this.scenaryValue
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getSetDesigners())));
+            this.animationValues.setText(
+                    String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getCharacterAnimators())));
+            this.dubbingValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getVoiceActors())));
+            this.plotTwistValues.setText(
+                    String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getPlotTwistScreenwriters())));
+            this.assemblerValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getNickelodeon().getAssemblers())));
+            this.maxCap.setText(String.valueOf(this.maxEmployees) + "     trabajadores");
+        }
+    }
+    
+    private int countNonNullEmployees(Empleado[] employees) {
+        int count = 0;
+        for (Empleado employee : employees) {
+            if (employee != null) {
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    public String formatNumberAsK(int number) {
+        // Se onverte el número a miles
+        double thousands = number / 1000.0;
+
+        // Se redondea a dos dígitos significativos
+        double rounded = Math.round(thousands * 100.0) / 100.0;
+
+        // Se convierte a cadena y se añade 'K'
+        return rounded + "K";
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1431,6 +1659,7 @@ public class MenuDell extends javax.swing.JFrame {
 
     private void valorPBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valorPBActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_valorPBActionPerformed
 
     private void menosPBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menosPBMouseClicked

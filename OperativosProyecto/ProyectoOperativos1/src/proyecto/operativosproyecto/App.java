@@ -9,7 +9,7 @@ package proyecto.operativosproyecto;
  * @author sisir
  */
 import GUI.MenuInicio;
-import proyectooperativos1.Funciones.FileFunctions;
+import Funciones.FileFunctions;
 import java.io.File;
 import proyecto.operativosproyecto.funcionesaux;
 import proyecto.operativosproyecto.Company;

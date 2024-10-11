@@ -89,7 +89,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="driveTitle15" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="driveTitle12" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="projectManagerStatus" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -798,9 +798,9 @@
                                           <Component id="jLabel13" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel16" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel15" alignment="0" pref="166" max="32767" attributes="0"/>
-                                          <Component id="jLabel19" alignment="0" pref="166" max="32767" attributes="0"/>
-                                          <Component id="jLabel20" alignment="0" pref="166" max="32767" attributes="0"/>
+                                          <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel19" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel20" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -886,7 +886,7 @@
                           <Component id="jLabel20" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="maximoTrabajador" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="14" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1381,7 +1381,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1452,7 +1452,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="placaAlmacen" alignment="0" pref="32" max="32767" attributes="0"/>
+                              <Component id="placaAlmacen" alignment="0" max="32767" attributes="0"/>
                               <Component id="textoalmacen1" alignment="0" max="32767" attributes="0"/>
                               <Component id="limitealmacen1" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -1541,7 +1541,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="cpusAlmacen" alignment="0" pref="32" max="32767" attributes="0"/>
+                              <Component id="cpusAlmacen" alignment="0" max="32767" attributes="0"/>
                               <Component id="textoalmacen2" alignment="0" max="32767" attributes="0"/>
                               <Component id="limitealmacen2" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -1630,7 +1630,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="ramAlmacen" alignment="0" pref="32" max="32767" attributes="0"/>
+                              <Component id="ramAlmacen" alignment="0" max="32767" attributes="0"/>
                               <Component id="textoalmacen3" alignment="0" max="32767" attributes="0"/>
                               <Component id="limitealmacen3" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -1719,7 +1719,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="fuenteAlmacen" alignment="0" pref="32" max="32767" attributes="0"/>
+                              <Component id="fuenteAlmacen" alignment="0" max="32767" attributes="0"/>
                               <Component id="textoalmacen4" alignment="0" max="32767" attributes="0"/>
                               <Component id="limitealmacen4" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -1808,7 +1808,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="tarjetaAlmacen" alignment="0" pref="32" max="32767" attributes="0"/>
+                              <Component id="tarjetaAlmacen" alignment="0" max="32767" attributes="0"/>
                               <Component id="textoalmacen5" alignment="0" max="32767" attributes="0"/>
                               <Component id="limitealmacen5" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -1895,7 +1895,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="ensambladorAlmacen" alignment="0" pref="32" max="32767" attributes="0"/>
+                              <Component id="ensambladorAlmacen" alignment="0" max="32767" attributes="0"/>
                               <Component id="textoalmacen6" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
