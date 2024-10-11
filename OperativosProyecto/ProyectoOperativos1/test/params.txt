@@ -11,6 +11,7 @@ GraphicsCardProducers=1
 Assemblers=1
 ProjectManager=1
 Director=1
+MaxCapacity=13
 
 [HP]
 MotherboardProducers=3
@@ -21,4 +22,5 @@ GraphicsCardProducers=1
 Assemblers=2
 ProjectManager=1
 Director=1
+MaxCapacity=14
 

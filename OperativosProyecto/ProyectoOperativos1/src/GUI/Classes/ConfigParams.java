@@ -1892,7 +1892,7 @@ public class ConfigParams extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(97, 97, 97)
+                .addGap(27, 27, 27)
                 .addComponent(workersConfigurations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
                 .addComponent(workersConfigurations1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2277,14 +2277,14 @@ public class ConfigParams extends javax.swing.JFrame {
 
     private void btn_nuevo_almacenMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_nuevo_almacenMouseClicked
         // TODO add your handling code here:
-        Nickelodeon v3 = new Nickelodeon();
+        Dell v3 = new Dell();
         v3.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_btn_nuevo_almacenMouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel7MouseClicked
         // TODO add your handling code here:
-        Nickelodeon v3 = new Nickelodeon();
+        Dell v3 = new Dell();
         v3.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_jLabel7MouseClicked
@@ -2296,14 +2296,14 @@ public class ConfigParams extends javax.swing.JFrame {
 
     private void btn_nueva_rutaMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_nueva_rutaMouseClicked
         // TODO add your handling code here:
-        CartoonNetwork v2 = new CartoonNetwork();
+        HP v2 = new HP();
         v2.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_btn_nueva_rutaMouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-        CartoonNetwork v2 = new CartoonNetwork();
+        HP v2 = new HP();
         v2.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_jLabel6MouseClicked
@@ -2420,7 +2420,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseScriptsMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseScriptsMouseClicked
         // TODO add your handling code here:
         if (this.canIncreaseQuantity(0)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.scriptsValues.setText(increaseQuantity(this.scriptsValues.getText(), increaseScripts));
             helper.addWorker(0, 0);
         }
@@ -2439,7 +2438,6 @@ public class ConfigParams extends javax.swing.JFrame {
         // TODO add your handling code here:
         updateValues();
         if (canDecreaseQuantity(0)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.scriptsValues.setText(decreaseQuantity(this.scriptsValues.getText(), this.decreaseScripts));
             helper.deleteWorker(0, 0);
         }
@@ -2458,7 +2456,6 @@ public class ConfigParams extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (canIncreaseQuantity(1)) {
             this.scenaryValue.setText(increaseQuantity(this.scenaryValue.getText(), increaseScenary));
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             helper.addWorker(0, 1);
         }
         updateBtnStatus();
@@ -2471,7 +2468,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseScenaryMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseScenaryMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(1)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.scenaryValue.setText(decreaseQuantity(this.scenaryValue.getText(), decreaseScenary));
             helper.deleteWorker(0, 1);
         }
@@ -2489,7 +2485,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseAnimationMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.animationValues.setText(decreaseQuantity(this.animationValues.getText(), decreaseAnimation));
             helper.deleteWorker(0, 2);
         }
@@ -2503,7 +2498,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseAnimationMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.animationValues.setText(increaseQuantity(this.animationValues.getText(), increaseAnimation));
             helper.addWorker(0, 2);
         }
@@ -2517,7 +2511,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseDubbingMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.dubbingValues.setText(decreaseQuantity(this.dubbingValues.getText(), decreaseDubbing));
             helper.deleteWorker(0, 3);
         }
@@ -2535,7 +2528,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseDubbingMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.dubbingValues.setText(increaseQuantity(this.dubbingValues.getText(), increaseDubbing));
             helper.addWorker(0, 3);
         }
@@ -2549,7 +2541,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increasePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increasePlotTwistMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.plotTwistValues.setText(increaseQuantity(this.plotTwistValues.getText(), increasePlotTwist));
             helper.addWorker(0, 4);
         }
@@ -2567,7 +2558,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreacePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreacePlotTwistMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.plotTwistValues.setText(decreaseQuantity(this.plotTwistValues.getText(), decreacePlotTwist));
             helper.deleteWorker(0, 4);
         }
@@ -2581,7 +2571,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseAssemblerMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseAssemblerMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.assemblerValues.setText(increaseQuantity(this.assemblerValues.getText(), increaseAssembler));
             helper.addWorker(0, 5);
         }
@@ -2599,7 +2588,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaceAssemblerMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaceAssemblerMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.assemblerValues.setText(decreaseQuantity(this.assemblerValues.getText(), decreaceAssembler));
             helper.deleteWorker(0, 5);
         }
@@ -2613,7 +2601,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseScripts1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseScripts1MouseClicked
         // TODO add your handling code here:
         if (this.canIncreaseQuantity1(0)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.scriptsValues1.setText(increaseQuantity1(this.scriptsValues1.getText(), increaseScripts1));
             helper.addWorker(1, 0);
         }
@@ -2632,7 +2619,6 @@ public class ConfigParams extends javax.swing.JFrame {
         // TODO add your handling code here:
         updateValues1();
         if (canDecreaseQuantity1(0)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.scriptsValues1.setText(decreaseQuantity1(this.scriptsValues1.getText(), this.decreaseScripts1));
             helper.deleteWorker(1, 0);
         }
@@ -2651,7 +2637,6 @@ public class ConfigParams extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (canIncreaseQuantity1(1)) {
             this.scenaryValue1.setText(increaseQuantity1(this.scenaryValue1.getText(), increaseScenary1));
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             helper.addWorker(1, 1);
         }
         updateBtnStatus1();
@@ -2664,7 +2649,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseScenary1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseScenary1MouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity1(1)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.scenaryValue1.setText(decreaseQuantity1(this.scenaryValue1.getText(), decreaseScenary1));
             helper.deleteWorker(1, 1);
         }
@@ -2682,7 +2666,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseAnimation1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseAnimation1MouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity1(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.animationValues1.setText(decreaseQuantity1(this.animationValues1.getText(), decreaseAnimation1));
             helper.deleteWorker(1, 2);
         }
@@ -2696,7 +2679,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseAnimation1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseAnimation1MouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity1(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.animationValues1.setText(increaseQuantity1(this.animationValues1.getText(), increaseAnimation1));
             helper.addWorker(1, 2);
         }
@@ -2710,7 +2692,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaseDubbing1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaseDubbing1MouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity1(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.dubbingValues1.setText(decreaseQuantity1(this.dubbingValues1.getText(), decreaseDubbing1));
             helper.deleteWorker(1, 3);
         }
@@ -2728,7 +2709,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseDubbing1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseDubbing1MouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity1(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.dubbingValues1.setText(increaseQuantity1(this.dubbingValues1.getText(), increaseDubbing1));
             helper.addWorker(1, 3);
         }
@@ -2742,7 +2722,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increasePlotTwist1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increasePlotTwist1MouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity1(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.plotTwistValues1.setText(increaseQuantity1(this.plotTwistValues1.getText(), increasePlotTwist1));
             helper.addWorker(1, 4);
         }
@@ -2760,7 +2739,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreacePlotTwist1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreacePlotTwist1MouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity1(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.plotTwistValues1.setText(decreaseQuantity1(this.plotTwistValues1.getText(), decreacePlotTwist1));
             helper.deleteWorker(1, 4);
         }
@@ -2774,7 +2752,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void increaseAssembler1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_increaseAssembler1MouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity1(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.assemblerValues1.setText(increaseQuantity1(this.assemblerValues1.getText(), increaseAssembler1));
             helper.addWorker(1, 5);
         }
@@ -2792,7 +2769,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private void decreaceAssembler1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_decreaceAssembler1MouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity1(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.assemblerValues1.setText(decreaseQuantity1(this.assemblerValues1.getText(), decreaceAssembler1));
             helper.deleteWorker(1, 5);
         }

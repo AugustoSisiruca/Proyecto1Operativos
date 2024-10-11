@@ -31,8 +31,8 @@ import javax.swing.Timer;
 
 public class ChartManager {
     private final App app = App.getInstance();
-    private XYSeries seriesNickelodeon;
-    private XYSeries seriesCartoonNetwork;
+    private XYSeries seriesDell;
+    private XYSeries seriesHP;
     private XYSeriesCollection dataset;
     private JFreeChart xyLineChart;
     private Timer updateTimer;
@@ -54,11 +54,11 @@ public class ChartManager {
      */
 
     private void initializeSeries() {
-        seriesNickelodeon = new XYSeries("Nickelodeon");
-        seriesCartoonNetwork = new XYSeries("Cartoon Network");
+        seriesDell = new XYSeries("Dell");
+        seriesHP = new XYSeries("HP");
         dataset = new XYSeriesCollection();
-        dataset.addSeries(seriesNickelodeon);
-        dataset.addSeries(seriesCartoonNetwork);
+        dataset.addSeries(seriesDell);
+        dataset.addSeries(seriesHP);
     }
 
     /**
@@ -112,10 +112,10 @@ public class ChartManager {
         // Se obtienen las nuevas ganancias
         double nickelodeonProfit = app.getDell().getProfit(); 
         double cartoonNetworkProfit = app.getHP().getProfit(); 
-        int newTimePoint = seriesNickelodeon.getItemCount() + 1;
+        int newTimePoint = seriesDell.getItemCount() + 1;
 
-        seriesNickelodeon.addOrUpdate(newTimePoint, nickelodeonProfit);
-        seriesCartoonNetwork.addOrUpdate(newTimePoint, cartoonNetworkProfit);
+        seriesDell.addOrUpdate(newTimePoint, nickelodeonProfit);
+        seriesHP.addOrUpdate(newTimePoint, cartoonNetworkProfit);
     }
 
     public ChartPanel getChartPanel() {
