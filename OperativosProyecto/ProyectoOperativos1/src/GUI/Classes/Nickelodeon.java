@@ -520,7 +520,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Cartoon Network");
+        jLabel6.setText("HP");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -536,7 +536,7 @@ public class Nickelodeon extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(icono3)
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(268, Short.MAX_VALUE))
         );
         btn_nueva_rutaLayout.setVerticalGroup(
             btn_nueva_rutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -661,7 +661,7 @@ public class Nickelodeon extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
-        jLabel10.setText("Nickelodeon");
+        jLabel10.setText("Dell");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel10MouseClicked(evt);
@@ -677,7 +677,7 @@ public class Nickelodeon extends javax.swing.JFrame {
                 .addComponent(icono7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addContainerGap(260, Short.MAX_VALUE))
         );
         btn_cargar_guardarLayout.setVerticalGroup(
             btn_cargar_guardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -750,7 +750,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         driveTitle4.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle4.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle4.setText("Capítulos plotTwist:");
+        driveTitle4.setText("Computadora GPU:");
         driveTitle4.setFocusable(false);
 
         plotTwistChapters.setEditable(false);
@@ -783,12 +783,12 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         driveTitle5.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle5.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle5.setText("Capítulos normales:");
+        driveTitle5.setText("Computadora normal:");
         driveTitle5.setFocusable(false);
 
         driveTitle25.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle25.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle25.setText("Capítulos (total):");
+        driveTitle25.setText("Ensamblados (total):");
         driveTitle25.setFocusable(false);
 
         totalChapters.setEditable(false);
@@ -964,7 +964,7 @@ public class Nickelodeon extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
+                .addContainerGap(255, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1002,7 +1002,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         scriptsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scriptsTitle.setText("Guionistas:");
+        scriptsTitle.setText("P. Place Base:");
 
         increaseScripts.setBackground(new java.awt.Color(51, 51, 51));
         increaseScripts.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1077,7 +1077,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         scenaryTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scenaryTitle.setText("Escenarios:");
+        scenaryTitle.setText("P. CPUs:");
 
         scenaryValue.setBackground(java.awt.Color.lightGray);
         scenaryValue.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1155,7 +1155,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         animationsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle.setText("Animador:");
+        animationsTitle.setText("P. RAM:");
 
         animationValues.setBackground(java.awt.Color.lightGray);
         animationValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1232,7 +1232,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         dubbingTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle.setText("Doblaje:");
+        dubbingTitle.setText("P. Fuente A:");
 
         decreaseDubbing.setBackground(new java.awt.Color(51, 51, 51));
         decreaseDubbing.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1309,7 +1309,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         plotTwistTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle.setText("PlotTwist:");
+        plotTwistTitle.setText("P. Tarjeta Graf:");
 
         increasePlotTwist.setBackground(new java.awt.Color(51, 51, 51));
         increasePlotTwist.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1435,7 +1435,7 @@ public class Nickelodeon extends javax.swing.JFrame {
         plotTwist2Layout.setHorizontalGroup(
             plotTwist2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plotTwist2Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(assemblerTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(decreaceAssembler)
@@ -1478,17 +1478,17 @@ public class Nickelodeon extends javax.swing.JFrame {
             .addComponent(driveTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(driveTitle21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workersConfigurationsLayout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addGroup(workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, workersConfigurationsLayout.createSequentialGroup()
                         .addComponent(driveTitle27, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(maxCap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(plotTwist2, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-                    .addComponent(plotTwist, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-                    .addComponent(dubbing, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-                    .addComponent(animations, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-                    .addComponent(scenary, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+                    .addComponent(plotTwist2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                    .addComponent(plotTwist, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                    .addComponent(dubbing, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                    .addComponent(animations, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                    .addComponent(scenary, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                     .addComponent(scripts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
         );
@@ -1525,7 +1525,7 @@ public class Nickelodeon extends javax.swing.JFrame {
         driveTitle2.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
         driveTitle2.setForeground(new java.awt.Color(51, 51, 51));
         driveTitle2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle2.setText("ESTATUS DEL DRIVE");
+        driveTitle2.setText("ESTATUS DEL AlMACEN");
 
         driveTitle3.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
         driveTitle3.setForeground(new java.awt.Color(51, 51, 51));
@@ -1538,7 +1538,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         scriptTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        scriptTitle1.setText("Guiones:");
+        scriptTitle1.setText("Placa Base:");
 
         scriptsLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsLimit1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1588,7 +1588,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         scenaryTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        scenaryTitle1.setText("Escenerarios:");
+        scenaryTitle1.setText("CPUs:");
         scenaryTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         scenaryLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1639,7 +1639,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         animationsTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle1.setText("Animación:");
+        animationsTitle1.setText("RAM:");
         animationsTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         animationsLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1690,7 +1690,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         dubbingTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle1.setText("Doblaje:");
+        dubbingTitle1.setText("Fuente A:");
         dubbingTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         dubbingLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1748,7 +1748,7 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         plotTwistTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle1.setText("PlotTwist:");
+        plotTwistTitle1.setText("Tarjeta Graf:");
         plotTwistTitle1.setPreferredSize(new java.awt.Dimension(70, 21));
 
         plotTwistDrive.setBackground(java.awt.Color.lightGray);

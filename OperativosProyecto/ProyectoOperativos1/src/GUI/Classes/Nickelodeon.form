@@ -211,7 +211,7 @@
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="icono3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="123" max="32767" attributes="0"/>
+                          <EmptySpace pref="268" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -247,7 +247,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Cartoon Network"/>
+                    <Property name="text" type="java.lang.String" value="HP"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel6MouseClicked"/>
@@ -417,7 +417,7 @@
                           <Component id="icono7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="152" max="32767" attributes="0"/>
+                          <EmptySpace pref="260" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -450,7 +450,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Montserrat" size="24" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Nickelodeon"/>
+                    <Property name="text" type="java.lang.String" value="Dell"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel10MouseClicked"/>
@@ -517,7 +517,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel4" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="244" max="32767" attributes="0"/>
+                      <EmptySpace pref="255" max="32767" attributes="0"/>
                       <Component id="jLabel9" min="-2" pref="311" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                       <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
@@ -673,7 +673,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="cc" red="cc" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Cap&#xed;tulos plotTwist:"/>
+                    <Property name="text" type="java.lang.String" value="Computadora GPU:"/>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
@@ -731,7 +731,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="cc" red="cc" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Cap&#xed;tulos normales:"/>
+                    <Property name="text" type="java.lang.String" value="Computadora normal:"/>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
@@ -743,7 +743,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="cc" red="cc" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Cap&#xed;tulos (total):"/>
+                    <Property name="text" type="java.lang.String" value="Ensamblados (total):"/>
                     <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
@@ -995,18 +995,18 @@
                   <Component id="driveTitle1" alignment="0" max="32767" attributes="0"/>
                   <Component id="driveTitle21" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace pref="9" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="driveTitle27" min="-2" pref="100" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="maxCap" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="plotTwist2" alignment="1" pref="273" max="32767" attributes="0"/>
-                          <Component id="plotTwist" alignment="1" pref="273" max="32767" attributes="0"/>
-                          <Component id="dubbing" alignment="1" pref="273" max="32767" attributes="0"/>
-                          <Component id="animations" alignment="1" pref="273" max="32767" attributes="0"/>
-                          <Component id="scenary" alignment="1" pref="273" max="32767" attributes="0"/>
+                          <Component id="plotTwist2" alignment="1" pref="276" max="32767" attributes="0"/>
+                          <Component id="plotTwist" alignment="1" pref="276" max="32767" attributes="0"/>
+                          <Component id="dubbing" alignment="1" pref="276" max="32767" attributes="0"/>
+                          <Component id="animations" alignment="1" pref="276" max="32767" attributes="0"/>
+                          <Component id="scenary" alignment="1" pref="276" max="32767" attributes="0"/>
                           <Component id="scripts" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -1101,7 +1101,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Guionistas:"/>
+                    <Property name="text" type="java.lang.String" value="P. Place Base:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="increaseScripts">
@@ -1219,7 +1219,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Escenarios:"/>
+                    <Property name="text" type="java.lang.String" value="P. CPUs:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="scenaryValue">
@@ -1334,7 +1334,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Animador:"/>
+                    <Property name="text" type="java.lang.String" value="P. RAM:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="animationValues">
@@ -1449,7 +1449,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Doblaje:"/>
+                    <Property name="text" type="java.lang.String" value="P. Fuente A:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="decreaseDubbing">
@@ -1564,7 +1564,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="PlotTwist:"/>
+                    <Property name="text" type="java.lang.String" value="P. Tarjeta Graf:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="increasePlotTwist">
@@ -1643,7 +1643,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="19" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="assemblerTitle" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="decreaceAssembler" min="-2" max="-2" attributes="0"/>
@@ -1855,7 +1855,7 @@
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="ESTATUS DEL DRIVE"/>
+                <Property name="text" type="java.lang.String" value="ESTATUS DEL AlMACEN"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="driveTitle3">
@@ -1920,7 +1920,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Guiones:"/>
+                    <Property name="text" type="java.lang.String" value="Placa Base:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="scriptsLimit1">
@@ -2009,7 +2009,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Escenerarios:"/>
+                    <Property name="text" type="java.lang.String" value="CPUs:"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 21]"/>
                     </Property>
@@ -2101,7 +2101,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Animaci&#xf3;n:"/>
+                    <Property name="text" type="java.lang.String" value="RAM:"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 21]"/>
                     </Property>
@@ -2195,7 +2195,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Doblaje:"/>
+                    <Property name="text" type="java.lang.String" value="Fuente A:"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 21]"/>
                     </Property>
@@ -2302,7 +2302,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="33" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="PlotTwist:"/>
+                    <Property name="text" type="java.lang.String" value="Tarjeta Graf:"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 21]"/>
                     </Property>
