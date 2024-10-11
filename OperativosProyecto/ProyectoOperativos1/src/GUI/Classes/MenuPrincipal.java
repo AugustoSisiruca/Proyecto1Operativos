@@ -550,6 +550,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void volverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverMenuActionPerformed
         // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_volverMenuActionPerformed
 
     private void cartoonPlayMusic(String path) {
