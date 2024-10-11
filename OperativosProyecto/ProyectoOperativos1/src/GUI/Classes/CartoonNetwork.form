@@ -528,38 +528,15 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="exit" min="-2" pref="71" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="exit" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="exit">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="1"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/GUI/Assets/exit.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Exit"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="exitMousePressed"/>
-                  </Events>
-                </Component>
-              </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel3">
               <Properties>
@@ -868,6 +845,9 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField8ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="driveTitle19">
                   <Properties>
@@ -987,12 +967,12 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="maxCap" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="plotTwist" alignment="1" pref="294" max="32767" attributes="0"/>
-                          <Component id="dubbing" alignment="1" pref="294" max="32767" attributes="0"/>
-                          <Component id="animations" alignment="1" pref="294" max="32767" attributes="0"/>
-                          <Component id="scenary" alignment="1" pref="294" max="32767" attributes="0"/>
+                          <Component id="plotTwist" alignment="1" pref="318" max="32767" attributes="0"/>
+                          <Component id="dubbing" alignment="1" pref="318" max="32767" attributes="0"/>
+                          <Component id="animations" alignment="1" pref="318" max="32767" attributes="0"/>
+                          <Component id="scenary" alignment="1" pref="318" max="32767" attributes="0"/>
                           <Component id="scripts" alignment="1" max="32767" attributes="0"/>
-                          <Component id="plotTwist2" alignment="0" pref="294" max="32767" attributes="0"/>
+                          <Component id="plotTwist2" alignment="0" pref="318" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
@@ -1890,7 +1870,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="scriptDrive" pref="32" max="32767" attributes="0"/>
+                              <Component id="scriptDrive" max="32767" attributes="0"/>
                               <Component id="scriptTitle1" max="32767" attributes="0"/>
                               <Component id="scriptsLimit1" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -1979,7 +1959,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="scenaryTitle1" pref="32" max="32767" attributes="0"/>
+                              <Component id="scenaryTitle1" max="32767" attributes="0"/>
                               <Component id="scenaryLimit1" alignment="0" max="32767" attributes="0"/>
                               <Component id="scenaryDrive" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -2068,7 +2048,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="animationDrive" pref="32" max="32767" attributes="0"/>
+                              <Component id="animationDrive" max="32767" attributes="0"/>
                               <Component id="animationsTitle1" max="32767" attributes="0"/>
                               <Component id="animationsLimit1" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -2157,7 +2137,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="dubbingDrive" pref="32" max="32767" attributes="0"/>
+                              <Component id="dubbingDrive" max="32767" attributes="0"/>
                               <Component id="dubbingTitle1" max="32767" attributes="0"/>
                               <Component id="dubbingLimit1" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -2247,7 +2227,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="plotTwistDrive" pref="32" max="32767" attributes="0"/>
+                              <Component id="plotTwistDrive" max="32767" attributes="0"/>
                               <Component id="plotTwistTitle1" max="32767" attributes="0"/>
                               <Component id="plotTwistLimit1" alignment="0" max="32767" attributes="0"/>
                           </Group>

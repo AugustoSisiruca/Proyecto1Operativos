@@ -107,7 +107,7 @@ public class Nickelodeon extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         initializeValues();
-        cartoonPlayMusic("/GUI/Assets/nickelodeonTheme.wav");
+       // cartoonPlayMusic("/GUI/Assets/nickelodeonTheme.wav");
 
 
         this.decreaseBtn[0] = decreaseScripts;
@@ -2505,7 +2505,6 @@ public class Nickelodeon extends javax.swing.JFrame {
     private void decreaseScenaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseScenaryMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(1)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.scenaryValue.setText(decreaseQuantity(this.scenaryValue.getText(), decreaseScenary));
             helper.deleteWorker(0, 1);
         }
@@ -2523,7 +2522,6 @@ public class Nickelodeon extends javax.swing.JFrame {
     private void decreaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseAnimationMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.animationValues.setText(decreaseQuantity(this.animationValues.getText(), decreaseAnimation));
             helper.deleteWorker(0, 2);
         }
@@ -2537,7 +2535,6 @@ public class Nickelodeon extends javax.swing.JFrame {
     private void increaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseAnimationMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(2)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.animationValues.setText(increaseQuantity(this.animationValues.getText(), increaseAnimation));
             helper.addWorker(0, 2);
         }
@@ -2551,7 +2548,6 @@ public class Nickelodeon extends javax.swing.JFrame {
     private void decreaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseDubbingMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.dubbingValues.setText(decreaseQuantity(this.dubbingValues.getText(), decreaseDubbing));
             helper.deleteWorker(0, 3);
         }
@@ -2569,7 +2565,6 @@ public class Nickelodeon extends javax.swing.JFrame {
     private void increaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseDubbingMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(3)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.dubbingValues.setText(increaseQuantity(this.dubbingValues.getText(), increaseDubbing));
             helper.addWorker(0, 3);
         }
@@ -2583,7 +2578,6 @@ public class Nickelodeon extends javax.swing.JFrame {
     private void increasePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increasePlotTwistMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.plotTwistValues.setText(increaseQuantity(this.plotTwistValues.getText(), increasePlotTwist));
             helper.addWorker(0, 4);
         }
@@ -2601,7 +2595,6 @@ public class Nickelodeon extends javax.swing.JFrame {
     private void decreacePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreacePlotTwistMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(4)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.plotTwistValues.setText(decreaseQuantity(this.plotTwistValues.getText(), decreacePlotTwist));
             helper.deleteWorker(0, 4);
         }
@@ -2615,7 +2608,6 @@ public class Nickelodeon extends javax.swing.JFrame {
     private void increaseAssemblerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseAssemblerMouseClicked
         // TODO add your handling code here:
         if (canIncreaseQuantity(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.assemblerValues.setText(increaseQuantity(this.assemblerValues.getText(), increaseAssembler));
             helper.addWorker(0, 5);
         }
@@ -2633,7 +2625,6 @@ public class Nickelodeon extends javax.swing.JFrame {
     private void decreaceAssemblerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaceAssemblerMouseClicked
         // TODO add your handling code here:
         if (canDecreaseQuantity(5)) {
-            cartoonPlayMusic("/GUI/Assets/cartoonClick.wav");
             this.assemblerValues.setText(decreaseQuantity(this.assemblerValues.getText(), decreaceAssembler));
             helper.deleteWorker(0, 5);
         }
