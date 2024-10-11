@@ -8,12 +8,12 @@ package GUI;
  *
  * @author sisir
  */
-public class MenuHP extends javax.swing.JFrame {
+public class MenuDell extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuHP
      */
-    public MenuHP() {
+    public MenuDell() {
         initComponents();
     }
 
@@ -501,13 +501,13 @@ public class MenuHP extends javax.swing.JFrame {
 
         jPanel1.add(panelDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 230, 130));
 
-        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/logo-HP_1.png"))); // NOI18N
-        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 0, 200, 140));
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/logo_Dell_1.png"))); // NOI18N
+        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 230, 90));
 
         Titulo.setFont(new java.awt.Font("Stencil", 0, 65)); // NOI18N
         Titulo.setForeground(new java.awt.Color(255, 255, 255));
         Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Titulo.setText("PANEL HP");
+        Titulo.setText("PANEL DEll");
         jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 500, 70));
 
         volverMenu.setBackground(new java.awt.Color(0, 0, 255));
@@ -818,7 +818,7 @@ public class MenuHP extends javax.swing.JFrame {
         });
 
         maximoTrabajador.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        maximoTrabajador.setText("14");
+        maximoTrabajador.setText("13");
         maximoTrabajador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 maximoTrabajadorActionPerformed(evt);
@@ -1634,20 +1634,21 @@ public class MenuHP extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuHP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDell.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuHP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDell.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuHP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDell.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuHP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuDell.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuHP().setVisible(true);
+                new MenuDell().setVisible(true);
             }
         });
     }

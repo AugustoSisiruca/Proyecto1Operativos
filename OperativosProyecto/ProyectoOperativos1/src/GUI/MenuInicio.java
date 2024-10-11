@@ -4,17 +4,29 @@
  */
 package GUI;
 
+import java.awt.Point;
+import proyecto.operativosproyecto.App;
+
+
 /**
  *
  * @author sisir
  */
 public class MenuInicio extends javax.swing.JFrame {
+    
+    private Point initialClick;
+    private final App app = App.getInstance();
 
     /**
      * Creates new form Menu
      */
     public MenuInicio() {
         initComponents();
+        // Centra la ventana
+        this.setLocationRelativeTo(null);
+        // Evita que el usuario cambie el tamaño
+        this.setResizable(false);
+
     }
 
     /**
@@ -27,100 +39,128 @@ public class MenuInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
+        Salir = new javax.swing.JButton();
+        simulacion = new javax.swing.JButton();
+        companiaHP = new javax.swing.JButton();
+        companiaDell = new javax.swing.JButton();
+        modificar = new javax.swing.JButton();
+        guardar = new javax.swing.JButton();
+        Titulo = new javax.swing.JLabel();
+        ParteInteractiva = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/logo_Dell_1.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 15, 220, 130));
-
-        jLabel2.setFont(new java.awt.Font("Stencil", 0, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("MENÚ DE INICIO");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 420, 90));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/logo-HP_1.png"))); // NOI18N
-        jLabel3.setText("jLabel1");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(644, 10, 240, 140));
-
-        jButton1.setBackground(new java.awt.Color(0, 0, 102));
-        jButton1.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("INICIO");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Salir.setBackground(new java.awt.Color(0, 0, 153));
+        Salir.setForeground(new java.awt.Color(255, 255, 255));
+        Salir.setText("SALIR");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SalirActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, 260, 60));
+        jPanel1.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, -1, -1));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 102));
-        jButton4.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("HP");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        simulacion.setBackground(new java.awt.Color(0, 0, 102));
+        simulacion.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
+        simulacion.setForeground(new java.awt.Color(255, 255, 255));
+        simulacion.setText("SIMULACION");
+        simulacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                simulacionActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 260, 60));
+        jPanel1.add(simulacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, 260, 60));
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 102));
-        jButton5.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("DELL");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        companiaHP.setBackground(new java.awt.Color(0, 0, 102));
+        companiaHP.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
+        companiaHP.setForeground(new java.awt.Color(255, 255, 255));
+        companiaHP.setText("HP");
+        companiaHP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                companiaHPActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, 260, 60));
+        jPanel1.add(companiaHP, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 260, 60));
 
-        jButton6.setBackground(new java.awt.Color(0, 0, 102));
-        jButton6.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("GUARDAR");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        companiaDell.setBackground(new java.awt.Color(0, 0, 102));
+        companiaDell.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
+        companiaDell.setForeground(new java.awt.Color(255, 255, 255));
+        companiaDell.setText("DELL");
+        companiaDell.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                companiaDellActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 420, 260, 60));
+        jPanel1.add(companiaDell, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, 260, 60));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+        modificar.setBackground(new java.awt.Color(0, 0, 102));
+        modificar.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
+        modificar.setForeground(new java.awt.Color(255, 255, 255));
+        modificar.setText("MODIFICAR");
+        modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, 260, 60));
+
+        guardar.setBackground(new java.awt.Color(0, 0, 102));
+        guardar.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
+        guardar.setForeground(new java.awt.Color(255, 255, 255));
+        guardar.setText("GUARDAR");
+        guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, 260, 60));
+
+        Titulo.setFont(new java.awt.Font("Stencil", 0, 65)); // NOI18N
+        Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Titulo.setText("MENÚ DE INICIO");
+        jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 500, 90));
+
+        ParteInteractiva.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel5.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel5.setText("¡Bienvenido a la simulacion para comparar el rendimiento");
+
+        jLabel7.setFont(new java.awt.Font("Cascadia Mono", 1, 16)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel7.setText("de la compañía HP  con el de una compañía rival Dell!");
+
+        javax.swing.GroupLayout ParteInteractivaLayout = new javax.swing.GroupLayout(ParteInteractiva);
+        ParteInteractiva.setLayout(ParteInteractivaLayout);
+        ParteInteractivaLayout.setHorizontalGroup(
+            ParteInteractivaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ParteInteractivaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(ParteInteractivaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(148, 148, 148))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
+        ParteInteractivaLayout.setVerticalGroup(
+            ParteInteractivaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ParteInteractivaLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(243, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 600, 320));
+        jPanel1.add(ParteInteractiva, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 580, 320));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/fondoPantalla.jpg"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-150, -400, 1050, 900));
-
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 500));
-
-        jButton2.setText("jButton2");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,21 +176,39 @@ public class MenuInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        MenuParametros v3 = new MenuParametros();
+        v3.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_modificarActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void companiaHPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_companiaHPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        MenuHP v2 = new MenuHP();
+        v2.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_companiaHPActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void simulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simulacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_simulacionActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_guardarActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_SalirActionPerformed
+
+    private void companiaDellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_companiaDellActionPerformed
+        // TODO add your handling code here:
+        MenuDell v1 = new MenuDell();
+        v1.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_companiaDellActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,20 +247,17 @@ public class MenuInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel ParteInteractiva;
+    private javax.swing.JButton Salir;
+    private javax.swing.JLabel Titulo;
+    private javax.swing.JButton companiaDell;
+    private javax.swing.JButton companiaHP;
+    private javax.swing.JButton guardar;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JButton modificar;
+    private javax.swing.JButton simulacion;
     // End of variables declaration//GEN-END:variables
 }

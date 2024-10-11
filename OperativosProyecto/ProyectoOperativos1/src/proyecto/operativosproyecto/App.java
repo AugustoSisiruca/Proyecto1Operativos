@@ -9,10 +9,10 @@ package proyecto.operativosproyecto;
  * @author sisir
  */
 import GUI.MenuInicio;
-import Funciones.FileFunctions;
+import proyectooperativos1.Funciones.FileFunctions;
 import java.io.File;
-
-
+import proyecto.operativosproyecto.funcionesaux;
+import proyecto.operativosproyecto.Company;
 public class App {
 
     // File params
@@ -27,7 +27,7 @@ public class App {
     // General variables
     private Company dell;
     private Company hp;
-  
+    //private static ChartManager chartManager;
 
     private static App app;
 
@@ -46,10 +46,13 @@ public class App {
     public void start() {
         
         
-        
+        funcionesaux.loadParams();
         // Inicia la simulación
-        //getDell().start();
-        //getHP().start();
+        getDell().start();
+        getHP().start();
+       // chartManager = new ChartManager();
+        MenuInicio home = new MenuInicio();
+        home.setVisible(true);
     }
 
     /**
