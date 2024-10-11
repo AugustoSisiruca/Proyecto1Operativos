@@ -26,13 +26,13 @@ import javax.swing.UIManager;
  *
  * @author Erika A. Hernández Z.
  */
-public class Nickelodeon extends javax.swing.JFrame {
+public class Dell extends javax.swing.JFrame {
 
     private Point initialClick;
     private final App app = App.getInstance();
     private int maxEmployees;
     private int actualEmployees;
-    private static Nickelodeon nickelodeon;
+    private static Dell dell;
     private funcionesaux helper = new funcionesaux();
     private FileFunctions filefunctions = new FileFunctions();
     private File selectedFile = app.getSelectedFile();
@@ -83,14 +83,14 @@ public class Nickelodeon extends javax.swing.JFrame {
         values[5] = countNonNullEmployees(this.app.getDell().getAssemblers());
     }
 
-    public static synchronized Nickelodeon getInstance() {
-        if (nickelodeon == null) {
-            nickelodeon = new Nickelodeon();
+    public static synchronized Dell getInstance() {
+        if (dell == null) {
+            dell = new Dell();
         }
-        return nickelodeon;
+        return dell;
     }
 
-    public Nickelodeon() {
+    public Dell() {
         try {
             // Código para el Look and Feel
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -166,25 +166,25 @@ public class Nickelodeon extends javax.swing.JFrame {
                                 directorStatus.setText(app.getDell().getDirectorInstance().getStatus());
 
                                 totalChapters.setText(
-                                        String.valueOf(app.getDell().getNumChapters()));
+                                        String.valueOf(app.getDell().getNumPC()));
                                 standardChapters.setText(
                                         String.valueOf(app.getDell().getNumNormalChapters()));
 
                                 plotTwistChapters.setText(
-                                        String.valueOf(app.getDell().getNumChaptersWithPlotTwist()));
+                                        String.valueOf(app.getDell().getNumPCWithGPU()));
 
                                 standardChaptes2.setText(
-                                        String.valueOf(app.getDell().getActualNumNormalChapters())
+                                        String.valueOf(app.getDell().getActualNumNormalPC())
                                 );
                                 plotTwistChapters2.setText(
-                                        String.valueOf(app.getDell().getActualNumChaptersWithPlotTwist())
+                                        String.valueOf(app.getDell().getActualNumGPUPC())
                                 );
 
                                 standardChaptes1.setText(
-                                        String.valueOf(app.getDell().getLastNumNormalChapters())
+                                        String.valueOf(app.getDell().getLastNumNormalPC())
                                 );
                                 plotTwistChapters1.setText(
-                                        String.valueOf(app.getDell().getLastNumChaptersWithPlotTwist())
+                                        String.valueOf(app.getDell().getLastNumGPUPC())
                                 );
 
                                 profit.setText(formatNumberAsK((int) app.getDell().getEarning() -  (int) app.getDell().getTotalCost()));
@@ -2406,14 +2406,14 @@ public class Nickelodeon extends javax.swing.JFrame {
 
     private void btn_nueva_rutaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_nueva_rutaMouseClicked
         // TODO add your handling code here:
-        CartoonNetwork v3 = new CartoonNetwork();
+        HP v3 = new HP();
         v3.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_nueva_rutaMouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-        CartoonNetwork v3 = new CartoonNetwork();
+        HP v3 = new HP();
         v3.setVisible(true);
         this.dispose();
 
@@ -2786,14 +2786,18 @@ public class Nickelodeon extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Nickelodeon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Dell.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Nickelodeon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Dell.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Nickelodeon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Dell.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Nickelodeon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Dell.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -2802,7 +2806,7 @@ public class Nickelodeon extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Nickelodeon().setVisible(true);
+                new Dell().setVisible(true);
             }
         });
     }

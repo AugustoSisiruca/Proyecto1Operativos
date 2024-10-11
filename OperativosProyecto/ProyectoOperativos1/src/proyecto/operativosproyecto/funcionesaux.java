@@ -27,13 +27,13 @@ public class funcionesaux {
         }
 
         App app = App.getInstance();
-        app.setDell(funcionesaux.createTelevisionNetwork(0));
-        app.setHP(funcionesaux.createTelevisionNetwork(1));
+        app.setDell(funcionesaux.createCompany(0));
+        app.setHP(funcionesaux.createCompany(1));
 
     }
 
     // NOTE - 0 para dell y 1 para hp
-    public static Company createTelevisionNetwork(int company) {
+    public static Company createCompany(int company) {
         String fileData = FileFunctions.read(App.getSelectedFile());
 
         // Se obtiene los datos del TXT
@@ -190,8 +190,8 @@ public class funcionesaux {
 
     public static void calculateTotalEarnings(int company) {
         Company tv = getCompany(company);
-        float earning = (tv.getNumNormalChapters() * constantes.profitPerChapter[company][0])
-                + (tv.getNumChaptersWithPlotTwist() * constantes.profitPerChapter[company][1]);
+        float earning = (tv.getNumNormalChapters() * constantes.profitPerPc[company][0])
+                + (tv.getNumPCWithGPU() * constantes.profitPerPc[company][1]);
         tv.setEarning(earning);
     }
 

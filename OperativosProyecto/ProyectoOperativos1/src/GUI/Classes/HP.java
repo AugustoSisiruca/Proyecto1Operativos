@@ -26,13 +26,13 @@ import javax.swing.UIManager;
  *
  * @author Erika A. Hernández Z.
  */
-public class CartoonNetwork extends javax.swing.JFrame {
+public class HP extends javax.swing.JFrame {
 
     private Point initialClick;
     private final App app = App.getInstance();
     private int maxEmployees;
     private int actualEmployees;
-    private static CartoonNetwork cartoonNetwork;
+    private static HP hp;
     private funcionesaux helper = new funcionesaux();
     private FileFunctions filefunctions = new FileFunctions();
     private File selectedFile = app.getSelectedFile();
@@ -83,14 +83,14 @@ public class CartoonNetwork extends javax.swing.JFrame {
         values[5] = countNonNullEmployees(this.app.getHP().getAssemblers());
     }
 
-    public static synchronized CartoonNetwork getInstance() {
-        if (cartoonNetwork == null) {
-            cartoonNetwork = new CartoonNetwork();
+    public static synchronized HP getInstance() {
+        if (hp == null) {
+            hp = new HP();
         }
-        return cartoonNetwork;
+        return hp;
     }
 
-    public CartoonNetwork() {
+    public HP() {
         try {
             // Código para el Look and Feel
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -168,25 +168,25 @@ public class CartoonNetwork extends javax.swing.JFrame {
                                 directorStatus.setText(app.getHP().getDirectorInstance().getStatus());
 
                                 totalChapters.setText(
-                                        String.valueOf(app.getHP().getNumChapters()));
+                                        String.valueOf(app.getHP().getNumPC()));
                                 standardChapters.setText(
                                         String.valueOf(app.getHP().getNumNormalChapters()));
 
                                 plotTwistChapters.setText(
-                                        String.valueOf(app.getHP().getNumChaptersWithPlotTwist()));
+                                        String.valueOf(app.getHP().getNumPCWithGPU()));
 
                                 standardChaptes2.setText(
-                                        String.valueOf(app.getHP().getActualNumNormalChapters())
+                                        String.valueOf(app.getHP().getActualNumNormalPC())
                                 );
                                 plotTwistChapters2.setText(
-                                        String.valueOf(app.getHP().getActualNumChaptersWithPlotTwist())
+                                        String.valueOf(app.getHP().getActualNumGPUPC())
                                 );
 
                                 standardChaptes1.setText(
-                                        String.valueOf(app.getHP().getLastNumNormalChapters())
+                                        String.valueOf(app.getHP().getLastNumNormalPC())
                                 );
                                 plotTwistChapters1.setText(
-                                        String.valueOf(app.getHP().getLastNumChaptersWithPlotTwist())
+                                        String.valueOf(app.getHP().getLastNumGPUPC())
                                 );
 
                                 profit.setText(formatNumberAsK((int) app.getHP().getEarning() -  (int) app.getHP().getTotalCost()));
@@ -2529,14 +2529,14 @@ public class CartoonNetwork extends javax.swing.JFrame {
 
     private void btn_cargar_guardarMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_cargar_guardarMouseClicked
         // TODO add your handling code here:
-        Nickelodeon v3 = new Nickelodeon();
+        Dell v3 = new Dell();
         v3.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_btn_cargar_guardarMouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
-        Nickelodeon v3 = new Nickelodeon();
+        Dell v3 = new Dell();
         v3.setVisible(true);
         this.setVisible(false);
 
@@ -2847,25 +2847,27 @@ public class CartoonNetwork extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CartoonNetwork.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(HP.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CartoonNetwork.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(HP.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CartoonNetwork.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(HP.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CartoonNetwork.class.getName()).log(java.util.logging.Level.SEVERE, null,
+            java.util.logging.Logger.getLogger(HP.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         }
+        // </editor-fold>
+        // </editor-fold>
         // </editor-fold>
         // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CartoonNetwork().setVisible(true);
+                new HP().setVisible(true);
             }
         });
     }

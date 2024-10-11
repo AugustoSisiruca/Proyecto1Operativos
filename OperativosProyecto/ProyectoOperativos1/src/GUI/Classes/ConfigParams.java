@@ -2035,14 +2035,14 @@ public class ConfigParams extends javax.swing.JFrame {
 
     private void btn_nuevo_almacenMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_nuevo_almacenMouseClicked
         // TODO add your handling code here:
-        Nickelodeon v3 = new Nickelodeon();
+        Dell v3 = new Dell();
         v3.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_btn_nuevo_almacenMouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel7MouseClicked
         // TODO add your handling code here:
-        Nickelodeon v3 = new Nickelodeon();
+        Dell v3 = new Dell();
         v3.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_jLabel7MouseClicked
@@ -2054,14 +2054,14 @@ public class ConfigParams extends javax.swing.JFrame {
 
     private void btn_nueva_rutaMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_nueva_rutaMouseClicked
         // TODO add your handling code here:
-        CartoonNetwork v2 = new CartoonNetwork();
+        HP v2 = new HP();
         v2.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_btn_nueva_rutaMouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-        CartoonNetwork v2 = new CartoonNetwork();
+        HP v2 = new HP();
         v2.setVisible(true);
         this.dispose();
     }// GEN-LAST:event_jLabel6MouseClicked

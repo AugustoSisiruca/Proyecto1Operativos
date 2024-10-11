@@ -14,7 +14,7 @@ public class Almacen {
 
     private int[] sections;
     private int[] maxCapacity;
-    private int standarChapters;
+    private int standarPC;
     private int plotTwistChapters;
 
     public Almacen(
@@ -95,15 +95,15 @@ public class Almacen {
     /**
      * @return the standarChapters
      */
-    public int getStandarChapters() {
-        return standarChapters;
+    public int getStandarPC() {
+        return standarPC;
     }
 
     /**
      * @param standarChapters the standarChapters to set
      */
-    public void setStandarChapters(int standarChapters) {
-        this.standarChapters = standarChapters;
+    public void setStandarPC(int standarChapters) {
+        this.standarPC = standarChapters;
     }
 
     /**
@@ -116,19 +116,19 @@ public class Almacen {
     /**
      * @param plotTwistChapters the plotTwistChapters to set
      */
-    public void setPlotTwistChapters(int plotTwistChapters) {
+    public void setGPUPC(int plotTwistChapters) {
         this.plotTwistChapters = plotTwistChapters;
     }
 
-    public void increaseStandarChapters() {
-        this.standarChapters++;
+    public void increaseStandarPC() {
+        this.standarPC++;
     }
 
-    public void increasePlotTwistChapters() {
+    public void increaseGPUPC() {
         this.plotTwistChapters++;
     }
 
-    public void resetChapters() {
+    public void resetPC() {
         this.getSections()[5] = 0;
     }
 

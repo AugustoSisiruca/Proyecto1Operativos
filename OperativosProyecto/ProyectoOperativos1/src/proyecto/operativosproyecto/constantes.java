@@ -46,14 +46,14 @@ public class constantes {
         {{1, 2}, {1, 2}, {3, 1}, {3, 1}, {1, 3}, {1, 2}}
     };
 
-    public final static int[][] chaptersComposition = {
+    public final static int[][] PcComposition = {
         {1, 5, 6, 5, 1},
         {1, 1, 2, 4, 3}
     };
 
-    public final static int[] plotTwistFreq = {3, 2};
+    public final static int[] GpuFreq = {3, 2};
 
-    public final static int[][] profitPerChapter = {
+    public final static int[][] profitPerPc = {
         {80000, 120000},
         {90000, 140000}
     };
