@@ -281,6 +281,8 @@ public class HP extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        Logo = new javax.swing.JLabel();
+        Titulo = new javax.swing.JLabel();
         SidePanel = new javax.swing.JPanel();
         btn_Inicio = new javax.swing.JPanel();
         icono1 = new javax.swing.JLabel();
@@ -300,16 +302,6 @@ public class HP extends javax.swing.JFrame {
         btn_cargar_guardar = new javax.swing.JPanel();
         icono7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        driveTitle4 = new javax.swing.JLabel();
-        plotTwistChapters = new javax.swing.JTextField();
-        standardChapters = new javax.swing.JTextField();
-        driveTitle5 = new javax.swing.JLabel();
-        driveTitle25 = new javax.swing.JLabel();
-        totalChapters = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         driveTitle6 = new javax.swing.JLabel();
         driveTitle8 = new javax.swing.JLabel();
@@ -319,8 +311,15 @@ public class HP extends javax.swing.JFrame {
         currentDeadline = new javax.swing.JTextField();
         driveTitle23 = new javax.swing.JLabel();
         totalDays = new javax.swing.JTextField();
-        Titulo = new javax.swing.JLabel();
-        Logo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        driveTitle4 = new javax.swing.JLabel();
+        plotTwistChapters = new javax.swing.JTextField();
+        standardChapters = new javax.swing.JTextField();
+        driveTitle5 = new javax.swing.JLabel();
+        driveTitle25 = new javax.swing.JLabel();
+        totalChapters = new javax.swing.JTextField();
         workersConfigurations = new javax.swing.JPanel();
         driveTitle1 = new javax.swing.JLabel();
         scripts = new javax.swing.JPanel();
@@ -427,6 +426,15 @@ public class HP extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1130, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/logo-HP_1.png"))); // NOI18N
+        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
+
+        Titulo.setFont(new java.awt.Font("Stencil", 0, 65)); // NOI18N
+        Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Titulo.setText("PANEL HP");
+        jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
         SidePanel.setBackground(new java.awt.Color(34, 46, 60));
         SidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -469,7 +477,7 @@ public class HP extends javax.swing.JFrame {
                 .addGap(0, 16, Short.MAX_VALUE))
         );
 
-        SidePanel.add(btn_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 330, 60));
+        SidePanel.add(btn_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 60));
 
         btn_nuevo_pedido.setBackground(new java.awt.Color(55, 71, 90));
         btn_nuevo_pedido.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -480,7 +488,7 @@ public class HP extends javax.swing.JFrame {
 
         dashboardLabel.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         dashboardLabel.setForeground(new java.awt.Color(255, 255, 255));
-        dashboardLabel.setText("Dashboard");
+        dashboardLabel.setText("Estadísticas");
         dashboardLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dashboardLabelMouseClicked(evt);
@@ -496,7 +504,7 @@ public class HP extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dashboardLabel)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         btn_nuevo_pedidoLayout.setVerticalGroup(
             btn_nuevo_pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -508,7 +516,7 @@ public class HP extends javax.swing.JFrame {
                 .addGap(0, 16, Short.MAX_VALUE))
         );
 
-        SidePanel.add(btn_nuevo_pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 330, 60));
+        SidePanel.add(btn_nuevo_pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 330, 60));
 
         btn_nueva_ruta.setBackground(new java.awt.Color(243, 168, 71));
         btn_nueva_ruta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -553,7 +561,7 @@ public class HP extends javax.swing.JFrame {
                 .addGap(0, 14, Short.MAX_VALUE))
         );
 
-        SidePanel.add(btn_nueva_ruta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 330, 60));
+        SidePanel.add(btn_nueva_ruta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 330, 60));
 
         config_btn.setBackground(new java.awt.Color(55, 71, 90));
         config_btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -604,7 +612,7 @@ public class HP extends javax.swing.JFrame {
                 .addGap(0, 7, Short.MAX_VALUE))
         );
 
-        SidePanel.add(config_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 330, 60));
+        SidePanel.add(config_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 330, 60));
 
         btn_reporte.setBackground(new java.awt.Color(55, 71, 90));
         btn_reporte.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -650,7 +658,7 @@ public class HP extends javax.swing.JFrame {
                 .addGap(0, 14, Short.MAX_VALUE))
         );
 
-        SidePanel.add(btn_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 330, 60));
+        SidePanel.add(btn_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 330, 60));
 
         btn_cargar_guardar.setBackground(new java.awt.Color(55, 71, 90));
         btn_cargar_guardar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -696,14 +704,135 @@ public class HP extends javax.swing.JFrame {
                 .addGap(0, 16, Short.MAX_VALUE))
         );
 
-        SidePanel.add(btn_cargar_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 330, 60));
+        SidePanel.add(btn_cargar_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 330, 60));
 
-        jSeparator1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        SidePanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 220, 26));
+        jPanel1.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 240, 460));
 
-        jPanel1.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 240, 490));
+        jPanel5.setBackground(new java.awt.Color(34, 46, 60));
+        jPanel5.setForeground(new java.awt.Color(51, 51, 51));
 
-        jPanel2.setBackground(new java.awt.Color(34, 46, 60));
+        driveTitle6.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        driveTitle6.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle6.setText("Días Restantes:");
+
+        driveTitle8.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        driveTitle8.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle8.setText("Días transcurridos:");
+
+        jTextField7.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField7.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField7.setText("0");
+        jTextField7.setEnabled(false);
+
+        jTextField8.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField8.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        jTextField8.setForeground(new java.awt.Color(51, 51, 51));
+        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField8.setText("0");
+        jTextField8.setEnabled(false);
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+
+        driveTitle19.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        driveTitle19.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle19.setText("Días para la entrega:");
+        driveTitle19.setFocusable(false);
+
+        currentDeadline.setEditable(false);
+        currentDeadline.setBackground(new java.awt.Color(34, 46, 60));
+        currentDeadline.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        currentDeadline.setForeground(new java.awt.Color(255, 255, 255));
+        currentDeadline.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        currentDeadline.setText("0");
+        currentDeadline.setBorder(null);
+        currentDeadline.setFocusable(false);
+        currentDeadline.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                currentDeadlineActionPerformed(evt);
+            }
+        });
+
+        driveTitle23.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        driveTitle23.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle23.setText("Días:");
+        driveTitle23.setFocusable(false);
+
+        totalDays.setEditable(false);
+        totalDays.setBackground(new java.awt.Color(34, 46, 60));
+        totalDays.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        totalDays.setForeground(new java.awt.Color(255, 255, 255));
+        totalDays.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        totalDays.setText("0");
+        totalDays.setBorder(null);
+        totalDays.setFocusable(false);
+        totalDays.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalDaysActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(driveTitle23, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(driveTitle19, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(driveTitle8)
+                            .addComponent(driveTitle6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(707, 707, 707))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(driveTitle23)
+                    .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(driveTitle19, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(driveTitle8)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(driveTitle6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 260, 180));
 
         jPanel4.setBackground(new java.awt.Color(246, 183, 102));
         jPanel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -727,6 +856,8 @@ public class HP extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 44, Short.MAX_VALUE)
         );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(34, 46, 60));
         jPanel3.setForeground(new java.awt.Color(51, 51, 51));
@@ -827,163 +958,7 @@ public class HP extends javax.swing.JFrame {
                     .addComponent(plotTwistChapters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        jPanel5.setBackground(new java.awt.Color(34, 46, 60));
-        jPanel5.setForeground(new java.awt.Color(51, 51, 51));
-
-        driveTitle6.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle6.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle6.setText("Días Restantes:");
-
-        driveTitle8.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle8.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle8.setText("Días transcurridos:");
-
-        jTextField7.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField7.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField7.setText("0");
-        jTextField7.setEnabled(false);
-
-        jTextField8.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField8.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField8.setText("0");
-        jTextField8.setEnabled(false);
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
-
-        driveTitle19.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle19.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle19.setText("Días para la entrega:");
-        driveTitle19.setFocusable(false);
-
-        currentDeadline.setEditable(false);
-        currentDeadline.setBackground(new java.awt.Color(34, 46, 60));
-        currentDeadline.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        currentDeadline.setForeground(new java.awt.Color(255, 255, 255));
-        currentDeadline.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        currentDeadline.setText("0");
-        currentDeadline.setBorder(null);
-        currentDeadline.setFocusable(false);
-        currentDeadline.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                currentDeadlineActionPerformed(evt);
-            }
-        });
-
-        driveTitle23.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle23.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle23.setText("Días:");
-        driveTitle23.setFocusable(false);
-
-        totalDays.setEditable(false);
-        totalDays.setBackground(new java.awt.Color(34, 46, 60));
-        totalDays.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        totalDays.setForeground(new java.awt.Color(255, 255, 255));
-        totalDays.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        totalDays.setText("0");
-        totalDays.setBorder(null);
-        totalDays.setFocusable(false);
-        totalDays.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                totalDaysActionPerformed(evt);
-            }
-        });
-
-        Titulo.setFont(new java.awt.Font("Stencil", 0, 65)); // NOI18N
-        Titulo.setForeground(new java.awt.Color(255, 255, 255));
-        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Titulo.setText("PANEL HP");
-
-        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/logo-HP_1.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(driveTitle23, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(driveTitle19, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(driveTitle8)
-                            .addComponent(driveTitle6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(19, 19, 19))))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(driveTitle23)
-                            .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(driveTitle19, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(125, 125, 125)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(driveTitle8)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(7, 7, 7)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(driveTitle6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 190));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 90, -1, -1));
 
         workersConfigurations.setBackground(new java.awt.Color(243, 168, 71));
 
@@ -997,7 +972,7 @@ public class HP extends javax.swing.JFrame {
 
         scriptsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scriptsTitle.setText("P. Placa Base");
+        scriptsTitle.setText("Programadores PB");
 
         increaseScripts.setBackground(new java.awt.Color(51, 51, 51));
         increaseScripts.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1048,7 +1023,7 @@ public class HP extends javax.swing.JFrame {
             scriptsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scriptsLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(scriptsTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                .addComponent(scriptsTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
                 .addGap(36, 36, 36)
                 .addComponent(decreaseScripts)
                 .addGap(18, 18, 18)
@@ -1072,7 +1047,7 @@ public class HP extends javax.swing.JFrame {
 
         scenaryTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scenaryTitle.setText("P. CPUs:");
+        scenaryTitle.setText("Programadores CPUs");
 
         scenaryValue.setBackground(java.awt.Color.lightGray);
         scenaryValue.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1150,7 +1125,7 @@ public class HP extends javax.swing.JFrame {
 
         animationsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle.setText("P. RAM:");
+        animationsTitle.setText("Programadores RAM");
 
         animationValues.setBackground(java.awt.Color.lightGray);
         animationValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1227,7 +1202,7 @@ public class HP extends javax.swing.JFrame {
 
         dubbingTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle.setText("P. Fuente A:");
+        dubbingTitle.setText("Programadores FA");
 
         decreaseDubbing.setBackground(new java.awt.Color(51, 51, 51));
         decreaseDubbing.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1304,7 +1279,7 @@ public class HP extends javax.swing.JFrame {
 
         plotTwistTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle.setText("P. Tarjeta Graf:");
+        plotTwistTitle.setText("Programadores GPU");
 
         increasePlotTwist.setBackground(new java.awt.Color(51, 51, 51));
         increasePlotTwist.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1430,9 +1405,9 @@ public class HP extends javax.swing.JFrame {
         plotTwist2Layout.setHorizontalGroup(
             plotTwist2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plotTwist2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(assemblerTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(decreaceAssembler)
                 .addGap(18, 18, 18)
                 .addComponent(assemblerValues, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1513,7 +1488,7 @@ public class HP extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        jPanel1.add(workersConfigurations, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 300, 510));
+        jPanel1.add(workersConfigurations, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 310, 510));
 
         drivePanel.setBackground(new java.awt.Color(243, 168, 71));
 
@@ -1533,7 +1508,7 @@ public class HP extends javax.swing.JFrame {
 
         scriptTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        scriptTitle1.setText("Placa Base:");
+        scriptTitle1.setText("Placa Base");
 
         scriptsLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsLimit1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1560,7 +1535,7 @@ public class HP extends javax.swing.JFrame {
             .addGroup(scripts1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(scriptTitle1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(scriptDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scriptsLimit1)
@@ -1571,7 +1546,7 @@ public class HP extends javax.swing.JFrame {
             .addGroup(scripts1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(scripts1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scriptDrive)
+                    .addComponent(scriptDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addComponent(scriptTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(scriptsLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1611,7 +1586,7 @@ public class HP extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addComponent(scenaryTitle1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scenaryDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                .addComponent(scenaryDrive)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scenaryLimit1)
                 .addGap(15, 15, 15))
@@ -1621,7 +1596,7 @@ public class HP extends javax.swing.JFrame {
             .addGroup(scenary1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(scenary1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scenaryTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(scenaryTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addComponent(scenaryLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(scenaryDrive))
                 .addContainerGap())
@@ -1660,7 +1635,7 @@ public class HP extends javax.swing.JFrame {
             .addGroup(animations1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(animationsTitle1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(animationDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(animationsLimit1)
@@ -1671,7 +1646,7 @@ public class HP extends javax.swing.JFrame {
             .addGroup(animations1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(animations1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(animationDrive)
+                    .addComponent(animationDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addComponent(animationsTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(animationsLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1683,7 +1658,7 @@ public class HP extends javax.swing.JFrame {
 
         dubbingTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle1.setText("Fuente A:");
+        dubbingTitle1.setText("Fuente Alimentación");
 
         dubbingLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingLimit1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1708,9 +1683,9 @@ public class HP extends javax.swing.JFrame {
         dubbing1Layout.setHorizontalGroup(
             dubbing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dubbing1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addComponent(dubbingTitle1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(dubbingDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dubbingLimit1)
@@ -1721,8 +1696,9 @@ public class HP extends javax.swing.JFrame {
             .addGroup(dubbing1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(dubbing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dubbingDrive)
-                    .addComponent(dubbingTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(dubbing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(dubbingDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                        .addComponent(dubbingTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(dubbingLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1739,7 +1715,7 @@ public class HP extends javax.swing.JFrame {
 
         plotTwistTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle1.setText("Tarjeta Graf:");
+        plotTwistTitle1.setText("Tarjeta Grafica");
 
         plotTwistDrive.setBackground(java.awt.Color.lightGray);
         plotTwistDrive.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1761,7 +1737,7 @@ public class HP extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plotTwist1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(plotTwistTitle1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(plotTwistDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(plotTwistLimit1)
@@ -1772,7 +1748,7 @@ public class HP extends javax.swing.JFrame {
             .addGroup(plotTwist1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(plotTwist1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(plotTwistDrive)
+                    .addComponent(plotTwistDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addComponent(plotTwistTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(plotTwistLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1789,7 +1765,7 @@ public class HP extends javax.swing.JFrame {
 
         assemblerTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         assemblerTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        assemblerTitle1.setText("Ensambladores:");
+        assemblerTitle1.setText("Ensambladores");
 
         assemblerDrive.setBackground(java.awt.Color.lightGray);
         assemblerDrive.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1812,7 +1788,7 @@ public class HP extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(assemblerTitle1)
                 .addGap(18, 18, 18)
-                .addComponent(assemblerDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                .addComponent(assemblerDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(plotTwistLimit3)
                 .addGap(14, 14, 14))
@@ -1840,12 +1816,12 @@ public class HP extends javax.swing.JFrame {
                             .addGroup(drivePanelLayout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addGroup(drivePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(dubbing1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                                    .addComponent(animations1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                                    .addComponent(scenary1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                                    .addComponent(scripts1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                                    .addComponent(plotTwist1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                                    .addComponent(plotTwist4, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)))
+                                    .addComponent(dubbing1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                                    .addComponent(animations1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                                    .addComponent(scenary1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                                    .addComponent(scripts1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                                    .addComponent(plotTwist1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                                    .addComponent(plotTwist4, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)))
                             .addGroup(drivePanelLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(driveTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2954,6 +2930,7 @@ public class HP extends javax.swing.JFrame {
     private javax.swing.JButton increasePlotTwist;
     private javax.swing.JButton increaseScenary;
     private javax.swing.JButton increaseScripts;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel4;
@@ -2962,7 +2939,6 @@ public class HP extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -2970,7 +2946,6 @@ public class HP extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JLabel maxCap;
