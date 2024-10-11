@@ -47,7 +47,7 @@ public class funcionesaux {
             Almacen drive = new Almacen(25, 20, 55, 35, 10);
             int projectManager = 1;
             int director = 1;
-            int maxEmployees = televisionNetworkValues[7];
+            int maxEmployees = televisionNetworkValues[8];
 
             // Se crean los empleados de cada sección
             for (int type = 0; type <= 5; type++) {

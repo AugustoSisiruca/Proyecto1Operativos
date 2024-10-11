@@ -286,6 +286,7 @@ public class ConfigParams extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        Titulo = new javax.swing.JLabel();
         SidePanel = new javax.swing.JPanel();
         btn_Inicio = new javax.swing.JPanel();
         icono1 = new javax.swing.JLabel();
@@ -303,13 +304,9 @@ public class ConfigParams extends javax.swing.JFrame {
         icono5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         btn_cargar_guardar = new javax.swing.JPanel();
         icono7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        driveTitle = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         scripts1 = new javax.swing.JPanel();
@@ -391,6 +388,7 @@ public class ConfigParams extends javax.swing.JFrame {
         driveTitle22 = new javax.swing.JLabel();
         driveTitle28 = new javax.swing.JLabel();
         maxCap1 = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -400,6 +398,12 @@ public class ConfigParams extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setPreferredSize(new java.awt.Dimension(1130, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Titulo.setFont(new java.awt.Font("Stencil", 0, 70)); // NOI18N
+        Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Titulo.setText("configuración DE HP Y DELL");
+        jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1050, 110));
 
         SidePanel.setBackground(new java.awt.Color(34, 46, 60));
         SidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -443,7 +447,7 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addGap(0, 16, Short.MAX_VALUE))
         );
 
-        SidePanel.add(btn_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 330, 60));
+        SidePanel.add(btn_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 60));
 
         btn_nuevo_pedido.setBackground(new java.awt.Color(55, 71, 90));
         btn_nuevo_pedido.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -454,7 +458,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Dashboard");
+        jLabel5.setText("Estadística");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -470,7 +474,7 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
         btn_nuevo_pedidoLayout.setVerticalGroup(
             btn_nuevo_pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,7 +486,7 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addGap(0, 14, Short.MAX_VALUE))
         );
 
-        SidePanel.add(btn_nuevo_pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 330, 60));
+        SidePanel.add(btn_nuevo_pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 330, 60));
 
         btn_nueva_ruta.setBackground(new java.awt.Color(55, 71, 90));
         btn_nueva_ruta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -500,7 +504,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Cartoon Network");
+        jLabel6.setText("HP");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel6MouseClicked(evt);
@@ -516,7 +520,7 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(icono3)
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(268, Short.MAX_VALUE))
         );
         btn_nueva_rutaLayout.setVerticalGroup(
             btn_nueva_rutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -528,7 +532,7 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addGap(0, 14, Short.MAX_VALUE))
         );
 
-        SidePanel.add(btn_nueva_ruta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 330, 60));
+        SidePanel.add(btn_nueva_ruta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 330, 60));
 
         btn_nuevo_almacen.setBackground(new java.awt.Color(55, 71, 90));
         btn_nuevo_almacen.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -546,7 +550,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Nickelodeon");
+        jLabel7.setText("Dell");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
@@ -562,7 +566,7 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(icono4)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(260, Short.MAX_VALUE))
         );
         btn_nuevo_almacenLayout.setVerticalGroup(
             btn_nuevo_almacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -576,7 +580,7 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addGap(0, 7, Short.MAX_VALUE))
         );
 
-        SidePanel.add(btn_nuevo_almacen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 330, 60));
+        SidePanel.add(btn_nuevo_almacen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 330, 60));
 
         btn_reporte.setBackground(new java.awt.Color(55, 71, 90));
         btn_reporte.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -622,17 +626,14 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addGap(0, 14, Short.MAX_VALUE))
         );
 
-        SidePanel.add(btn_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 330, 60));
+        SidePanel.add(btn_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 330, 60));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Unimet 2024 ®");
         SidePanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 690, -1, -1));
 
-        jSeparator1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        SidePanel.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 220, 26));
-
-        btn_cargar_guardar.setBackground(new java.awt.Color(243, 168, 71));
+        btn_cargar_guardar.setBackground(new java.awt.Color(204, 255, 255));
         btn_cargar_guardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_cargar_guardarMouseClicked(evt);
@@ -657,60 +658,9 @@ public class ConfigParams extends javax.swing.JFrame {
         });
         btn_cargar_guardar.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        SidePanel.add(btn_cargar_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 330, 60));
+        SidePanel.add(btn_cargar_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 330, 60));
 
-        jPanel1.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 740));
-
-        jPanel2.setBackground(new java.awt.Color(34, 46, 60));
-
-        jPanel4.setBackground(new java.awt.Color(246, 183, 102));
-        jPanel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel4MouseDragged(evt);
-            }
-        });
-        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel4MousePressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1130, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 44, Short.MAX_VALUE)
-        );
-
-        driveTitle.setFont(new java.awt.Font("Montserrat", 1, 48)); // NOI18N
-        driveTitle.setForeground(new java.awt.Color(255, 255, 255));
-        driveTitle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        driveTitle.setText("Configuracion de parámetros");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(driveTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 866, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(driveTitle)
-                .addContainerGap(36, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 160));
+        jPanel1.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 140, 240, 510));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -794,7 +744,6 @@ public class ConfigParams extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(34, 46, 60));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Assets/save_btn.png"))); // NOI18N
         jButton1.setText("Guardar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -864,7 +813,7 @@ public class ConfigParams extends javax.swing.JFrame {
             scripts3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scripts3Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(scriptsTitle3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(scriptsTitle3, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(decreaseDeadline)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -906,14 +855,14 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        workersConfigurations.setBackground(new java.awt.Color(243, 168, 71));
+        workersConfigurations.setBackground(new java.awt.Color(0, 0, 51));
 
         scripts.setBackground(java.awt.Color.lightGray);
         scripts.setForeground(new java.awt.Color(60, 63, 65));
 
         scriptsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scriptsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scriptsTitle.setText("Guionistas:");
+        scriptsTitle.setText("Productores PB:");
 
         increaseScripts.setBackground(new java.awt.Color(51, 51, 51));
         increaseScripts.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -987,7 +936,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         scenaryTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         scenaryTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scenaryTitle.setText("Escenarios:");
+        scenaryTitle.setText("Productores CPUs:");
 
         scenaryValue.setBackground(java.awt.Color.lightGray);
         scenaryValue.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1064,7 +1013,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         animationsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle.setText("Animador:");
+        animationsTitle.setText("Productores RAM:");
 
         animationValues.setBackground(java.awt.Color.lightGray);
         animationValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1140,7 +1089,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         dubbingTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         dubbingTitle.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle.setText("Doblaje:");
+        dubbingTitle.setText("Productores  FA:");
 
         decreaseDubbing.setBackground(new java.awt.Color(51, 51, 51));
         decreaseDubbing.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1216,7 +1165,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         plotTwistTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle.setText("PlotTwist:");
+        plotTwistTitle.setText("Productores de GPU:");
 
         increasePlotTwist.setBackground(new java.awt.Color(51, 51, 51));
         increasePlotTwist.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1341,9 +1290,9 @@ public class ConfigParams extends javax.swing.JFrame {
         plotTwist2Layout.setHorizontalGroup(
             plotTwist2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plotTwist2Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(assemblerTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(decreaceAssembler)
                 .addGap(18, 18, 18)
                 .addComponent(assemblerValues, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1364,12 +1313,12 @@ public class ConfigParams extends javax.swing.JFrame {
         );
 
         driveTitle21.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        driveTitle21.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle21.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle21.setText("Nickelodeon");
+        driveTitle21.setText("Trabajadores de Dell");
 
         driveTitle27.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle27.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle27.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         driveTitle27.setText("Máximo:");
 
@@ -1422,7 +1371,7 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        workersConfigurations1.setBackground(new java.awt.Color(243, 168, 71));
+        workersConfigurations1.setBackground(new java.awt.Color(0, 0, 51));
 
         scripts2.setBackground(java.awt.Color.lightGray);
         scripts2.setForeground(new java.awt.Color(60, 63, 65));
@@ -1580,7 +1529,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         animationsTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         animationsTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle1.setText("Animador:");
+        animationsTitle1.setText("Productores RAM:");
 
         animationValues1.setBackground(java.awt.Color.lightGray);
         animationValues1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
@@ -1732,7 +1681,7 @@ public class ConfigParams extends javax.swing.JFrame {
 
         plotTwistTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         plotTwistTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle1.setText("PlotTwist:");
+        plotTwistTitle1.setText("Productores de GPU:");
 
         increasePlotTwist1.setBackground(new java.awt.Color(51, 51, 51));
         increasePlotTwist1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1857,9 +1806,9 @@ public class ConfigParams extends javax.swing.JFrame {
         plotTwist3Layout.setHorizontalGroup(
             plotTwist3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plotTwist3Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(assemblerTitle1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(decreaceAssembler1)
                 .addGap(18, 18, 18)
                 .addComponent(assemblerValues1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1880,12 +1829,12 @@ public class ConfigParams extends javax.swing.JFrame {
         );
 
         driveTitle22.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        driveTitle22.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle22.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle22.setText("Cartoon Network");
+        driveTitle22.setText("Trabajadores de HP");
 
         driveTitle28.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle28.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle28.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         driveTitle28.setText("Máximo:");
 
@@ -1904,7 +1853,7 @@ public class ConfigParams extends javax.swing.JFrame {
                     .addGroup(workersConfigurations1Layout.createSequentialGroup()
                         .addComponent(driveTitle28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(maxCap1, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
+                        .addComponent(maxCap1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(plotTwist3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(plotTwist1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(dubbing1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1934,7 +1883,7 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addGroup(workersConfigurations1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(driveTitle28, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(maxCap1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -1957,10 +1906,14 @@ public class ConfigParams extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(workersConfigurations, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(workersConfigurations1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 890, 580));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 890, 580));
+
+        Fondo.setFont(new java.awt.Font("Centaur", 1, 12)); // NOI18N
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/fondoPantalla.jpg"))); // NOI18N
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 730));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1975,6 +1928,294 @@ public class ConfigParams extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void increaseDayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseDayMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseDayMouseClicked
+
+    private void increaseDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseDayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseDayActionPerformed
+
+    private void dayDurationValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayDurationValueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dayDurationValueActionPerformed
+
+    private void decreaseDayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseDayMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseDayMouseClicked
+
+    private void decreaseDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseDayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseDayActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void increaseDeadlineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseDeadlineMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseDeadlineMouseClicked
+
+    private void increaseDeadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseDeadlineActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseDeadlineActionPerformed
+
+    private void deadlineValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deadlineValueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deadlineValueActionPerformed
+
+    private void decreaseDeadlineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseDeadlineMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseDeadlineMouseClicked
+
+    private void decreaseDeadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseDeadlineActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseDeadlineActionPerformed
+
+    private void increaseScriptsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseScriptsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseScriptsMouseClicked
+
+    private void increaseScriptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseScriptsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseScriptsActionPerformed
+
+    private void scriptsValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scriptsValuesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_scriptsValuesActionPerformed
+
+    private void decreaseScriptsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseScriptsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseScriptsMouseClicked
+
+    private void decreaseScriptsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseScriptsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseScriptsActionPerformed
+
+    private void scenaryValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scenaryValueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_scenaryValueActionPerformed
+
+    private void increaseScenaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseScenaryMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseScenaryMouseClicked
+
+    private void increaseScenaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseScenaryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseScenaryActionPerformed
+
+    private void decreaseScenaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseScenaryMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseScenaryMouseClicked
+
+    private void decreaseScenaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseScenaryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseScenaryActionPerformed
+
+    private void animationValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_animationValuesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_animationValuesActionPerformed
+
+    private void decreaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseAnimationMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseAnimationMouseClicked
+
+    private void decreaseAnimationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseAnimationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseAnimationActionPerformed
+
+    private void increaseAnimationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseAnimationMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseAnimationMouseClicked
+
+    private void increaseAnimationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseAnimationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseAnimationActionPerformed
+
+    private void decreaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseDubbingMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseDubbingMouseClicked
+
+    private void decreaseDubbingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseDubbingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseDubbingActionPerformed
+
+    private void dubbingValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dubbingValuesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dubbingValuesActionPerformed
+
+    private void increaseDubbingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseDubbingMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseDubbingMouseClicked
+
+    private void increaseDubbingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseDubbingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseDubbingActionPerformed
+
+    private void increasePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increasePlotTwistMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increasePlotTwistMouseClicked
+
+    private void increasePlotTwistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increasePlotTwistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increasePlotTwistActionPerformed
+
+    private void plotTwistValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotTwistValuesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_plotTwistValuesActionPerformed
+
+    private void decreacePlotTwistMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreacePlotTwistMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreacePlotTwistMouseClicked
+
+    private void decreacePlotTwistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreacePlotTwistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreacePlotTwistActionPerformed
+
+    private void increaseAssemblerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseAssemblerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseAssemblerMouseClicked
+
+    private void increaseAssemblerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseAssemblerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseAssemblerActionPerformed
+
+    private void assemblerValuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assemblerValuesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_assemblerValuesActionPerformed
+
+    private void decreaceAssemblerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaceAssemblerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaceAssemblerMouseClicked
+
+    private void decreaceAssemblerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaceAssemblerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaceAssemblerActionPerformed
+
+    private void increaseScripts1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseScripts1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseScripts1MouseClicked
+
+    private void increaseScripts1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseScripts1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseScripts1ActionPerformed
+
+    private void scriptsValues1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scriptsValues1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_scriptsValues1ActionPerformed
+
+    private void decreaseScripts1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseScripts1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseScripts1MouseClicked
+
+    private void decreaseScripts1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseScripts1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseScripts1ActionPerformed
+
+    private void scenaryValue1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scenaryValue1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_scenaryValue1ActionPerformed
+
+    private void increaseScenary1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseScenary1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseScenary1MouseClicked
+
+    private void increaseScenary1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseScenary1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseScenary1ActionPerformed
+
+    private void decreaseScenary1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseScenary1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseScenary1MouseClicked
+
+    private void decreaseScenary1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseScenary1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseScenary1ActionPerformed
+
+    private void animationValues1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_animationValues1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_animationValues1ActionPerformed
+
+    private void decreaseAnimation1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseAnimation1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseAnimation1MouseClicked
+
+    private void decreaseAnimation1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseAnimation1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseAnimation1ActionPerformed
+
+    private void increaseAnimation1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseAnimation1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseAnimation1MouseClicked
+
+    private void increaseAnimation1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseAnimation1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseAnimation1ActionPerformed
+
+    private void decreaseDubbing1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseDubbing1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseDubbing1MouseClicked
+
+    private void decreaseDubbing1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseDubbing1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaseDubbing1ActionPerformed
+
+    private void dubbingValues1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dubbingValues1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dubbingValues1ActionPerformed
+
+    private void increaseDubbing1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseDubbing1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseDubbing1MouseClicked
+
+    private void increaseDubbing1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseDubbing1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseDubbing1ActionPerformed
+
+    private void increasePlotTwist1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increasePlotTwist1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increasePlotTwist1MouseClicked
+
+    private void increasePlotTwist1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increasePlotTwist1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increasePlotTwist1ActionPerformed
+
+    private void plotTwistValues1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotTwistValues1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_plotTwistValues1ActionPerformed
+
+    private void decreacePlotTwist1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreacePlotTwist1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreacePlotTwist1MouseClicked
+
+    private void decreacePlotTwist1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreacePlotTwist1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreacePlotTwist1ActionPerformed
+
+    private void increaseAssembler1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseAssembler1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseAssembler1MouseClicked
+
+    private void increaseAssembler1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseAssembler1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_increaseAssembler1ActionPerformed
+
+    private void assemblerValues1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assemblerValues1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_assemblerValues1ActionPerformed
+
+    private void decreaceAssembler1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaceAssembler1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaceAssembler1MouseClicked
+
+    private void decreaceAssembler1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaceAssembler1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_decreaceAssembler1ActionPerformed
 
     private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jPanel4MousePressed
         // TODO add your handling code here:
@@ -2705,7 +2946,9 @@ public class ConfigParams extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
     private javax.swing.JPanel SidePanel;
+    private javax.swing.JLabel Titulo;
     private javax.swing.JTextField animationValues;
     private javax.swing.JTextField animationValues1;
     private javax.swing.JPanel animations;
@@ -2738,7 +2981,6 @@ public class ConfigParams extends javax.swing.JFrame {
     private javax.swing.JButton decreaseScenary1;
     private javax.swing.JButton decreaseScripts;
     private javax.swing.JButton decreaseScripts1;
-    private javax.swing.JLabel driveTitle;
     private javax.swing.JLabel driveTitle21;
     private javax.swing.JLabel driveTitle22;
     private javax.swing.JLabel driveTitle27;
@@ -2778,11 +3020,8 @@ public class ConfigParams extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel maxCap;
     private javax.swing.JLabel maxCap1;
     private javax.swing.JPanel plotTwist;
