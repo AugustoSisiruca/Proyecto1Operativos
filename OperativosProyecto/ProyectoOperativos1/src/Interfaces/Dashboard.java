@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package GUI.Classes;
+package Interfaces;
 
 import proyecto.operativosproyecto.App;
 import java.awt.Point;
@@ -29,7 +29,7 @@ import org.jfree.chart.plot.PlotOrientation;
 
 /**
  *
- * @author Erika Hernández
+ * @author sisir
  */
 public class Dashboard extends javax.swing.JFrame {
 

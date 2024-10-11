@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package GUI.Classes;
+package Interfaces;
 
 import Funciones.FileFunctions;
 import proyecto.operativosproyecto.funcionesaux;
@@ -24,7 +24,7 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author Erika A. Hernández Z.
+ * @author sisir
  */
 public class ConfigParams extends javax.swing.JFrame {
 

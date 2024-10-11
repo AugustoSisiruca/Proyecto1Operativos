@@ -602,7 +602,6 @@
                                   <Component id="currentDeadline" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="driveTitle19" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -619,9 +618,9 @@
                                   <Component id="driveTitle4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="plotTwistChapters" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

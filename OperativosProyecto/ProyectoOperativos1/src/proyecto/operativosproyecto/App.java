@@ -8,9 +8,9 @@ package proyecto.operativosproyecto;
  *
  * @author sisir
  */
-import GUI.Classes.MenuPrincipal;
+import Interfaces.MenuPrincipal;
 import Funciones.FileFunctions;
-import GUI.Classes.ChartManager;
+import Interfaces.ChartManager;
 import java.io.File;
 import proyecto.operativosproyecto.funcionesaux;
 import proyecto.operativosproyecto.Company;
