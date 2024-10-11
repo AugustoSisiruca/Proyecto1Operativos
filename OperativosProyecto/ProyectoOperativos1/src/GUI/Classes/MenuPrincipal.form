@@ -28,7 +28,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="1269" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -72,10 +72,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btn_Inicio" max="32767" attributes="0"/>
-                          <Component id="btn_nuevo_pedido" max="32767" attributes="0"/>
-                          <Component id="btn_nuevo_almacen" max="32767" attributes="0"/>
-                          <Component id="btn_reporte" max="32767" attributes="0"/>
+                          <Component id="btn_Inicio" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btn_nuevo_pedido" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btn_nuevo_almacen" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btn_reporte" alignment="0" max="32767" attributes="0"/>
                           <Component id="btn_cargar_guardar" alignment="0" max="32767" attributes="0"/>
                           <Component id="btn_nueva_ruta" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -523,14 +523,14 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel12" min="-2" pref="748" max="-2" attributes="0"/>
-                          <Component id="jLabel14" min="-2" pref="748" max="-2" attributes="0"/>
-                          <Component id="jLabel11" min="-2" pref="748" max="-2" attributes="0"/>
-                          <Component id="jLabel9" min="-2" pref="748" max="-2" attributes="0"/>
-                          <Component id="jLabel3" linkSize="1" min="-2" pref="748" max="-2" attributes="0"/>
-                          <Component id="jLabel2" linkSize="1" min="-2" pref="748" max="-2" attributes="0"/>
-                          <Component id="jLabel15" min="-2" pref="748" max="-2" attributes="0"/>
-                          <Component id="jLabel16" min="-2" pref="748" max="-2" attributes="0"/>
+                          <Component id="jLabel12" alignment="0" min="-2" pref="748" max="-2" attributes="0"/>
+                          <Component id="jLabel14" alignment="0" min="-2" pref="748" max="-2" attributes="0"/>
+                          <Component id="jLabel11" alignment="0" min="-2" pref="748" max="-2" attributes="0"/>
+                          <Component id="jLabel9" alignment="0" min="-2" pref="748" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="0" min="-2" pref="748" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="0" min="-2" pref="748" max="-2" attributes="0"/>
+                          <Component id="jLabel15" alignment="0" min="-2" pref="748" max="-2" attributes="0"/>
+                          <Component id="jLabel16" alignment="0" min="-2" pref="748" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="28" max="32767" attributes="0"/>
                   </Group>

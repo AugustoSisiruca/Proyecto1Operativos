@@ -8,7 +8,7 @@ package proyecto.operativosproyecto;
  *
  * @author sisir
  */
-import GUI.Classes.Home;
+import GUI.Classes.MenuPrincipal;
 import Funciones.FileFunctions;
 import GUI.Classes.ChartManager;
 import java.io.File;
@@ -52,7 +52,7 @@ public class App {
         getDell().start();
         getHP().start();
        chartManager = new ChartManager();
-        Home home = new Home();
+        MenuPrincipal home = new MenuPrincipal();
         home.setVisible(true);
     }
 
