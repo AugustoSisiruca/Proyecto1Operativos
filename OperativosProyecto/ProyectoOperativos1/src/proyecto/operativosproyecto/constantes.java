@@ -36,25 +36,25 @@ public class constantes {
         60
     };
 
-    // ANCHOR - El primer array es de Nickelodeon y el segundo de Cartoon Network
+    // ANCHOR - El primer array es de Dell y el segundo de HP
     // FIXME - Revisar los tiempos de producción (El carnet)
-    // NOTE - Estoy asumiendo que Nickelodeon es con el carnet mio (ultimo digito =
-    // 3). El primer numero es la cantidad de trabajo que termina y el segundo es
+    // NOTE - Estoy asumiendo que Dell es con el carnet mio (ultimo digito =
+    // 1). El primer numero es la cantidad de trabajo que termina y el segundo es
     // cuantos dia le toma en terminarlo
     public final static int[][][] productionTimes = {
-        {{1, 3}, {1, 3}, {2, 1}, {3, 1}, {1, 3}, {1, 2}},
-        {{1, 4}, {1, 4}, {1, 1}, {5, 1}, {1, 2}, {1, 2}}
+        {{1, 2}, {1, 2}, {3, 1}, {3, 1}, {1, 3}, {1, 2}},
+        {{1, 2}, {1, 2}, {3, 1}, {3, 1}, {1, 3}, {1, 2}}
     };
 
     public final static int[][] chaptersComposition = {
-        {2, 1, 4, 4, 2},
-        {1, 2, 6, 5, 1}
+        {1, 5, 6, 5, 1},
+        {1, 1, 2, 4, 3}
     };
 
-    public final static int[] plotTwistFreq = {5, 3};
+    public final static int[] plotTwistFreq = {3, 2};
 
     public final static int[][] profitPerChapter = {
-        {450000, 500000},
-        {300000, 650000}
+        {80000, 120000},
+        {90000, 140000}
     };
 }
