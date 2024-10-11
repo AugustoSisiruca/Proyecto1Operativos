@@ -303,23 +303,19 @@ public class HP extends javax.swing.JFrame {
         icono7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        driveTitle6 = new javax.swing.JLabel();
-        driveTitle8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
         driveTitle19 = new javax.swing.JLabel();
         currentDeadline = new javax.swing.JTextField();
         driveTitle23 = new javax.swing.JLabel();
         totalDays = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        tituloAlmacen = new javax.swing.JLabel();
         driveTitle4 = new javax.swing.JLabel();
         plotTwistChapters = new javax.swing.JTextField();
         standardChapters = new javax.swing.JTextField();
         driveTitle5 = new javax.swing.JLabel();
         driveTitle25 = new javax.swing.JLabel();
         totalChapters = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
         workersConfigurations = new javax.swing.JPanel();
         driveTitle1 = new javax.swing.JLabel();
         scripts = new javax.swing.JPanel();
@@ -402,7 +398,6 @@ public class HP extends javax.swing.JFrame {
         strikeCounter = new javax.swing.JTextField();
         cashPenality = new javax.swing.JTextField();
         driveTitle15 = new javax.swing.JLabel();
-        driveTitle = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         driveTitle7 = new javax.swing.JLabel();
         plotTwistChapters1 = new javax.swing.JTextField();
@@ -415,7 +410,16 @@ public class HP extends javax.swing.JFrame {
         plotTwistChapters2 = new javax.swing.JTextField();
         standardChaptes2 = new javax.swing.JTextField();
         driveTitle24 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
         driveTitle26 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
+        driveTitle = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        driveTitle8 = new javax.swing.JLabel();
+        driveTitle6 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -427,18 +431,18 @@ public class HP extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/logo-HP_1.png"))); // NOI18N
-        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
+        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
 
-        Titulo.setFont(new java.awt.Font("Stencil", 0, 65)); // NOI18N
+        Titulo.setFont(new java.awt.Font("Stencil", 0, 70)); // NOI18N
         Titulo.setForeground(new java.awt.Color(255, 255, 255));
         Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titulo.setText("PANEL HP");
-        jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
         SidePanel.setBackground(new java.awt.Color(34, 46, 60));
         SidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_Inicio.setBackground(new java.awt.Color(55, 71, 90));
+        btn_Inicio.setBackground(new java.awt.Color(0, 0, 51));
         btn_Inicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_InicioMouseClicked(evt);
@@ -447,8 +451,10 @@ public class HP extends javax.swing.JFrame {
 
         icono1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Inicio");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -462,32 +468,34 @@ public class HP extends javax.swing.JFrame {
             btn_InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_InicioLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(icono1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                .addGap(18, 18, 18))
+                .addGroup(btn_InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(icono1))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         btn_InicioLayout.setVerticalGroup(
             btn_InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_InicioLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(btn_InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(icono1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 16, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(icono1, javax.swing.GroupLayout.DEFAULT_SIZE, 4, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         SidePanel.add(btn_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 60));
 
-        btn_nuevo_pedido.setBackground(new java.awt.Color(55, 71, 90));
+        btn_nuevo_pedido.setBackground(new java.awt.Color(0, 0, 51));
         btn_nuevo_pedido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_nuevo_pedidoMouseClicked(evt);
             }
         });
 
-        dashboardLabel.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        dashboardLabel.setBackground(new java.awt.Color(255, 255, 255));
+        dashboardLabel.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         dashboardLabel.setForeground(new java.awt.Color(255, 255, 255));
+        dashboardLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dashboardLabel.setText("Estadísticas");
         dashboardLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -502,23 +510,26 @@ public class HP extends javax.swing.JFrame {
             .addGroup(btn_nuevo_pedidoLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addComponent(dashboardLabel)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         btn_nuevo_pedidoLayout.setVerticalGroup(
             btn_nuevo_pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_nuevo_pedidoLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(btn_nuevo_pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dashboardLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 16, Short.MAX_VALUE))
+                .addGroup(btn_nuevo_pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btn_nuevo_pedidoLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(btn_nuevo_pedidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(dashboardLabel)))
+                .addGap(0, 2, Short.MAX_VALUE))
         );
 
         SidePanel.add(btn_nuevo_pedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 330, 60));
 
-        btn_nueva_ruta.setBackground(new java.awt.Color(243, 168, 71));
+        btn_nueva_ruta.setBackground(new java.awt.Color(204, 255, 255));
         btn_nueva_ruta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_nueva_rutaMouseClicked(evt);
@@ -532,7 +543,9 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("HP");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -545,25 +558,27 @@ public class HP extends javax.swing.JFrame {
         btn_nueva_rutaLayout.setHorizontalGroup(
             btn_nueva_rutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_nueva_rutaLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(83, 83, 83)
                 .addComponent(icono3)
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addComponent(jLabel6)
+                .addContainerGap(139, Short.MAX_VALUE))
         );
         btn_nueva_rutaLayout.setVerticalGroup(
             btn_nueva_rutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_nueva_rutaLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(btn_nueva_rutaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(icono3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addComponent(icono3, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addGap(0, 2, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_nueva_rutaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addContainerGap())
         );
 
         SidePanel.add(btn_nueva_ruta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 330, 60));
 
-        config_btn.setBackground(new java.awt.Color(55, 71, 90));
+        config_btn.setBackground(new java.awt.Color(0, 0, 51));
         config_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 config_btnMouseClicked(evt);
@@ -580,8 +595,10 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Configuración");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -594,27 +611,27 @@ public class HP extends javax.swing.JFrame {
         config_btnLayout.setHorizontalGroup(
             config_btnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(config_btnLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(29, 29, 29)
                 .addComponent(icono4)
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         config_btnLayout.setVerticalGroup(
             config_btnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(config_btnLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(config_btnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(icono4, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                    .addGroup(config_btnLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(0, 7, Short.MAX_VALUE))
+                .addComponent(icono4, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addGap(0, 2, Short.MAX_VALUE))
+            .addGroup(config_btnLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         SidePanel.add(config_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 330, 60));
 
-        btn_reporte.setBackground(new java.awt.Color(55, 71, 90));
+        btn_reporte.setBackground(new java.awt.Color(0, 0, 51));
         btn_reporte.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_reporteMouseClicked(evt);
@@ -628,8 +645,10 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Guardar");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -642,25 +661,28 @@ public class HP extends javax.swing.JFrame {
         btn_reporteLayout.setHorizontalGroup(
             btn_reporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_reporteLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(icono5)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addGroup(btn_reporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(btn_reporteLayout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(icono5))
+                    .addGroup(btn_reporteLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel8)))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         btn_reporteLayout.setVerticalGroup(
             btn_reporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_reporteLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(btn_reporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(icono5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(icono5, javax.swing.GroupLayout.DEFAULT_SIZE, 4, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         SidePanel.add(btn_reporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 330, 60));
 
-        btn_cargar_guardar.setBackground(new java.awt.Color(55, 71, 90));
+        btn_cargar_guardar.setBackground(new java.awt.Color(0, 0, 51));
         btn_cargar_guardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_cargar_guardarMouseClicked(evt);
@@ -674,8 +696,10 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Century", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Dell");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -690,62 +714,38 @@ public class HP extends javax.swing.JFrame {
             .addGroup(btn_cargar_guardarLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(icono7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(103, 103, 103)
                 .addComponent(jLabel10)
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
         btn_cargar_guardarLayout.setVerticalGroup(
             btn_cargar_guardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btn_cargar_guardarLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(btn_cargar_guardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(icono7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 16, Short.MAX_VALUE))
+                .addComponent(icono7, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addGap(0, 2, Short.MAX_VALUE))
+            .addGroup(btn_cargar_guardarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         SidePanel.add(btn_cargar_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 330, 60));
 
-        jPanel1.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 240, 460));
+        jPanel1.add(SidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 130, 320, 460));
 
-        jPanel5.setBackground(new java.awt.Color(34, 46, 60));
+        jPanel5.setBackground(new java.awt.Color(0, 0, 51));
         jPanel5.setForeground(new java.awt.Color(51, 51, 51));
 
-        driveTitle6.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle6.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle6.setText("Días Restantes:");
-
-        driveTitle8.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle8.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle8.setText("Días transcurridos:");
-
-        jTextField7.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField7.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField7.setText("0");
-        jTextField7.setEnabled(false);
-
-        jTextField8.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField8.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField8.setText("0");
-        jTextField8.setEnabled(false);
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
-
-        driveTitle19.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle19.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle19.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle19.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle19.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle19.setText("Días para la entrega:");
         driveTitle19.setFocusable(false);
 
         currentDeadline.setEditable(false);
         currentDeadline.setBackground(new java.awt.Color(34, 46, 60));
-        currentDeadline.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        currentDeadline.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         currentDeadline.setForeground(new java.awt.Color(255, 255, 255));
         currentDeadline.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         currentDeadline.setText("0");
@@ -757,14 +757,15 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        driveTitle23.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle23.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle23.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle23.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle23.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle23.setText("Días:");
         driveTitle23.setFocusable(false);
 
         totalDays.setEditable(false);
         totalDays.setBackground(new java.awt.Color(34, 46, 60));
-        totalDays.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        totalDays.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         totalDays.setForeground(new java.awt.Color(255, 255, 255));
         totalDays.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         totalDays.setText("0");
@@ -776,63 +777,164 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
+        jPanel11.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel11.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel11MouseDragged(evt);
+            }
+        });
+        jPanel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel11MousePressed(evt);
+            }
+        });
+
+        tituloAlmacen.setFont(new java.awt.Font("Castellar", 1, 18)); // NOI18N
+        tituloAlmacen.setForeground(new java.awt.Color(255, 255, 255));
+        tituloAlmacen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tituloAlmacen.setText("estadisticas de ensamblaje de computadoras");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tituloAlmacen, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(tituloAlmacen)
+                .addContainerGap())
+        );
+
+        driveTitle4.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle4.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle4.setForeground(new java.awt.Color(255, 255, 255));
+        driveTitle4.setText("Computadora GPU:");
+        driveTitle4.setFocusable(false);
+
+        plotTwistChapters.setEditable(false);
+        plotTwistChapters.setBackground(new java.awt.Color(34, 46, 60));
+        plotTwistChapters.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        plotTwistChapters.setForeground(new java.awt.Color(255, 255, 255));
+        plotTwistChapters.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        plotTwistChapters.setText("0");
+        plotTwistChapters.setBorder(null);
+        plotTwistChapters.setFocusable(false);
+        plotTwistChapters.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plotTwistChaptersActionPerformed(evt);
+            }
+        });
+
+        standardChapters.setEditable(false);
+        standardChapters.setBackground(new java.awt.Color(34, 46, 60));
+        standardChapters.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        standardChapters.setForeground(new java.awt.Color(255, 255, 255));
+        standardChapters.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        standardChapters.setText("0");
+        standardChapters.setBorder(null);
+        standardChapters.setFocusable(false);
+        standardChapters.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                standardChaptersActionPerformed(evt);
+            }
+        });
+
+        driveTitle5.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle5.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle5.setForeground(new java.awt.Color(255, 255, 255));
+        driveTitle5.setText("Computadora normal:");
+        driveTitle5.setFocusable(false);
+
+        driveTitle25.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle25.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle25.setForeground(new java.awt.Color(255, 255, 255));
+        driveTitle25.setText("Ensamblados (total):");
+        driveTitle25.setFocusable(false);
+
+        totalChapters.setEditable(false);
+        totalChapters.setBackground(new java.awt.Color(34, 46, 60));
+        totalChapters.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        totalChapters.setForeground(new java.awt.Color(255, 255, 255));
+        totalChapters.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        totalChapters.setText("0");
+        totalChapters.setBorder(null);
+        totalChapters.setFocusable(false);
+        totalChapters.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalChaptersActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(driveTitle23, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(driveTitle19, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addGap(17, 17, 17)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(driveTitle8)
-                            .addComponent(driveTitle6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(driveTitle23, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(driveTitle19, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(707, 707, 707))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(totalDays, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(currentDeadline, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(driveTitle4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(driveTitle5))
+                                .addGap(18, 18, 18))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(driveTitle25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(totalChapters, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(standardChapters, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(plotTwistChapters, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21))
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(401, 401, 401))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(driveTitle23)
-                    .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(driveTitle19, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(driveTitle8)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(driveTitle6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(driveTitle23)
+                            .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(driveTitle19, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(totalChapters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(driveTitle25))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(standardChapters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(driveTitle5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(driveTitle4)
+                            .addComponent(plotTwistChapters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 260, 180));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 620, 550, 130));
 
         jPanel4.setBackground(new java.awt.Color(246, 183, 102));
         jPanel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -859,120 +961,19 @@ public class HP extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(34, 46, 60));
-        jPanel3.setForeground(new java.awt.Color(51, 51, 51));
+        workersConfigurations.setBackground(new java.awt.Color(0, 0, 51));
 
-        driveTitle4.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle4.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle4.setText("Computadora GPU:");
-        driveTitle4.setFocusable(false);
-
-        plotTwistChapters.setEditable(false);
-        plotTwistChapters.setBackground(new java.awt.Color(34, 46, 60));
-        plotTwistChapters.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        plotTwistChapters.setForeground(new java.awt.Color(255, 255, 255));
-        plotTwistChapters.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        plotTwistChapters.setText("0");
-        plotTwistChapters.setBorder(null);
-        plotTwistChapters.setFocusable(false);
-        plotTwistChapters.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                plotTwistChaptersActionPerformed(evt);
-            }
-        });
-
-        standardChapters.setEditable(false);
-        standardChapters.setBackground(new java.awt.Color(34, 46, 60));
-        standardChapters.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        standardChapters.setForeground(new java.awt.Color(255, 255, 255));
-        standardChapters.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        standardChapters.setText("0");
-        standardChapters.setBorder(null);
-        standardChapters.setFocusable(false);
-        standardChapters.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                standardChaptersActionPerformed(evt);
-            }
-        });
-
-        driveTitle5.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle5.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle5.setText("Computadora normal:");
-        driveTitle5.setFocusable(false);
-
-        driveTitle25.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle25.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle25.setText("Ensamblados (total):");
-        driveTitle25.setFocusable(false);
-
-        totalChapters.setEditable(false);
-        totalChapters.setBackground(new java.awt.Color(34, 46, 60));
-        totalChapters.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        totalChapters.setForeground(new java.awt.Color(255, 255, 255));
-        totalChapters.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        totalChapters.setText("0");
-        totalChapters.setBorder(null);
-        totalChapters.setFocusable(false);
-        totalChapters.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                totalChaptersActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(driveTitle4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(driveTitle5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(standardChapters, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(plotTwistChapters, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(driveTitle25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(totalChapters, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(totalChapters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(driveTitle25))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(standardChapters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(driveTitle5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(driveTitle4)
-                    .addComponent(plotTwistChapters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 90, -1, -1));
-
-        workersConfigurations.setBackground(new java.awt.Color(243, 168, 71));
-
-        driveTitle1.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle1.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle1.setFont(new java.awt.Font("Centaur", 1, 20)); // NOI18N
+        driveTitle1.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle1.setText("TRABAJADORES");
 
-        scripts.setBackground(java.awt.Color.lightGray);
-        scripts.setForeground(new java.awt.Color(60, 63, 65));
+        scripts.setBackground(new java.awt.Color(0, 0, 51));
+        scripts.setForeground(new java.awt.Color(255, 255, 255));
 
-        scriptsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        scriptsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scriptsTitle.setText("Programadores PB");
+        scriptsTitle.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        scriptsTitle.setForeground(new java.awt.Color(255, 255, 255));
+        scriptsTitle.setText("Programadores PB:");
 
         increaseScripts.setBackground(new java.awt.Color(51, 51, 51));
         increaseScripts.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -990,9 +991,9 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        scriptsValues.setBackground(java.awt.Color.lightGray);
-        scriptsValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        scriptsValues.setForeground(new java.awt.Color(51, 51, 51));
+        scriptsValues.setBackground(new java.awt.Color(0, 0, 51));
+        scriptsValues.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        scriptsValues.setForeground(new java.awt.Color(255, 255, 255));
         scriptsValues.setText("0");
         scriptsValues.setBorder(null);
         scriptsValues.setFocusable(false);
@@ -1023,7 +1024,7 @@ public class HP extends javax.swing.JFrame {
             scriptsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scriptsLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(scriptsTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                .addComponent(scriptsTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(36, 36, 36)
                 .addComponent(decreaseScripts)
                 .addGap(18, 18, 18)
@@ -1041,17 +1042,17 @@ public class HP extends javax.swing.JFrame {
                 .addComponent(decreaseScripts))
         );
 
-        scenary.setBackground(java.awt.Color.lightGray);
-        scenary.setForeground(new java.awt.Color(60, 63, 65));
+        scenary.setBackground(new java.awt.Color(0, 0, 51));
+        scenary.setForeground(new java.awt.Color(255, 255, 255));
         scenary.setPreferredSize(new java.awt.Dimension(257, 44));
 
-        scenaryTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        scenaryTitle.setForeground(new java.awt.Color(51, 51, 51));
-        scenaryTitle.setText("Programadores CPUs");
+        scenaryTitle.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        scenaryTitle.setForeground(new java.awt.Color(255, 255, 255));
+        scenaryTitle.setText("Programadores CPUs:");
 
-        scenaryValue.setBackground(java.awt.Color.lightGray);
-        scenaryValue.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        scenaryValue.setForeground(new java.awt.Color(51, 51, 51));
+        scenaryValue.setBackground(new java.awt.Color(0, 0, 51));
+        scenaryValue.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        scenaryValue.setForeground(new java.awt.Color(255, 255, 255));
         scenaryValue.setText("0");
         scenaryValue.setBorder(null);
         scenaryValue.setFocusable(false);
@@ -1119,17 +1120,17 @@ public class HP extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        animations.setBackground(java.awt.Color.lightGray);
+        animations.setBackground(new java.awt.Color(0, 0, 51));
         animations.setForeground(new java.awt.Color(255, 255, 255));
         animations.setPreferredSize(new java.awt.Dimension(257, 44));
 
-        animationsTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        animationsTitle.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle.setText("Programadores RAM");
+        animationsTitle.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        animationsTitle.setForeground(new java.awt.Color(255, 255, 255));
+        animationsTitle.setText("Programadores RAM:");
 
-        animationValues.setBackground(java.awt.Color.lightGray);
-        animationValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        animationValues.setForeground(new java.awt.Color(51, 51, 51));
+        animationValues.setBackground(new java.awt.Color(0, 0, 51));
+        animationValues.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        animationValues.setForeground(new java.awt.Color(255, 255, 255));
         animationValues.setText("0");
         animationValues.setBorder(null);
         animationValues.setFocusable(false);
@@ -1196,13 +1197,13 @@ public class HP extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        dubbing.setBackground(java.awt.Color.lightGray);
+        dubbing.setBackground(new java.awt.Color(0, 0, 51));
         dubbing.setForeground(new java.awt.Color(255, 255, 255));
         dubbing.setPreferredSize(new java.awt.Dimension(257, 44));
 
-        dubbingTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        dubbingTitle.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle.setText("Programadores FA");
+        dubbingTitle.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        dubbingTitle.setForeground(new java.awt.Color(255, 255, 255));
+        dubbingTitle.setText("Programadores FA:");
 
         decreaseDubbing.setBackground(new java.awt.Color(51, 51, 51));
         decreaseDubbing.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1219,9 +1220,9 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        dubbingValues.setBackground(java.awt.Color.lightGray);
-        dubbingValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        dubbingValues.setForeground(new java.awt.Color(51, 51, 51));
+        dubbingValues.setBackground(new java.awt.Color(0, 0, 51));
+        dubbingValues.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        dubbingValues.setForeground(new java.awt.Color(255, 255, 255));
         dubbingValues.setText("0");
         dubbingValues.setBorder(null);
         dubbingValues.setFocusable(false);
@@ -1273,13 +1274,13 @@ public class HP extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        plotTwist.setBackground(java.awt.Color.lightGray);
+        plotTwist.setBackground(new java.awt.Color(0, 0, 51));
         plotTwist.setForeground(new java.awt.Color(255, 255, 255));
         plotTwist.setPreferredSize(new java.awt.Dimension(257, 44));
 
-        plotTwistTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        plotTwistTitle.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle.setText("Programadores GPU");
+        plotTwistTitle.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        plotTwistTitle.setForeground(new java.awt.Color(255, 255, 255));
+        plotTwistTitle.setText("Programadores GPU:");
 
         increasePlotTwist.setBackground(new java.awt.Color(51, 51, 51));
         increasePlotTwist.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1296,9 +1297,9 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        plotTwistValues.setBackground(java.awt.Color.lightGray);
-        plotTwistValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        plotTwistValues.setForeground(new java.awt.Color(51, 51, 51));
+        plotTwistValues.setBackground(new java.awt.Color(0, 0, 51));
+        plotTwistValues.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        plotTwistValues.setForeground(new java.awt.Color(255, 255, 255));
         plotTwistValues.setText("0");
         plotTwistValues.setBorder(null);
         plotTwistValues.setFocusable(false);
@@ -1350,12 +1351,13 @@ public class HP extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        plotTwist2.setBackground(java.awt.Color.lightGray);
+        plotTwist2.setBackground(new java.awt.Color(0, 0, 51));
         plotTwist2.setForeground(new java.awt.Color(255, 255, 255));
         plotTwist2.setPreferredSize(new java.awt.Dimension(257, 44));
 
-        assemblerTitle.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        assemblerTitle.setForeground(new java.awt.Color(51, 51, 51));
+        assemblerTitle.setBackground(new java.awt.Color(0, 0, 51));
+        assemblerTitle.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        assemblerTitle.setForeground(new java.awt.Color(255, 255, 255));
         assemblerTitle.setText("Ensambladores:");
 
         increaseAssembler.setBackground(new java.awt.Color(51, 51, 51));
@@ -1373,9 +1375,9 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        assemblerValues.setBackground(java.awt.Color.lightGray);
-        assemblerValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        assemblerValues.setForeground(new java.awt.Color(51, 51, 51));
+        assemblerValues.setBackground(new java.awt.Color(0, 0, 51));
+        assemblerValues.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        assemblerValues.setForeground(new java.awt.Color(255, 255, 255));
         assemblerValues.setText("0");
         assemblerValues.setBorder(null);
         assemblerValues.setFocusable(false);
@@ -1405,7 +1407,7 @@ public class HP extends javax.swing.JFrame {
         plotTwist2Layout.setHorizontalGroup(
             plotTwist2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plotTwist2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(16, 16, 16)
                 .addComponent(assemblerTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(decreaceAssembler)
@@ -1427,18 +1429,19 @@ public class HP extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        driveTitle21.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle21.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle21.setFont(new java.awt.Font("Centaur", 1, 20)); // NOI18N
+        driveTitle21.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle21.setText("CONFIGURACIÓN");
+        driveTitle21.setText("DISPONIBILIDAD DE LOS");
 
-        driveTitle27.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle27.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle27.setFont(new java.awt.Font("Century", 1, 19)); // NOI18N
+        driveTitle27.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         driveTitle27.setText("Máximo:");
 
-        maxCap.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        maxCap.setForeground(new java.awt.Color(51, 51, 51));
+        maxCap.setBackground(new java.awt.Color(0, 0, 51));
+        maxCap.setFont(new java.awt.Font("Century", 1, 19)); // NOI18N
+        maxCap.setForeground(new java.awt.Color(255, 255, 255));
         maxCap.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout workersConfigurationsLayout = new javax.swing.GroupLayout(workersConfigurations);
@@ -1446,21 +1449,24 @@ public class HP extends javax.swing.JFrame {
         workersConfigurationsLayout.setHorizontalGroup(
             workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(driveTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(driveTitle21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workersConfigurationsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(workersConfigurationsLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
                         .addComponent(driveTitle27, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(maxCap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(plotTwist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
-                    .addComponent(dubbing, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
-                    .addComponent(animations, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
-                    .addComponent(scenary, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                    .addComponent(plotTwist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(dubbing, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(animations, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                    .addComponent(scenary, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                     .addComponent(scripts, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(plotTwist2, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE))
+                    .addComponent(plotTwist2, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
+            .addGroup(workersConfigurationsLayout.createSequentialGroup()
+                .addComponent(driveTitle21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         workersConfigurationsLayout.setVerticalGroup(
             workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1485,39 +1491,39 @@ public class HP extends javax.swing.JFrame {
                 .addGroup(workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(driveTitle27, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(maxCap, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jPanel1.add(workersConfigurations, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 310, 510));
+        jPanel1.add(workersConfigurations, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 340, 500));
 
-        drivePanel.setBackground(new java.awt.Color(243, 168, 71));
+        drivePanel.setBackground(new java.awt.Color(0, 0, 51));
 
-        driveTitle2.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle2.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle2.setFont(new java.awt.Font("Centaur", 1, 20)); // NOI18N
+        driveTitle2.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle2.setText("ESTATUS DEL ALMACEN");
+        driveTitle2.setText("DISPONIBILIDAD DEL");
 
-        driveTitle3.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        driveTitle3.setForeground(new java.awt.Color(51, 51, 51));
+        driveTitle3.setFont(new java.awt.Font("Centaur", 1, 20)); // NOI18N
+        driveTitle3.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle3.setText("(Disponiblidad)");
+        driveTitle3.setText("ALMACEN");
 
-        scripts1.setBackground(java.awt.Color.lightGray);
-        scripts1.setForeground(new java.awt.Color(60, 63, 65));
+        scripts1.setBackground(new java.awt.Color(0, 0, 51));
+        scripts1.setForeground(new java.awt.Color(255, 255, 255));
         scripts1.setPreferredSize(new java.awt.Dimension(218, 44));
 
-        scriptTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        scriptTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        scriptTitle1.setText("Placa Base");
+        scriptTitle1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        scriptTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        scriptTitle1.setText("Placa Base:");
 
-        scriptsLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        scriptsLimit1.setForeground(new java.awt.Color(51, 51, 51));
+        scriptsLimit1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        scriptsLimit1.setForeground(new java.awt.Color(255, 255, 255));
         scriptsLimit1.setText("/25");
         scriptsLimit1.setFocusable(false);
 
-        scriptDrive.setBackground(java.awt.Color.lightGray);
-        scriptDrive.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        scriptDrive.setForeground(new java.awt.Color(51, 51, 51));
+        scriptDrive.setBackground(new java.awt.Color(0, 0, 51));
+        scriptDrive.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        scriptDrive.setForeground(new java.awt.Color(255, 255, 255));
         scriptDrive.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         scriptDrive.setText("0");
         scriptDrive.setBorder(null);
@@ -1534,12 +1540,12 @@ public class HP extends javax.swing.JFrame {
             scripts1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scripts1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(scriptTitle1)
+                .addComponent(scriptTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(scriptDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scriptsLimit1)
-                .addGap(16, 16, 16))
+                .addComponent(scriptsLimit1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         scripts1Layout.setVerticalGroup(
             scripts1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1552,22 +1558,22 @@ public class HP extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        scenary1.setBackground(java.awt.Color.lightGray);
+        scenary1.setBackground(new java.awt.Color(0, 0, 51));
         scenary1.setForeground(new java.awt.Color(60, 63, 65));
         scenary1.setPreferredSize(new java.awt.Dimension(218, 44));
 
-        scenaryTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        scenaryTitle1.setForeground(new java.awt.Color(51, 51, 51));
+        scenaryTitle1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        scenaryTitle1.setForeground(new java.awt.Color(255, 255, 255));
         scenaryTitle1.setText("CPUs:");
 
-        scenaryLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        scenaryLimit1.setForeground(new java.awt.Color(51, 51, 51));
+        scenaryLimit1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        scenaryLimit1.setForeground(new java.awt.Color(255, 255, 255));
         scenaryLimit1.setText("/20");
         scenaryLimit1.setFocusable(false);
 
-        scenaryDrive.setBackground(java.awt.Color.lightGray);
-        scenaryDrive.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        scenaryDrive.setForeground(new java.awt.Color(51, 51, 51));
+        scenaryDrive.setBackground(new java.awt.Color(0, 0, 51));
+        scenaryDrive.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        scenaryDrive.setForeground(new java.awt.Color(255, 255, 255));
         scenaryDrive.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         scenaryDrive.setText("0");
         scenaryDrive.setBorder(null);
@@ -1584,12 +1590,12 @@ public class HP extends javax.swing.JFrame {
             scenary1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(scenary1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(scenaryTitle1)
+                .addComponent(scenaryTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scenaryDrive)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(scenaryLimit1)
-                .addGap(15, 15, 15))
+                .addComponent(scenaryLimit1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         scenary1Layout.setVerticalGroup(
             scenary1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1602,22 +1608,22 @@ public class HP extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        animations1.setBackground(java.awt.Color.lightGray);
-        animations1.setForeground(new java.awt.Color(60, 63, 65));
+        animations1.setBackground(new java.awt.Color(0, 0, 51));
+        animations1.setForeground(new java.awt.Color(255, 255, 255));
         animations1.setPreferredSize(new java.awt.Dimension(218, 44));
 
-        animationsTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        animationsTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        animationsTitle1.setText("RAM");
+        animationsTitle1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        animationsTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        animationsTitle1.setText("RAM:");
 
-        animationsLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        animationsLimit1.setForeground(new java.awt.Color(51, 51, 51));
+        animationsLimit1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        animationsLimit1.setForeground(new java.awt.Color(255, 255, 255));
         animationsLimit1.setText("/55");
         animationsLimit1.setFocusable(false);
 
-        animationDrive.setBackground(java.awt.Color.lightGray);
-        animationDrive.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        animationDrive.setForeground(new java.awt.Color(51, 51, 51));
+        animationDrive.setBackground(new java.awt.Color(0, 0, 51));
+        animationDrive.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        animationDrive.setForeground(new java.awt.Color(255, 255, 255));
         animationDrive.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         animationDrive.setText("0");
         animationDrive.setBorder(null);
@@ -1634,12 +1640,12 @@ public class HP extends javax.swing.JFrame {
             animations1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(animations1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(animationsTitle1)
+                .addComponent(animationsTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(animationDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(animationsLimit1)
-                .addGap(14, 14, 14))
+                .addComponent(animationsLimit1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         animations1Layout.setVerticalGroup(
             animations1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1652,22 +1658,22 @@ public class HP extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        dubbing1.setBackground(java.awt.Color.lightGray);
-        dubbing1.setForeground(new java.awt.Color(60, 63, 65));
+        dubbing1.setBackground(new java.awt.Color(0, 0, 51));
+        dubbing1.setForeground(new java.awt.Color(255, 255, 255));
         dubbing1.setPreferredSize(new java.awt.Dimension(218, 44));
 
-        dubbingTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        dubbingTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        dubbingTitle1.setText("Fuente Alimentación");
+        dubbingTitle1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        dubbingTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        dubbingTitle1.setText("Fuente A:");
 
-        dubbingLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        dubbingLimit1.setForeground(new java.awt.Color(51, 51, 51));
+        dubbingLimit1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        dubbingLimit1.setForeground(new java.awt.Color(255, 255, 255));
         dubbingLimit1.setText("/35");
         dubbingLimit1.setFocusable(false);
 
-        dubbingDrive.setBackground(java.awt.Color.lightGray);
-        dubbingDrive.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        dubbingDrive.setForeground(new java.awt.Color(51, 51, 51));
+        dubbingDrive.setBackground(new java.awt.Color(0, 0, 51));
+        dubbingDrive.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        dubbingDrive.setForeground(new java.awt.Color(255, 255, 255));
         dubbingDrive.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         dubbingDrive.setText("0");
         dubbingDrive.setBorder(null);
@@ -1683,13 +1689,13 @@ public class HP extends javax.swing.JFrame {
         dubbing1Layout.setHorizontalGroup(
             dubbing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dubbing1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(dubbingTitle1)
+                .addGap(16, 16, 16)
+                .addComponent(dubbingTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(dubbingDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dubbingLimit1)
-                .addGap(14, 14, 14))
+                .addComponent(dubbingLimit1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         dubbing1Layout.setVerticalGroup(
             dubbing1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1703,23 +1709,23 @@ public class HP extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        plotTwist1.setBackground(java.awt.Color.lightGray);
-        plotTwist1.setForeground(new java.awt.Color(60, 63, 65));
+        plotTwist1.setBackground(new java.awt.Color(0, 0, 51));
+        plotTwist1.setForeground(new java.awt.Color(255, 255, 255));
         plotTwist1.setFocusable(false);
         plotTwist1.setPreferredSize(new java.awt.Dimension(218, 44));
 
-        plotTwistLimit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        plotTwistLimit1.setForeground(new java.awt.Color(51, 51, 51));
+        plotTwistLimit1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        plotTwistLimit1.setForeground(new java.awt.Color(255, 255, 255));
         plotTwistLimit1.setText("/10");
         plotTwistLimit1.setFocusable(false);
 
-        plotTwistTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        plotTwistTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        plotTwistTitle1.setText("Tarjeta Grafica");
+        plotTwistTitle1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        plotTwistTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        plotTwistTitle1.setText("Tarjeta Grafica:");
 
-        plotTwistDrive.setBackground(java.awt.Color.lightGray);
-        plotTwistDrive.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        plotTwistDrive.setForeground(new java.awt.Color(51, 51, 51));
+        plotTwistDrive.setBackground(new java.awt.Color(0, 0, 51));
+        plotTwistDrive.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        plotTwistDrive.setForeground(new java.awt.Color(255, 255, 255));
         plotTwistDrive.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         plotTwistDrive.setText("0");
         plotTwistDrive.setBorder(null);
@@ -1736,12 +1742,12 @@ public class HP extends javax.swing.JFrame {
             plotTwist1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plotTwist1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(plotTwistTitle1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(plotTwistTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(plotTwistDrive, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(plotTwistLimit1)
-                .addGap(14, 14, 14))
+                .addComponent(plotTwistLimit1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         plotTwist1Layout.setVerticalGroup(
             plotTwist1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1754,8 +1760,8 @@ public class HP extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        plotTwist4.setBackground(java.awt.Color.lightGray);
-        plotTwist4.setForeground(new java.awt.Color(60, 63, 65));
+        plotTwist4.setBackground(new java.awt.Color(0, 0, 51));
+        plotTwist4.setForeground(new java.awt.Color(255, 255, 255));
         plotTwist4.setFocusable(false);
         plotTwist4.setPreferredSize(new java.awt.Dimension(218, 44));
 
@@ -1763,13 +1769,13 @@ public class HP extends javax.swing.JFrame {
         plotTwistLimit3.setForeground(new java.awt.Color(51, 51, 51));
         plotTwistLimit3.setFocusable(false);
 
-        assemblerTitle1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        assemblerTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        assemblerTitle1.setText("Ensambladores");
+        assemblerTitle1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        assemblerTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        assemblerTitle1.setText("Ensambladores:");
 
-        assemblerDrive.setBackground(java.awt.Color.lightGray);
-        assemblerDrive.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        assemblerDrive.setForeground(new java.awt.Color(51, 51, 51));
+        assemblerDrive.setBackground(new java.awt.Color(0, 0, 51));
+        assemblerDrive.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        assemblerDrive.setForeground(new java.awt.Color(255, 255, 255));
         assemblerDrive.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         assemblerDrive.setText("0");
         assemblerDrive.setBorder(null);
@@ -1787,8 +1793,8 @@ public class HP extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plotTwist4Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(assemblerTitle1)
-                .addGap(18, 18, 18)
-                .addComponent(assemblerDrive, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(assemblerDrive)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(plotTwistLimit3)
                 .addGap(14, 14, 14))
@@ -1816,16 +1822,16 @@ public class HP extends javax.swing.JFrame {
                             .addGroup(drivePanelLayout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addGroup(drivePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(dubbing1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                                    .addComponent(animations1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                                    .addComponent(scenary1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                                    .addComponent(scripts1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                                    .addComponent(plotTwist1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                                    .addComponent(plotTwist4, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)))
+                                    .addComponent(dubbing1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                                    .addComponent(animations1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                                    .addComponent(scenary1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                                    .addComponent(scripts1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                                    .addComponent(plotTwist1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                                    .addComponent(plotTwist4, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)))
                             .addGroup(drivePanelLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(driveTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 11, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         drivePanelLayout.setVerticalGroup(
@@ -1847,38 +1853,41 @@ public class HP extends javax.swing.JFrame {
                 .addComponent(plotTwist1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(plotTwist4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
-        jPanel1.add(drivePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 200, 250, 510));
+        jPanel1.add(drivePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 280, 510));
 
-        jPanel6.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel6.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel6.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel6.setForeground(new java.awt.Color(0, 0, 51));
         jPanel6.setEnabled(false);
 
-        driveTitle9.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle9.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle9.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle9.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle9.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle9.setText("Ganancia bruta:");
         driveTitle9.setFocusable(false);
 
-        driveTitle10.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle10.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle10.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle10.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle10.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle10.setText("Costos operativos:");
         driveTitle10.setFocusable(false);
 
-        driveTitle11.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
-        driveTitle11.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle11.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        driveTitle11.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle11.setText("COSTOS/ GANANCIAS");
+        driveTitle11.setText("FINANZAS");
         driveTitle11.setFocusable(false);
 
-        driveTitle17.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle17.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle17.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle17.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle17.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle17.setText("Ganancia neta:");
         driveTitle17.setFocusable(false);
 
-        cost.setBackground(new java.awt.Color(51, 51, 51));
-        cost.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        cost.setBackground(new java.awt.Color(0, 0, 51));
+        cost.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         cost.setForeground(new java.awt.Color(255, 255, 255));
         cost.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         cost.setText("0");
@@ -1890,8 +1899,8 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        earning.setBackground(new java.awt.Color(51, 51, 51));
-        earning.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        earning.setBackground(new java.awt.Color(0, 0, 51));
+        earning.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         earning.setForeground(new java.awt.Color(255, 255, 255));
         earning.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         earning.setText("0");
@@ -1903,8 +1912,8 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        profit.setBackground(new java.awt.Color(51, 51, 51));
-        profit.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        profit.setBackground(new java.awt.Color(0, 0, 51));
+        profit.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         profit.setForeground(new java.awt.Color(255, 255, 255));
         profit.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         profit.setText("0");
@@ -1921,21 +1930,16 @@ public class HP extends javax.swing.JFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(driveTitle17, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(driveTitle10))
-                        .addGap(11, 11, 11))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(driveTitle9, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                    .addComponent(driveTitle17, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(driveTitle10)
+                    .addComponent(driveTitle9, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(profit, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 25, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(earning, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cost, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -1945,37 +1949,35 @@ public class HP extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(driveTitle11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(driveTitle11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(driveTitle10)
                     .addComponent(cost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(earning, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(driveTitle9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(driveTitle9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(driveTitle17)
                     .addComponent(profit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19))
+                .addGap(13, 13, 13))
         );
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 200, 300, 120));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 330, 120));
 
-        jPanel7.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel7.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel7.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel7.setForeground(new java.awt.Color(0, 0, 51));
 
-        driveTitle18.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle18.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle18.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle18.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle18.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle18.setText("Estado:");
         driveTitle18.setFocusable(false);
 
-        directorStatus.setBackground(new java.awt.Color(51, 51, 51));
-        directorStatus.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        directorStatus.setBackground(new java.awt.Color(0, 0, 51));
+        directorStatus.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         directorStatus.setForeground(new java.awt.Color(255, 255, 255));
         directorStatus.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         directorStatus.setText("0");
@@ -1987,8 +1989,9 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        driveTitle14.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
-        driveTitle14.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle14.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle14.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle14.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle14.setText("DIRECTOR");
         driveTitle14.setFocusable(false);
@@ -2017,29 +2020,32 @@ public class HP extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 320, 300, 60));
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 300, 60));
 
-        jPanel8.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel8.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel8.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel8.setForeground(new java.awt.Color(0, 0, 51));
         jPanel8.setEnabled(false);
 
-        driveTitle12.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle12.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle12.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle12.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle12.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle12.setText("Estado:");
         driveTitle12.setFocusable(false);
 
-        driveTitle13.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle13.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle13.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle13.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle13.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle13.setText("Faltas:");
         driveTitle13.setFocusable(false);
 
-        driveTitle16.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle16.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle16.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle16.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle16.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle16.setText("Penalización ($):");
         driveTitle16.setFocusable(false);
 
-        projectManagerStatus.setBackground(new java.awt.Color(51, 51, 51));
-        projectManagerStatus.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        projectManagerStatus.setBackground(new java.awt.Color(0, 0, 51));
+        projectManagerStatus.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         projectManagerStatus.setForeground(new java.awt.Color(255, 255, 255));
         projectManagerStatus.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         projectManagerStatus.setText("Por comenzar");
@@ -2051,8 +2057,8 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        strikeCounter.setBackground(new java.awt.Color(51, 51, 51));
-        strikeCounter.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        strikeCounter.setBackground(new java.awt.Color(0, 0, 51));
+        strikeCounter.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         strikeCounter.setForeground(new java.awt.Color(255, 255, 255));
         strikeCounter.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         strikeCounter.setText("0");
@@ -2064,8 +2070,8 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        cashPenality.setBackground(new java.awt.Color(51, 51, 51));
-        cashPenality.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        cashPenality.setBackground(new java.awt.Color(0, 0, 51));
+        cashPenality.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         cashPenality.setForeground(new java.awt.Color(255, 255, 255));
         cashPenality.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         cashPenality.setText("0");
@@ -2077,10 +2083,11 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        driveTitle15.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
-        driveTitle15.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle15.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle15.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle15.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle15.setText("STATUS PROJECT MANAGER");
+        driveTitle15.setText(" PROJECT MANAGER");
         driveTitle15.setFocusable(false);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -2126,24 +2133,19 @@ public class HP extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 380, 300, 120));
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 230, 300, 120));
 
-        driveTitle.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        driveTitle.setForeground(new java.awt.Color(51, 51, 51));
-        driveTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle.setText("Lote Actual");
-        jPanel1.add(driveTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 500, 300, -1));
+        jPanel9.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel9.setForeground(new java.awt.Color(0, 0, 51));
 
-        jPanel9.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel9.setForeground(new java.awt.Color(51, 51, 51));
-
-        driveTitle7.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle7.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle7.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle7.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle7.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle7.setText("Computadora con GPU:");
         driveTitle7.setFocusable(false);
 
-        plotTwistChapters1.setBackground(new java.awt.Color(51, 51, 51));
-        plotTwistChapters1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        plotTwistChapters1.setBackground(new java.awt.Color(0, 0, 51));
+        plotTwistChapters1.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         plotTwistChapters1.setForeground(new java.awt.Color(255, 255, 255));
         plotTwistChapters1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         plotTwistChapters1.setText("0");
@@ -2155,8 +2157,8 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        standardChaptes1.setBackground(new java.awt.Color(51, 51, 51));
-        standardChaptes1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        standardChaptes1.setBackground(new java.awt.Color(0, 0, 51));
+        standardChaptes1.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         standardChaptes1.setForeground(new java.awt.Color(255, 255, 255));
         standardChaptes1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         standardChaptes1.setText("0");
@@ -2168,18 +2170,20 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        driveTitle22.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle22.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle22.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle22.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle22.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle22.setText("Computadora normales:");
         driveTitle22.setFocusable(false);
 
-        driveTitle28.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle28.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle28.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle28.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle28.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle28.setText("Ganancia neta:");
         driveTitle28.setFocusable(false);
 
-        batchLastProfit.setBackground(new java.awt.Color(51, 51, 51));
-        batchLastProfit.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        batchLastProfit.setBackground(new java.awt.Color(0, 0, 51));
+        batchLastProfit.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         batchLastProfit.setForeground(new java.awt.Color(255, 255, 255));
         batchLastProfit.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         batchLastProfit.setText("0");
@@ -2232,18 +2236,19 @@ public class HP extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 620, 300, 90));
+        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 500, 300, 90));
 
-        jPanel10.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel10.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel10.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel10.setForeground(new java.awt.Color(0, 0, 51));
 
-        driveTitle20.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle20.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle20.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle20.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle20.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle20.setText("Computadora con GPU:");
         driveTitle20.setFocusable(false);
 
-        plotTwistChapters2.setBackground(new java.awt.Color(51, 51, 51));
-        plotTwistChapters2.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        plotTwistChapters2.setBackground(new java.awt.Color(0, 0, 51));
+        plotTwistChapters2.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         plotTwistChapters2.setForeground(new java.awt.Color(255, 255, 255));
         plotTwistChapters2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         plotTwistChapters2.setText("0");
@@ -2255,8 +2260,8 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        standardChaptes2.setBackground(new java.awt.Color(51, 51, 51));
-        standardChaptes2.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        standardChaptes2.setBackground(new java.awt.Color(0, 0, 51));
+        standardChaptes2.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         standardChaptes2.setForeground(new java.awt.Color(255, 255, 255));
         standardChaptes2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         standardChaptes2.setText("0");
@@ -2268,8 +2273,9 @@ public class HP extends javax.swing.JFrame {
             }
         });
 
-        driveTitle24.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle24.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle24.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle24.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle24.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle24.setText("Computadora normales:");
         driveTitle24.setFocusable(false);
 
@@ -2284,7 +2290,7 @@ public class HP extends javax.swing.JFrame {
                     .addComponent(driveTitle24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(plotTwistChapters2, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                    .addComponent(plotTwistChapters2, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                     .addComponent(standardChaptes2))
                 .addContainerGap())
         );
@@ -2302,13 +2308,132 @@ public class HP extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 530, 300, -1));
+        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 390, 300, 60));
 
-        driveTitle26.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
-        driveTitle26.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel12.setBackground(new java.awt.Color(0, 51, 51));
+
+        driveTitle26.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle26.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        driveTitle26.setText("Último Lote");
-        jPanel1.add(driveTitle26, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 590, 300, -1));
+        driveTitle26.setText("ÚLTIMO ENSAMBLAJE");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addComponent(driveTitle26, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(driveTitle26)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 460, 300, 40));
+
+        jPanel13.setBackground(new java.awt.Color(0, 51, 51));
+
+        driveTitle.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle.setForeground(new java.awt.Color(255, 255, 255));
+        driveTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        driveTitle.setText("ENSAMBLAJE ACTUAL");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(driveTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(driveTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 360, 300, 30));
+
+        Fondo.setFont(new java.awt.Font("Centaur", 1, 12)); // NOI18N
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/fondoPantalla.jpg"))); // NOI18N
+        jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 780));
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 51));
+
+        driveTitle8.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle8.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle8.setForeground(new java.awt.Color(255, 255, 255));
+        driveTitle8.setText("Días transcurridos:");
+
+        driveTitle6.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle6.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle6.setForeground(new java.awt.Color(255, 255, 255));
+        driveTitle6.setText("Días Restantes:");
+
+        jTextField7.setBackground(new java.awt.Color(34, 46, 60));
+        jTextField7.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(0, 0, 51));
+        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField7.setText("0");
+        jTextField7.setEnabled(false);
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+
+        jTextField8.setBackground(new java.awt.Color(34, 46, 60));
+        jTextField8.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        jTextField8.setForeground(new java.awt.Color(0, 0, 51));
+        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField8.setText("0");
+        jTextField8.setEnabled(false);
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(driveTitle8)
+                            .addGap(8, 8, 8)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(driveTitle6)
+                            .addGap(34, 34, 34)
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(driveTitle8)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(4, 4, 4)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(driveTitle6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 10, 280, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -2318,7 +2443,7 @@ public class HP extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
         );
 
         pack();
@@ -2339,6 +2464,22 @@ public class HP extends javax.swing.JFrame {
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jPanel11MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel11MouseDragged
+        // TODO add your handling code here:
+        int x = getLocation().x - initialClick.x + evt.getX();
+        int y = getLocation().y - initialClick.y + evt.getY();
+        setLocation(x, y);
+    }//GEN-LAST:event_jPanel11MouseDragged
+
+    private void jPanel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel11MousePressed
+        // TODO add your handling code here:
+        initialClick = evt.getPoint();
+    }//GEN-LAST:event_jPanel11MousePressed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
 
     private void totalDaysActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_totalDaysActionPerformed
         // TODO add your handling code here:
@@ -2849,6 +2990,7 @@ public class HP extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Logo;
     private javax.swing.JPanel SidePanel;
     private javax.swing.JLabel Titulo;
@@ -2930,7 +3072,6 @@ public class HP extends javax.swing.JFrame {
     private javax.swing.JButton increasePlotTwist;
     private javax.swing.JButton increaseScenary;
     private javax.swing.JButton increaseScripts;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel4;
@@ -2939,7 +3080,10 @@ public class HP extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -2982,6 +3126,7 @@ public class HP extends javax.swing.JFrame {
     private javax.swing.JTextField standardChaptes1;
     private javax.swing.JTextField standardChaptes2;
     private javax.swing.JTextField strikeCounter;
+    private javax.swing.JLabel tituloAlmacen;
     private javax.swing.JTextField totalChapters;
     private javax.swing.JTextField totalDays;
     private javax.swing.JPanel workersConfigurations;

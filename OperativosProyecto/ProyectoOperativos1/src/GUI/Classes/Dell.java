@@ -414,6 +414,11 @@ public class Dell extends javax.swing.JFrame {
         driveTitle26 = new javax.swing.JLabel();
         Titulo = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        driveTitle30 = new javax.swing.JLabel();
+        driveTitle31 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -424,7 +429,7 @@ public class Dell extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/logo_Dell_1.png"))); // NOI18N
-        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 10, 230, 100));
+        jPanel1.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 230, 100));
 
         SidePanel.setBackground(new java.awt.Color(34, 46, 60));
         SidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -753,7 +758,7 @@ public class Dell extends javax.swing.JFrame {
         jPanel3.setForeground(new java.awt.Color(51, 51, 51));
 
         driveTitle4.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
-        driveTitle4.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle4.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle4.setText("Computadora GPU:");
         driveTitle4.setFocusable(false);
 
@@ -786,12 +791,12 @@ public class Dell extends javax.swing.JFrame {
         });
 
         driveTitle5.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
-        driveTitle5.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle5.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle5.setText("Computadora normal:");
         driveTitle5.setFocusable(false);
 
         driveTitle25.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
-        driveTitle25.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle25.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle25.setText("Ensamblados (total):");
         driveTitle25.setFocusable(false);
 
@@ -874,7 +879,7 @@ public class Dell extends javax.swing.JFrame {
         jTextField8.setEnabled(false);
 
         driveTitle19.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
-        driveTitle19.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle19.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle19.setText("Días para la entrega:");
         driveTitle19.setFocusable(false);
 
@@ -893,7 +898,7 @@ public class Dell extends javax.swing.JFrame {
         });
 
         driveTitle23.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
-        driveTitle23.setForeground(new java.awt.Color(204, 204, 204));
+        driveTitle23.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle23.setText("Días:");
         driveTitle23.setFocusable(false);
 
@@ -1465,8 +1470,9 @@ public class Dell extends javax.swing.JFrame {
         driveTitle21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle21.setText("DISPONIBILIDAD DE LOS");
 
+        maxCap.setBackground(new java.awt.Color(0, 0, 51));
         maxCap.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        maxCap.setForeground(new java.awt.Color(51, 51, 51));
+        maxCap.setForeground(new java.awt.Color(255, 255, 255));
         maxCap.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         driveTitle27.setBackground(new java.awt.Color(255, 255, 255));
@@ -1481,22 +1487,24 @@ public class Dell extends javax.swing.JFrame {
             workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workersConfigurationsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(driveTitle21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(plotTwist2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
-                    .addComponent(plotTwist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
-                    .addComponent(dubbing, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
-                    .addComponent(animations, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
-                    .addComponent(scenary, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
-                    .addComponent(scripts, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, workersConfigurationsLayout.createSequentialGroup()
+                .addGroup(workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(workersConfigurationsLayout.createSequentialGroup()
+                        .addGroup(workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(driveTitle21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(plotTwist2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                            .addComponent(plotTwist, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                            .addComponent(dubbing, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                            .addComponent(animations, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                            .addComponent(scenary, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                            .addComponent(scripts, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(driveTitle1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(233, 233, 233))
+                    .addGroup(workersConfigurationsLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(driveTitle27, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(driveTitle1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(maxCap, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(maxCap, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         workersConfigurationsLayout.setVerticalGroup(
             workersConfigurationsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2323,7 +2331,7 @@ public class Dell extends javax.swing.JFrame {
         driveTitle20.setBackground(new java.awt.Color(0, 0, 51));
         driveTitle20.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         driveTitle20.setForeground(new java.awt.Color(255, 255, 255));
-        driveTitle20.setText("Computadoras GPU:");
+        driveTitle20.setText("Computadoras GPU");
         driveTitle20.setFocusable(false);
 
         plotTwistChapters2.setBackground(new java.awt.Color(0, 0, 51));
@@ -2355,7 +2363,7 @@ public class Dell extends javax.swing.JFrame {
         driveTitle24.setBackground(new java.awt.Color(0, 0, 51));
         driveTitle24.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         driveTitle24.setForeground(new java.awt.Color(255, 255, 255));
-        driveTitle24.setText("Computadoras:");
+        driveTitle24.setText("Computadoras normales");
         driveTitle24.setFocusable(false);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -2369,7 +2377,7 @@ public class Dell extends javax.swing.JFrame {
                     .addComponent(driveTitle24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(plotTwistChapters2, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                    .addComponent(plotTwistChapters2, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
                     .addComponent(standardChaptes2))
                 .addContainerGap())
         );
@@ -2425,6 +2433,75 @@ public class Dell extends javax.swing.JFrame {
         Fondo.setFont(new java.awt.Font("Centaur", 1, 12)); // NOI18N
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Imagenes/fondoPantalla.jpg"))); // NOI18N
         jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, 730));
+
+        jPanel12.setBackground(new java.awt.Color(0, 0, 51));
+
+        driveTitle30.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle30.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle30.setForeground(new java.awt.Color(255, 255, 255));
+        driveTitle30.setText("Días transcurridos:");
+
+        driveTitle31.setBackground(new java.awt.Color(0, 0, 51));
+        driveTitle31.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        driveTitle31.setForeground(new java.awt.Color(255, 255, 255));
+        driveTitle31.setText("Días Restantes:");
+
+        jTextField9.setBackground(new java.awt.Color(34, 46, 60));
+        jTextField9.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        jTextField9.setForeground(new java.awt.Color(0, 0, 51));
+        jTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField9.setText("0");
+        jTextField9.setEnabled(false);
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField9ActionPerformed(evt);
+            }
+        });
+
+        jTextField10.setBackground(new java.awt.Color(34, 46, 60));
+        jTextField10.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
+        jTextField10.setForeground(new java.awt.Color(0, 0, 51));
+        jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField10.setText("0");
+        jTextField10.setEnabled(false);
+        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField10ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(driveTitle30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(driveTitle31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(driveTitle30)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(driveTitle31, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13))
+        );
+
+        jPanel1.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, 280, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -2837,6 +2914,14 @@ public class Dell extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_standardChaptes2ActionPerformed
 
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10ActionPerformed
+
     private String increaseQuantity(String actualValue, JButton btn) {
         int intValue = 0;
         try {
@@ -2978,6 +3063,8 @@ public class Dell extends javax.swing.JFrame {
     private javax.swing.JLabel driveTitle28;
     private javax.swing.JLabel driveTitle29;
     private javax.swing.JLabel driveTitle3;
+    private javax.swing.JLabel driveTitle30;
+    private javax.swing.JLabel driveTitle31;
     private javax.swing.JLabel driveTitle4;
     private javax.swing.JLabel driveTitle5;
     private javax.swing.JLabel driveTitle6;
@@ -3014,6 +3101,7 @@ public class Dell extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -3023,8 +3111,10 @@ public class Dell extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel maxCap;
     private javax.swing.JPanel plotTwist;
     private javax.swing.JPanel plotTwist1;
